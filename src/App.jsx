@@ -6,7 +6,7 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route index element={<Login />} />
+        <Route index element={<Login username="Matric Number" />} />
         <Route path="overview" element={<Dashboard />} />
       </Routes>
     </Router>

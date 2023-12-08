@@ -1,0 +1,50 @@
+@font-face {
+  font-family: "MetaPro";
+  src: url("../../fonts/FFMetaProCondBd.TTF") format("truetype"),
+    url("../../fonts/FFMetaProCondBlk.TTF") format("truetype"),
+    url("../../fonts/FFMetaProCondMed.TTF") format("truetype"),
+    url("../../fonts/FFMetaProRegular.TTF") format("truetype");
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* Main Content Area */
+main {
+  margin-left: 251px;
+  box-sizing: border-box;
+  overflow-y: auto;
+}
+
+.side-content-body {
+  padding: 25px;
+  display: flex;
+
+  font-family: "MetaPro Regular", sans-serif;
+}
+
+.side-content-body .overview {
+  flex: 1;
+}
+
+.side-content-body .overview h2 {
+  font-family: "MetaPro Bold", sans-serif;
+}
+
+.side-content-body .overview p {
+  font-size: 11px;
+  color: #405855;
+}
+
+.side-content-body .overview .boxes {
+  display: flex;
+  column-gap: 16px;
+}
+
+.side-content-body aside {
+  width: 250px;
+  padding: 0 30px;
+  margin: 0;
+}

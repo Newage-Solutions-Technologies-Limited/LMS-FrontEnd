@@ -1,0 +1,38 @@
+nav {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  align-items: center;
+  padding: 20px 25px 13px;
+  border-bottom: 1px solid #e1e2e9;
+}
+
+nav .search {
+  display: flex;
+  align-items: center;
+  border: 1px solid #cbd5e1;
+  padding: 0 3px;
+  border-radius: 8px;
+}
+
+nav .search input {
+  font-family: "MetaPro", sans-serif;
+  border-style: none;
+  outline: none;
+  width: 90%;
+  padding: 7px 10px;
+}
+
+nav .icons {
+  text-align: end;
+}
+
+nav .icons span {
+  margin-right: 16px;
+}
+
+nav .icons .user {
+  background: #d9d9d9;
+  padding: 7px;
+  border-radius: 50%;
+}

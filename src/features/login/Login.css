@@ -3,12 +3,12 @@
   justify-content: center;
   align-content: center;
   height: 100vh;
-  font-family: "Inter", sans-serif;
+  font-family: "MetaPro Regular", sans-serif;
 }
 
 .heading-desc h2 {
   font-weight: 700;
-  font-size: 32px;
+  font-size: 24px;
   line-height: 0.5;
   color: #3e334e;
 }
@@ -16,7 +16,7 @@
 .heading-desc p {
   color: #3e334e;
   font-weight: 400;
-  font-size: 16px;
+  font-size: 12px;
   line-height: 27px;
 }
 
@@ -30,16 +30,16 @@ form .form-details {
 
 form .form-details label {
   display: block;
-  font-size: 16px;
+  font-size: 14px;
   line-height: 30px;
   font-weight: 600;
 }
 
 form .form-details > input,
 .form-password-toggle {
-  padding: 16px;
-  width: 350px;
-  font-size: 16px;
+  padding: 10px;
+  width: 300px;
+  font-size: 12px;
   gap: 4px;
   outline: none;
   border-radius: 8px;
@@ -55,7 +55,7 @@ form .form-password-toggle {
 
 form .form-password-toggle input {
   border-style: none;
-  font-size: 16px;
+  font-size: 12px;
   font-family: "Inter", sans-serif;
   outline: none;
 }
@@ -68,16 +68,21 @@ form .eye-toggle {
 form .form-foot {
   display: flex;
   justify-content: space-between;
-  padding-bottom: 25px;
+  padding-bottom: 20px;
 }
 
 :is(form .form-foot label, form .form-foot a) {
-  font-size: 14px;
+  font-size: 12px;
   color: #3e334e;
   font-family: "Inter", sans-serif;
+  font-family: "MetaPro Regular", sans-serif;
+}
+
+form .form-foot a {
+  color: #008688;
 }
 
 input[type="checkbox"] {
-  accent-color: #9ca3af;
-  margin-right: 10px;
+  accent-color: #008688;
+  margin-right: 7px;
 }

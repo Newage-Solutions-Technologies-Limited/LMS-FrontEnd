@@ -40,7 +40,7 @@ main {
 
 .side-content-body .overview .boxes {
   display: flex;
-  column-gap: 16px;
+  column-gap: 12px;
 }
 
 .side-content-body aside {

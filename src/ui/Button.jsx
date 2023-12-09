@@ -26,6 +26,7 @@ const StyledButton = styled.button`
 
   &:hover {
     background-color: ${(props) => props.hoverIn};
+    border: 2px solid ${(props) => props.hoverIn};
   }
 `;
 
@@ -53,15 +54,3 @@ export default function Button({
     </StyledButton>
   );
 }
-
-// const btnStyle = {
-//   width: `${width}%`,
-//   fontSize: `${fontSize}px`,
-//   fontWeight,
-//   backgroundColor,
-//   color,
-//   padding: "10px 0",
-//   borderRadius: "8px",
-//   textAlign: "center",
-//   border: `2px solid ${backgroundColor}`,
-// };

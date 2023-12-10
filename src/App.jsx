@@ -1,14 +1,17 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Dashboard from "./features/dashboard/Dashboard";
-import LoginPage from "./loginpage/LoginPage";
+import LoginPage from "./features/loginpage/LoginPage";
+import Calendar from "./features/calendar/Calendar";
+import Courses from "./features/courses/Courses";
 
 function App() {
   return (
     <Router>
       <Routes>
         <Route index element={<LoginPage />} />
-
-        <Route path="overview" element={<Dashboard />} />
+        <Route path="dashboard" element={<Dashboard />} />
+        <Route path="calendar" element={<Calendar />} />
+        <Route path="courses" element={<Courses />} />
       </Routes>
     </Router>
   );

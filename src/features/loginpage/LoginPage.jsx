@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
-import Login from "../features/login/Login";
+import Login from "../../ui/login/Login";
 import "./LoginPage.css";
-import loginImg1 from "../assets/login-img-1.png";
-import loginImg2 from "../assets/login-img-2.png";
+import loginImg1 from "../../assets/login-img-1.png";
+import loginImg2 from "../../assets/login-img-2.png";
 
 function LoginPage() {
   const [activeIndex, setActiveIndex] = useState(0);

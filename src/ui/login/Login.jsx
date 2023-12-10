@@ -2,8 +2,8 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import PropTypes from "prop-types";
 import "./Login.css";
-import Logo from "../../ui/Logo";
-import Button from "../../ui/Button";
+import Logo from "../Logo";
+import Button from "../Button";
 import edurexLogo from "../../assets/edurex-logo.svg";
 import { IoEyeOffSharp, IoEyeSharp } from "react-icons/io5";
 // IoEyeSharp,
@@ -74,7 +74,7 @@ function Login({ username = "Username" }) {
               color="#fff"
               backgroundColor="#008688"
               hoverIn="#a1dfe4"
-              onClick={() => navigate("/overview")}
+              onClick={() => navigate("/dashboard")}
             >
               Login
             </Button>

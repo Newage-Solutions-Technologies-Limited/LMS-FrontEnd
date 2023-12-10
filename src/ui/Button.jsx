@@ -33,8 +33,8 @@ const StyledButton = styled.button`
 export default function Button({
   children,
   width = 100,
-  color = "#fff",
-  backgroundColor = "#000",
+  color = "#000",
+  backgroundColor = "#fff",
   fontSize = 16,
   fontWeight = 100,
   hoverIn,

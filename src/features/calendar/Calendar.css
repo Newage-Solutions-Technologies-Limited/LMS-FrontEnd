@@ -1,0 +1,10 @@
+.calendar-box {
+  margin-left: 251px;
+  box-sizing: border-box;
+  overflow-y: auto;
+}
+
+.calendar {
+  padding: 30px;
+  font-family: "MetaPro Regular", sans-serif;
+}

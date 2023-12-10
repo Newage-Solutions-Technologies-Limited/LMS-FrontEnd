@@ -1,0 +1,16 @@
+.courses-section {
+  margin-left: 251px;
+  box-sizing: border-box;
+  overflow-y: auto;
+}
+
+.courses {
+  padding: 30px;
+  font-family: "MetaPro Regular", sans-serif;
+}
+
+.courses-analysis {
+  display: flex;
+  width: 100%;
+  column-gap: 10px;
+}

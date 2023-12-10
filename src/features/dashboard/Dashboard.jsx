@@ -12,10 +12,28 @@ export default function Dashboard() {
         <NavBar />
         <div className="side-content-body">
           <div className="overview">
-            <p>Wed 22, 2023</p>
-            <h2>Overview</h2>
+            <div className="date">
+              <p>Wed 22, 2023</p>
+              <h2>Overview</h2>
+            </div>
 
-            <div className="boxes">
+            <div className="session">
+              <div className="inputs">
+                <select name="" id="">
+                  <option value="">2023/2024</option>
+                  <option value="">2024/2025</option>
+                </select>
+
+                <select name="" id="">
+                  <option value="">Second Semester</option>
+                  <option value="">First Semester</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div className="boxes">
+            <div className="average-total">
               <Box
                 description="Total Registered Courses"
                 total="16"
@@ -34,17 +52,22 @@ export default function Dashboard() {
                 progress="+2"
               />
             </div>
+
+            <div className="upcoming">
+              <Box
+                description="Current CGPA"
+                total="3.56 / 4.00"
+                progress="+2"
+              />
+            </div>
           </div>
 
-          <aside>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias
-              nemo dolores vel maiores architecto fugit laboriosam, officiis,
-              voluptas fugiat, illum nam recusandae inventore nisi. Adipisci,
-              cumque nihil fuga iure iusto exercitationem eveniet repudiandae
-              cupiditate accusamus tempore? Molestiae aliquid magni reiciendis.
-            </p>
-          </aside>
+          <div className="grid-container">
+            <div className="top-div">Top Div</div>
+            <div className="bottom-div">Bottom Div 1</div>
+            <div className="bottom-div">Bottom Div 2</div>
+            <div className="bottom-div">Bottom Div 3</div>
+          </div>
         </div>
       </main>
     </>
@@ -61,7 +84,8 @@ function Box({ description, total, progress }) {
   const boxStyle = {
     border: "1px solid #DDE1E6",
     width: "100%",
-    padding: "7px",
+    padding: "6px 20px",
+    borderRadius: "8px",
   };
 
   const boxDesc = {
@@ -78,7 +102,7 @@ function Box({ description, total, progress }) {
 
   return (
     <div style={boxStyle}>
-      <p>{description}</p>
+      <h4>{description}</h4>
 
       <div style={boxDesc}>
         <h3>{total}</h3>

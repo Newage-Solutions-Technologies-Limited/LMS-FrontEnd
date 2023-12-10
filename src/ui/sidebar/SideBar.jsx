@@ -1,24 +1,30 @@
 import Logo from "../Logo";
-import adinLogo from "../../assets/adin-logo.svg";
+import { Link } from "react-router-dom";
+import edurexLogo from "../../assets/edurex-logo.svg";
 import { IoLogOutOutline } from "react-icons/io5";
 import "./SideBar.css";
 
 export default function SideBar() {
   return (
     <div className="sidebar">
-      <Logo width={200} margin={30} imageUrl={adinLogo} imageAlt="adin-logo" />
+      <Logo
+        width={120}
+        margin={50}
+        imageUrl={edurexLogo}
+        imageAlt="edurex-logo"
+      />
 
       <div className="links">
-        <a href="#section1" className="active">
+        <Link to="/dashboard" className="active">
           Dashboard
-        </a>
-        <a href="#section2">Calendar</a>
-        <a href="#section3">Courses</a>
-        <a href="#section4">Quiz & Exams</a>
-        <a href="#section5">Performance</a>
-        <a href="#section6">Help</a>
-        <a href="#section7">Discussions</a>
-        <a href="#section8">Messages</a>
+        </Link>
+        <Link to="/calendar">Calendar</Link>
+        <Link to="/courses">Courses</Link>
+        <Link to="/quiz-and-exams">Quiz & Exams</Link>
+        <Link to="/performace-analysis">Performance</Link>
+        <Link to="/help">Help</Link>
+        <Link to="/discussions">Discussions</Link>
+        <Link to="/messages">Messages</Link>
       </div>
 
       <div className="logout">

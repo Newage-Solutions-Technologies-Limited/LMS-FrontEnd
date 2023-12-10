@@ -20,13 +20,13 @@ main {
 
 .side-content-body {
   padding: 25px;
-  display: flex;
-
   font-family: "MetaPro Regular", sans-serif;
 }
 
 .side-content-body .overview {
-  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .side-content-body .overview h2 {
@@ -34,17 +34,62 @@ main {
 }
 
 .side-content-body .overview p {
-  font-size: 11px;
+  font-size: 12px;
   color: #405855;
 }
 
-.side-content-body .overview .boxes {
+.side-content-body .overview .inputs {
   display: flex;
-  column-gap: 12px;
+  column-gap: 10px;
 }
 
-.side-content-body aside {
-  width: 250px;
-  padding: 0 30px;
-  margin: 0;
+.side-content-body .overview .inputs select {
+  border: 1px solid #94a3b8;
+  padding: 8px 10px;
+  border-radius: 8px;
+  outline: none;
+  font-family: "MetaPro Regular", sans-serif;
 }
+
+.side-content-body .boxes {
+  display: grid;
+  grid-template-columns: 1fr 400px;
+  column-gap: 10px;
+  /* justify-content: space-between; */
+}
+
+.side-content-body .boxes .average-total {
+  display: flex;
+  width: 100%;
+  column-gap: 20px;
+}
+
+.side-content-body .boxes .upcoming {
+  width: 100%;
+}
+
+/* .side-content-body aside {
+  width: 280px;
+  padding: 5px 20px;
+  margin: 0;
+} */
+
+/* .grid-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.top-div {
+  grid-column: span 2;
+  background-color: #3498db;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+.bottom-div {
+  background-color: #ecf0f1;
+  padding: 20px;
+  text-align: center;
+} */

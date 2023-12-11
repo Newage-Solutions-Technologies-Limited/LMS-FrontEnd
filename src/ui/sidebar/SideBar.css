@@ -20,12 +20,12 @@
   margin-bottom: 10px;
   border-radius: 5rem;
   transition: background-color 0.3s ease;
-  font-size: 13px;
+  font-size: 16px;
   font-family: "MetaPro Regular", sans-serif;
 }
 
 .sidebar .logout {
-  line-height: 5;
+  margin-top: 70px;
 }
 
 .sidebar .links .active,

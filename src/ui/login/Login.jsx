@@ -28,7 +28,7 @@ function Login({ username = "Username" }) {
             width={150}
             margin={70}
             imageUrl={edurexLogo}
-            imageAlt="adin-logo"
+            imageAlt="edurex-logo"
           />
 
           <div className="heading-desc">

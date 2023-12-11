@@ -49,9 +49,9 @@ function Login({ username = "Username" }) {
                 <input type="password" placeholder="Enter Password" />
                 <div className="eye-icon" onClick={toggleSelection}>
                   {passwordRevealed ? (
-                    <IoEyeSharp size={18} />
+                    <IoEyeSharp size={18} color="#008688" />
                   ) : (
-                    <IoEyeOffSharp size={18} />
+                    <IoEyeOffSharp size={18} color="#008688" />
                   )}
                 </div>
               </div>
@@ -71,9 +71,10 @@ function Login({ username = "Username" }) {
             <Button
               width={100}
               fontWeight={600}
-              color="#fff"
+              fontSize={14}
+              color="#dde1e6"
               backgroundColor="#008688"
-              hoverIn="#a1dfe4"
+              hoverIn="#1c9c9e"
               onClick={() => navigate("/dashboard")}
             >
               Login

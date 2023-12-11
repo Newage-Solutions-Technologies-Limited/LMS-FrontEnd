@@ -99,15 +99,18 @@ export default function Dashboard() {
                   Live class is ongoing. <br /> Join now!
                 </h4>
                 <Button
-                  width={70}
+                  width={50}
+                  fontSize={14}
                   fontWeight={600}
-                  color="#fff"
+                  color="#dde1e6"
                   backgroundColor="#008688"
-                  hoverIn="#a1dfe4"
+                  hoverIn="#1c9c9e"
                 >
-                  Join Now!
+                  Join Now
                 </Button>
               </div>
+
+              <div className="line"></div>
 
               <div className="upcoming-classes">
                 <Card
@@ -118,7 +121,7 @@ export default function Dashboard() {
                 />
 
                 <Card
-                  title="Examination Reminder : EDX 508"
+                  title="Examination Reminder: EDX 508"
                   date="22/09"
                   time="12:00"
                   color=" #C2410C"
@@ -130,6 +133,13 @@ export default function Dashboard() {
                   time="05:00"
                   color="#047857"
                 />
+
+                <Card
+                  title="Examination Reminder: EDX 508"
+                  date="22/09"
+                  time="12:00"
+                  color="#6D28D9"
+                />
               </div>
             </aside>
           </div>
@@ -137,7 +147,10 @@ export default function Dashboard() {
           <div className="grid-container featured-grid">
             <div className="main-content-three">
               <div className="featured">
-                <h4>Recent Resources</h4>
+                <div className="featured-heading">
+                  <h4>Recent Resources</h4>
+                  <h5>See all</h5>
+                </div>
 
                 <div className="recent-classes">
                   <div className="box-style">
@@ -153,6 +166,7 @@ export default function Dashboard() {
                   <div className="box-style">
                     <CourseBox
                       leftTop1="EDX 204: Essential Human Virology"
+                      leftTop2="Video"
                       leftBottom1={<LuTimer size={15} />}
                       leftBottom2="01:30 mins"
                       rightMiddle={<IoPlayOutline color="#11a75c" />}
@@ -162,6 +176,47 @@ export default function Dashboard() {
                   <div className="box-style">
                     <CourseBox
                       leftTop1="EDX 204: Essential Human Virology"
+                      leftTop2="File"
+                      leftBottom1={<LuTimer size={15} />}
+                      leftBottom2="01:30 mins"
+                      rightMiddle={<CgFileDocument color="#11a75c" />}
+                    />
+                  </div>
+
+                  <div className="box-style">
+                    <CourseBox
+                      leftTop1="EDX 204: Essential Human Virology"
+                      leftTop2="Audio"
+                      leftBottom1={<LuTimer size={15} />}
+                      leftBottom2="01:30 mins"
+                      rightMiddle={<GrMicrophone color="#11a75c" />}
+                    />
+                  </div>
+
+                  <div className="box-style">
+                    <CourseBox
+                      leftTop1="EDX 204: Essential Human Virology"
+                      leftTop2="Audio"
+                      leftBottom1={<LuTimer size={15} />}
+                      leftBottom2="01:30 mins"
+                      rightMiddle={<GrMicrophone color="#11a75c" />}
+                    />
+                  </div>
+
+                  <div className="box-style">
+                    <CourseBox
+                      leftTop1="EDX 204: Essential Human Virology"
+                      leftTop2="Video"
+                      leftBottom1={<LuTimer size={15} />}
+                      leftBottom2="01:30 mins"
+                      rightMiddle={<IoPlayOutline color="#11a75c" />}
+                    />
+                  </div>
+
+                  <div className="box-style">
+                    <CourseBox
+                      leftTop1="EDX 204: Essential Human Virology"
+                      leftTop2="File"
                       leftBottom1={<LuTimer size={15} />}
                       leftBottom2="01:30 mins"
                       rightMiddle={<CgFileDocument color="#11a75c" />}
@@ -172,24 +227,6 @@ export default function Dashboard() {
                     <CourseBox
                       leftTop1="EDX 204: Essential Human Virology"
                       leftTop2="Video"
-                      leftBottom1={<LuTimer size={15} />}
-                      leftBottom2="01:30 mins"
-                      rightMiddle={<GrMicrophone color="#11a75c" />}
-                    />
-                  </div>
-
-                  <div className="box-style">
-                    <CourseBox
-                      leftTop1="EDX 204: Essential Human Virology"
-                      leftBottom1={<LuTimer size={15} />}
-                      leftBottom2="01:30 mins"
-                      rightMiddle={<GrMicrophone color="#11a75c" />}
-                    />
-                  </div>
-
-                  <div className="box-style">
-                    <CourseBox
-                      leftTop1="EDX 204: Essential Human Virology"
                       leftBottom1={<LuTimer size={15} />}
                       leftBottom2="01:30 mins"
                       rightMiddle={<IoPlayOutline color="#11a75c" />}
@@ -265,17 +302,8 @@ Card.propTypes = {
 };
 
 function Card({ title, date, time, color }) {
-  const courseCard = {
-    border: "1px solid #dde1e6",
-    borderRadius: "8px",
-    padding: "0 5px",
-    marginTop: "12px",
-  };
-
   const courseCardBorder = {
     borderLeft: `7px solid ${color}`,
-    borderRadius: "8px",
-    padding: "0 8px",
   };
 
   const courseCardTitle = {
@@ -283,16 +311,16 @@ function Card({ title, date, time, color }) {
   };
 
   return (
-    <div style={courseCard}>
-      <div style={courseCardBorder}>
-        <h6 style={courseCardTitle}>{title}</h6>
-        <h6>
-          <span>
-            <LuTimer />
-          </span>{" "}
-          {date} {time} pm
-        </h6>
-      </div>
+    <div style={courseCardBorder} className="course-card">
+      <span style={courseCardTitle} className="card course-card-title">
+        {title}
+      </span>
+      <p className="card course-card-time">
+        <span>
+          <LuTimer />
+        </span>{" "}
+        {date} {time} pm
+      </p>
     </div>
   );
 }
@@ -300,10 +328,10 @@ function Card({ title, date, time, color }) {
 function OverviewBox({ leftTop, leftBottom1, leftBottom2 = "", rightMiddle }) {
   return (
     <div className="boxDesc">
-      <div>
-        <h5>{leftTop}</h5>
+      <div className="overview">
+        <span className="title">{leftTop}</span>
 
-        <h3>
+        <h3 className="overview-report">
           {leftBottom1} <span>{leftBottom2}</span>
         </h3>
       </div>
@@ -323,11 +351,10 @@ function CourseBox({
     <div className="boxDesc">
       <div className="course-details">
         <div className="course-title">
-          <h5>{leftTop1}</h5>
-          <p>
-            <span className={leftTop2 ? "left-top-2" : ""}>{leftTop2}</span>
-          </p>
+          <span className="title">{leftTop1}</span>
+          <span className={leftTop2 ? "left-top-2" : "hidden"}>{leftTop2}</span>
         </div>
+
         <h3>
           {leftBottom1} <span>{leftBottom2}</span>
         </h3>

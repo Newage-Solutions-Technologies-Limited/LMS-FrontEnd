@@ -21,12 +21,13 @@ const StyledButton = styled.button`
   padding: 10px 0;
   border-radius: 8px;
   text-align: center;
-  border: 2px solid ${(props) => props.backgroundColor};
+  border: 1px solid ${(props) => props.backgroundColor};
   transition: color 0.3s;
+  font-family: "MetaPro Regular", sans-serif;
 
   &:hover {
     background-color: ${(props) => props.hoverIn};
-    border: 2px solid ${(props) => props.hoverIn};
+    border: 1px solid ${(props) => props.hoverIn};
   }
 `;
 

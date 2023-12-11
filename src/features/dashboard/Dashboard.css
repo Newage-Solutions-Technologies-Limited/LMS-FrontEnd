@@ -27,7 +27,7 @@ main {
   display: grid;
   grid-template-columns: 3fr 1fr;
   grid-template-rows: auto 1fr auto;
-  grid-gap: 15px;
+  grid-gap: 20px;
   row-gap: 5px;
   grid-template-areas: "main aside";
   color: #405855;
@@ -77,7 +77,7 @@ main {
 .report {
   grid-area: report;
   border: 1px solid #dde1e6;
-  height: 40vh;
+  height: 60vh;
   border-radius: 8px;
 }
 
@@ -99,14 +99,22 @@ main {
 
 .featured {
   grid-area: featured;
-  height: 40vh;
+  height: 70vh;
   border: 1px solid #dde1e6;
   border-radius: 8px;
   padding: 0 10px;
+  overflow: auto;
 }
 
 .featured-grid {
   margin-top: 14px;
+}
+
+.featured .recent-classes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 12px;
+  justify-items: center;
 }
 
 .resources {
@@ -143,8 +151,53 @@ main {
   justify-content: space-between;
 }
 
+.boxDesc h3 {
+  color: #008688;
+  font-size: 22px;
+}
+
+.boxDesc h3 span {
+  color: #405855;
+  font-size: 13.28px;
+}
+
+.boxDesc h5 {
+  color: #697077;
+  font-weight: 600;
+}
+
+.course-title {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+}
+
+.course-title p .left-top-2 {
+  font-size: 12px;
+  background: #1db4691f;
+  color: #11a75c;
+  padding: 3px 8px;
+  border-radius: 8px;
+}
+
+.course-details h3 span {
+  font-weight: 400;
+  color: #697077;
+}
+
+.icon-classes {
+  background: #d7e8e559;
+}
+
+.icon-time {
+  background: #e8e7d759;
+}
+.icon-current {
+  background: #e2d7e859;
+}
+
 .progressStyle {
-  padding: 5px;
+  padding: 10px 12px;
   border-radius: 14px;
   background: #f2f4f8;
 }
@@ -153,7 +206,14 @@ main {
   padding: 15px;
 }
 
+.upcoming .icon-radio {
+  background-color: #fff;
+  padding: 4px;
+  border-radius: 8px;
+}
+
 .upcoming-classes {
+  margin-top: 20px;
   max-height: 240px;
   overflow: auto;
   scrollbar-width: thin;
@@ -180,6 +240,43 @@ main {
   padding: 20px 12px;
 }
 
+.live-class h4 {
+  animation: animate 2s infinite;
+}
+
+@keyframes animate {
+  0% {
+    opacity: 0;
+    color: #239294;
+  }
+  50%,
+  75% {
+    opacity: 1;
+    color: #008688;
+  }
+  100% {
+    opacity: 0;
+    color: #117072;
+  }
+}
+
 .total-resources {
   padding: 0 20px;
+  width: 80%;
+}
+
+.total-resources .doughnut {
+  margin: auto;
+}
+
+.total-resources .chart-details {
+  margin: 20px 0 10px;
+}
+
+.total-resources .chart-details .files {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  font-weight: 600;
 }

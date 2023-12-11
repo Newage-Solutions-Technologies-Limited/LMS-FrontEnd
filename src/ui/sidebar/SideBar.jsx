@@ -2,7 +2,6 @@ import Logo from "../Logo";
 import { Link } from "react-router-dom";
 import edurexLogo from "../../assets/edurex-logo.svg";
 import { CiHome, CiCalendar } from "react-icons/ci";
-import { CgFileDocument } from "react-icons/cg";
 import { GrVirtualMachine } from "react-icons/gr";
 import {
   IoLogOutOutline,
@@ -10,7 +9,7 @@ import {
   IoSettingsOutline,
 } from "react-icons/io5";
 import { IoIosCreate } from "react-icons/io";
-import { GrScorecard } from "react-icons/gr";
+import { GrScorecard, GrCopy } from "react-icons/gr";
 import { GoCommentDiscussion } from "react-icons/go";
 import { TbBrandGoogleAnalytics } from "react-icons/tb";
 import "./SideBar.css";
@@ -34,7 +33,7 @@ export default function SideBar() {
           Schedule
         </Link>
         <Link to="/courses">
-          <CgFileDocument />
+          <GrCopy />
           Courses
         </Link>
         <Link to="/quiz-and-exams">

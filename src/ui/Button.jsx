@@ -8,6 +8,9 @@ Button.propTypes = {
   color: PropTypes.string,
   backgroundColor: PropTypes.string,
   hoverIn: PropTypes.string,
+  paddingtb: PropTypes.number,
+  paddinglr: PropTypes.number,
+  borderRadius: PropTypes.number,
   children: PropTypes.node.isRequired,
   onClick: PropTypes.func,
 };
@@ -18,16 +21,16 @@ const StyledButton = styled.button`
   font-weight: ${(props) => props.fontWeight};
   background-color: ${(props) => props.backgroundColor};
   color: ${(props) => props.color};
-  padding: 10px 0;
-  border-radius: 8px;
+  padding: ${(props) => props.paddingtb}px ${(props) => props.paddinglr}px;
+  border-radius: ${(props) => props.borderRadius}px;
   text-align: center;
-  border: 1px solid ${(props) => props.backgroundColor};
+  border: 2px solid ${(props) => props.backgroundColor};
   transition: color 0.3s;
   font-family: "MetaPro Regular", sans-serif;
 
   &:hover {
     background-color: ${(props) => props.hoverIn};
-    border: 1px solid ${(props) => props.hoverIn};
+    border: 2px solid ${(props) => props.hoverIn};
   }
 `;
 
@@ -38,6 +41,9 @@ export default function Button({
   backgroundColor = "#fff",
   fontSize = 16,
   fontWeight = 100,
+  paddingtb = 10,
+  paddinglr = 0,
+  borderRadius = 8,
   hoverIn,
   onClick,
 }) {
@@ -49,6 +55,9 @@ export default function Button({
       fontSize={fontSize}
       fontWeight={fontWeight}
       hoverIn={hoverIn}
+      paddingtb={paddingtb}
+      paddinglr={paddinglr}
+      borderRadius={borderRadius}
       onClick={onClick}
     >
       {children}

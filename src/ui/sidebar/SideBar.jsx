@@ -1,15 +1,14 @@
 import Logo from "../Logo";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import edurexLogo from "../../assets/edurex-logo.svg";
 import { CiHome, CiCalendar } from "react-icons/ci";
-import { GrVirtualMachine } from "react-icons/gr";
 import {
   IoLogOutOutline,
   IoHelpCircleOutline,
   IoSettingsOutline,
 } from "react-icons/io5";
 import { IoIosCreate } from "react-icons/io";
-import { GrScorecard, GrCopy } from "react-icons/gr";
+import { GrScorecard, GrCopy, GrVirtualMachine } from "react-icons/gr";
 import { GoCommentDiscussion } from "react-icons/go";
 import { TbBrandGoogleAnalytics } from "react-icons/tb";
 import "./SideBar.css";
@@ -18,58 +17,91 @@ export default function SideBar() {
   return (
     <div className="sidebar">
       <Logo
-        width={120}
-        margin={80}
+        width={150}
+        margin={60}
         imageUrl={edurexLogo}
         imageAlt="edurex-logo"
       />
 
       <div className="links">
-        <Link to="/dashboard" className="active">
-          <CiHome /> Dashboard
-        </Link>
-        <Link to="/calendar">
-          <CiCalendar />
-          Schedule
-        </Link>
-        <Link to="/courses">
-          <GrCopy />
-          Courses
-        </Link>
-        <Link to="/quiz-and-exams">
-          <GrVirtualMachine />
-          Virtual Class
-        </Link>
-        <Link to="/performace-analysis">
-          <IoIosCreate />
-          Assessments
-        </Link>
-        <Link to="/help">
-          <GrScorecard />
-          Grades
-        </Link>
-        <Link to="/discussions">
-          <GoCommentDiscussion />
-          Discussions
-        </Link>
-        <Link to="/messages">
-          <TbBrandGoogleAnalytics />
-          Report{" "}
-        </Link>
+        <NavLink to="/dashboard" className="menu ">
+          <div className="menu-link">
+            <CiHome className="menu-icon" size={20} color="#006869" />
+            <span>Dashboard</span>
+          </div>
+        </NavLink>
+
+        <NavLink to="/schedule" className="menu">
+          <div className="menu-link">
+            <CiCalendar size={20} className="menu-icon" />
+            <span>Schedule</span>
+          </div>
+        </NavLink>
+
+        <NavLink to="/courses">
+          <div className="menu-link">
+            <GrCopy size={20} className="menu-icon" />
+            <span>Courses</span>
+          </div>
+        </NavLink>
+
+        <NavLink to="/virtual-class">
+          <div className="menu-link">
+            <GrVirtualMachine size={20} className="menu-icon" />
+            <span>Virtual Class</span>
+          </div>
+        </NavLink>
+
+        <NavLink to="/assessments">
+          <div className="menu-link">
+            <IoIosCreate size={20} className="menu-icon" />
+            <span>Assessments</span>
+          </div>
+        </NavLink>
+
+        <NavLink to="/grades">
+          <div className="menu-link">
+            <GrScorecard size={18} className="menu-icon" />
+            <span>Grades</span>
+          </div>
+        </NavLink>
+
+        <NavLink to="/discussions">
+          <div className="menu-link">
+            <GoCommentDiscussion size={20} className="menu-icon" />
+            <span>Discussions</span>
+          </div>
+        </NavLink>
+
+        <NavLink to="/report">
+          <div className="menu-link">
+            <TbBrandGoogleAnalytics size={20} className="menu-icon" />
+            <span>Report</span>
+          </div>
+        </NavLink>
       </div>
 
-      <div className="logout">
-        <Link to="#">
-          <IoHelpCircleOutline color=" #008688" size={15} /> <span>Help</span>
-        </Link>
+      <div className="links second-part-links">
+        <NavLink to="/help">
+          <div className="menu-link">
+            <IoHelpCircleOutline size={20} className="menu-icon" />
+            <span>Help</span>
+          </div>
+        </NavLink>
 
-        <Link to="#">
-          <IoSettingsOutline color=" #008688" size={15} /> <span>Settings</span>
-        </Link>
+        <NavLink to="/settings">
+          <div className="menu-link">
+            <IoSettingsOutline className="menu-icon" size={20} />
+            <span>Settings</span>
+          </div>
+        </NavLink>
 
-        <Link to="#">
-          <IoLogOutOutline color=" #008688" size={15} /> <span>Logout</span>
-        </Link>
+        <NavLink to="/">
+          <div className="menu-link logout">
+            <IoLogOutOutline color="red" size={20} className="menu-icon" />
+            <span className="">Logout</span>
+          </div>
+        </NavLink>
       </div>
     </div>
   );

@@ -283,15 +283,15 @@ OverviewBox.propTypes = {
   leftTop: PropTypes.string,
   leftBottom1: PropTypes.string,
   leftBottom2: PropTypes.string,
-  rightMiddle: PropTypes.string,
+  rightMiddle: PropTypes.object,
 };
 
 CourseBox.propTypes = {
   leftTop1: PropTypes.string,
   leftTop2: PropTypes.string,
-  leftBottom1: PropTypes.string,
+  leftBottom1: PropTypes.object,
   leftBottom2: PropTypes.string,
-  rightMiddle: PropTypes.string,
+  rightMiddle: PropTypes.object,
 };
 
 Card.propTypes = {

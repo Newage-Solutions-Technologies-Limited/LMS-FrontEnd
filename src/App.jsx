@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Dashboard from "./features/dashboard/Dashboard";
 import LoginPage from "./features/loginpage/LoginPage";
-import Calendar from "./features/calendar/Calendar";
+import Schedule from "./features/schedule/Schedule";
 import Courses from "./features/courses/Courses";
 
 function App() {
@@ -10,7 +10,7 @@ function App() {
       <Routes>
         <Route index element={<LoginPage />} />
         <Route path="dashboard" element={<Dashboard />} />
-        <Route path="schedule" element={<Calendar />} />
+        <Route path="schedule" element={<Schedule />} />
         <Route path="courses" element={<Courses />} />
       </Routes>
     </Router>

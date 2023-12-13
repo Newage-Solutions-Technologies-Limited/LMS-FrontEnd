@@ -3,34 +3,34 @@ import styled from "styled-components";
 
 Button.propTypes = {
   width: PropTypes.number,
-  fontSize: PropTypes.number,
-  fontWeight: PropTypes.number,
+  fontsize: PropTypes.number,
+  fontweight: PropTypes.number,
   color: PropTypes.string,
-  backgroundColor: PropTypes.string,
-  hoverIn: PropTypes.string,
+  backgroundcolor: PropTypes.string,
+  hoverin: PropTypes.string,
   paddingtb: PropTypes.number,
   paddinglr: PropTypes.number,
-  borderRadius: PropTypes.number,
+  borderradius: PropTypes.number,
   children: PropTypes.node.isRequired,
   onClick: PropTypes.func,
 };
 
 const StyledButton = styled.button`
   width: ${(props) => props.width}%;
-  font-size: ${(props) => props.fontSize}px;
-  font-weight: ${(props) => props.fontWeight};
-  background-color: ${(props) => props.backgroundColor};
+  font-size: ${(props) => props.fontsize}px;
+  font-weight: ${(props) => props.fontweight};
+  background-color: ${(props) => props.backgroundcolor};
   color: ${(props) => props.color};
   padding: ${(props) => props.paddingtb}px ${(props) => props.paddinglr}px;
-  border-radius: ${(props) => props.borderRadius}px;
+  border-radius: ${(props) => props.borderradius}px;
   text-align: center;
-  border: 2px solid ${(props) => props.backgroundColor};
+  border: 2px solid ${(props) => props.backgroundcolor};
   transition: color 0.3s;
   font-family: "MetaPro Regular", sans-serif;
 
   &:hover {
-    background-color: ${(props) => props.hoverIn};
-    border: 2px solid ${(props) => props.hoverIn};
+    background-color: ${(props) => props.hoverin};
+    border: 2px solid ${(props) => props.hoverin};
   }
 `;
 
@@ -38,26 +38,26 @@ export default function Button({
   children,
   width = 100,
   color = "#000",
-  backgroundColor = "#fff",
-  fontSize = 16,
-  fontWeight = 100,
+  backgroundcolor = "#fff",
+  fontsize = 16,
+  fontweight = 100,
   paddingtb = 10,
   paddinglr = 0,
-  borderRadius = 8,
-  hoverIn,
+  borderradius = 8,
+  hoverin,
   onClick,
 }) {
   return (
     <StyledButton
       width={width}
       color={color}
-      backgroundColor={backgroundColor}
-      fontSize={fontSize}
-      fontWeight={fontWeight}
-      hoverIn={hoverIn}
+      backgroundcolor={backgroundcolor}
+      fontsize={fontsize}
+      fontweight={fontweight}
+      hoverin={hoverin}
       paddingtb={paddingtb}
       paddinglr={paddinglr}
-      borderRadius={borderRadius}
+      borderradius={borderradius}
       onClick={onClick}
     >
       {children}

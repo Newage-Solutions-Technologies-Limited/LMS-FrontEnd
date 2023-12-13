@@ -36,15 +36,15 @@ export default function Modal({ isOpen, onClose }) {
         </h2>
 
         <Button
-          width={40}
-          fontWeight={600}
-          fontSize={18}
+          width={50}
+          fontweight={600}
+          fontsize={18}
           paddingtb={16}
           paddinglr={13}
-          borderRadius={14}
+          borderradius={14}
           color="#F3F4F6"
-          backgroundColor="#008688"
-          hoverIn="#1c9c9e"
+          backgroundcolor="#008688"
+          hoverin="#1c9c9e"
           onClick={() => navigate("/dashboard")}
         >
           Proceed To Dashboard

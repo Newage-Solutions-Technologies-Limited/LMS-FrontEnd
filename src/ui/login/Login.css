@@ -14,7 +14,7 @@
 }
 
 .heading-desc p {
-  color: #3e334e;
+  color: #4f5662;
   font-weight: 400;
   font-size: 12px;
   line-height: 27px;
@@ -33,6 +33,7 @@ form .form-details label {
   font-size: 14px;
   line-height: 30px;
   font-weight: 600;
+  color: #4f5662;
 }
 
 /* .form-password-toggle, */
@@ -42,9 +43,31 @@ form .form-details input {
   font-size: 14px;
   outline: none;
   border-radius: 8px;
-  color: #3e334e;
+  color: #4f5662;
+
   border: 1px solid #afa2c3;
   font-family: "MetaPro Regular", sans-serif;
+}
+
+.form-details .form-password-toggle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 10px;
+  border-radius: 8px;
+  color: #3e334e;
+  border: 1px solid #afa2c3;
+}
+
+.form-details .form-password-toggle input {
+  font-size: 14px;
+  font-family: "Inter", sans-serif;
+  border-style: none;
+  outline: none;
+  width: 80%;
+  padding: 8px 0;
+  font-family: "MetaPro Regular", sans-serif;
+  color: #4f5662;
 }
 
 form .form-foot {
@@ -72,6 +95,8 @@ input[type="checkbox"] {
 .form-error-message {
   font-size: 12px;
   color: #ff574d;
+  width: 320px;
+  overflow-wrap: break-word;
 }
 
 form .form-details .error-style {
@@ -80,6 +105,8 @@ form .form-details .error-style {
 
 .hidden-text {
   visibility: hidden;
+  width: 320px;
+  overflow-wrap: break-word;
 }
 
 .login-btn {
@@ -110,12 +137,14 @@ form .form-details .error-style {
   padding: 1px 0;
   border-radius: 8px;
   text-align: center;
+  pointer-events: none;
 }
 
 .login-btn-text-error {
   font-size: 16px;
   color: #9ca3af;
   font-weight: 400;
+  pointer-events: none;
 }
 
 /* Modal */
@@ -180,20 +209,3 @@ form .form-details .error-style {
 .modal.closed {
   transform: scale(0.9);
 }
-
-/* form .form-password-toggle {
-  display: flex;
-  justify-content: space-between;
-}
-
-form .form-password-toggle input {
-  border-style: none;
-  font-size: 12px;
-  font-family: "Inter", sans-serif;
-  outline: none;
-}
-
-form .eye-toggle {
-  text-align: end;
-  color: #b2a6c5;
-} */

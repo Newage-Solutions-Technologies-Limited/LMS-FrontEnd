@@ -2,10 +2,10 @@ import { Calendar, momentLocalizer } from "react-big-calendar";
 import "react-big-calendar/lib/css/react-big-calendar.css";
 import moment from "moment";
 import SideBar from "../../ui/sidebar/SideBar";
-import "./Calendar.css";
+import "./Schedule.css";
 import NavBar from "../../ui/navbar/NavBar";
 
-const MyCalendar = () => {
+export default function Schedule() {
   const localizer = momentLocalizer(moment);
 
   const events = [
@@ -107,6 +107,4 @@ const MyCalendar = () => {
       </div>
     </section>
   );
-};
-
-export default MyCalendar;
+}

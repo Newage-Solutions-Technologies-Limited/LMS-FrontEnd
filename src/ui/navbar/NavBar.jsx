@@ -3,8 +3,9 @@ import {
   IoNotificationsOutline,
   IoSearchOutline,
 } from "react-icons/io5";
-import { FaUser } from "react-icons/fa";
-import { FaAngleDown } from "react-icons/fa6";
+import user from "../../assets/lanre.png";
+// import { FaUser } from "react-icons/fa";
+// import { FaAngleDown } from "react-icons/fa6";
 import "./NavBar.css";
 
 function NavBar() {
@@ -17,20 +18,29 @@ function NavBar() {
         <input type="search" placeholder="Search" />
       </div>
 
-      <div className="icons">
-        <span>
-          <IoChatbubbleEllipsesOutline />
+      <div className="icons ">
+        <span className="icon other-icons">
+          <IoChatbubbleEllipsesOutline size={20} color="#6E917E" />
+          <span className="chat">2</span>
+        </span>
+
+        <span className="icon split-icons other-icons">
+          <IoNotificationsOutline size={20} color="#6E917E" />
+          <span className="notifications"></span>
+        </span>
+
+        <span className="user icon">
+          {/* <FaUser color="#685B5B" size={20} /> */}
+          <img src={user} alt="user-image" className="user-image" />
         </span>
 
         <span>
-          <IoNotificationsOutline />
+          <span className="user-name">Olanrewaju O.</span>
+          <p className="user-info">
+            <span>Web development | </span>
+            <span>300lvl</span>
+          </p>
         </span>
-
-        <span className="user">
-          <FaUser color="#685B5B" />
-        </span>
-
-        <FaAngleDown />
       </div>
     </nav>
   );

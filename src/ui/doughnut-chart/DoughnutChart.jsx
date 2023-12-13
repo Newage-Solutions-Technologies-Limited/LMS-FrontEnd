@@ -46,6 +46,10 @@ const options = {
   },
   responsive: true,
   maintainAspectRatio: false,
-  // width: "100%",
-  // height: "30%",
+  // animation: {
+  //   animateRotate: false,
+  //   animateScale: true,
+  // },
+  // width: "100px",
+  // height: "100px",
 };

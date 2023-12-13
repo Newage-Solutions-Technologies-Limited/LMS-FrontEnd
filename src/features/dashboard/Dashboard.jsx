@@ -12,6 +12,30 @@ import { FaCircle } from "react-icons/fa6";
 import PropTypes from "prop-types";
 
 export default function Dashboard() {
+  const today = new Date();
+
+  const daysOfWeek = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  const monthsOfYear = [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec",
+  ];
+  const dayOfWeek = daysOfWeek[today.getDay()];
+  const monthOfYear = monthsOfYear[today.getMonth()];
+  const dayOfMonth = today.getDate();
+  const year = today.getFullYear();
+
+  const formattedDate = `${dayOfWeek}, ${dayOfMonth} ${monthOfYear} ${year}`;
+
   return (
     <>
       <SideBar />
@@ -21,7 +45,7 @@ export default function Dashboard() {
         <div className="side-content-body">
           <div className="grid-container header">
             <div className="main-content-one">
-              <p>Wed 22, 2023</p>
+              <p>{formattedDate}</p>
               <h2>Overview</h2>
             </div>
 
@@ -100,11 +124,11 @@ export default function Dashboard() {
                 </h4>
                 <Button
                   width={50}
-                  fontSize={14}
-                  fontWeight={600}
+                  fontsize={14}
+                  fontweight={600}
                   color="#dde1e6"
-                  backgroundColor="#008688"
-                  hoverIn="#1c9c9e"
+                  backgroundcolor="#008688"
+                  hoverin="#1c9c9e"
                 >
                   Join Now
                 </Button>

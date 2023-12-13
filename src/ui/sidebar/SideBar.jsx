@@ -26,56 +26,56 @@ export default function SideBar() {
       <div className="links">
         <NavLink to="/dashboard" className="menu ">
           <div className="menu-link">
-            <CiHome className="menu-icon" size={20} color="#006869" />
+            <CiHome className="menu-icon" size={15} />
             <span>Dashboard</span>
           </div>
         </NavLink>
 
         <NavLink to="/schedule" className="menu">
           <div className="menu-link">
-            <CiCalendar size={20} className="menu-icon" />
+            <CiCalendar size={15} className="menu-icon" />
             <span>Schedule</span>
           </div>
         </NavLink>
 
         <NavLink to="/courses">
           <div className="menu-link">
-            <GrCopy size={20} className="menu-icon" />
+            <GrCopy size={15} className="menu-icon" />
             <span>Courses</span>
           </div>
         </NavLink>
 
         <NavLink to="/virtual-class">
           <div className="menu-link">
-            <GrVirtualMachine size={20} className="menu-icon" />
+            <GrVirtualMachine size={15} className="menu-icon" />
             <span>Virtual Class</span>
           </div>
         </NavLink>
 
         <NavLink to="/assessments">
           <div className="menu-link">
-            <IoIosCreate size={20} className="menu-icon" />
+            <IoIosCreate size={15} className="menu-icon" />
             <span>Assessments</span>
           </div>
         </NavLink>
 
         <NavLink to="/grades">
           <div className="menu-link">
-            <GrScorecard size={18} className="menu-icon" />
+            <GrScorecard size={15} className="menu-icon" />
             <span>Grades</span>
           </div>
         </NavLink>
 
         <NavLink to="/discussions">
           <div className="menu-link">
-            <GoCommentDiscussion size={20} className="menu-icon" />
+            <GoCommentDiscussion size={15} className="menu-icon" />
             <span>Discussions</span>
           </div>
         </NavLink>
 
         <NavLink to="/report">
           <div className="menu-link">
-            <TbBrandGoogleAnalytics size={20} className="menu-icon" />
+            <TbBrandGoogleAnalytics size={15} className="menu-icon" />
             <span>Report</span>
           </div>
         </NavLink>
@@ -84,21 +84,21 @@ export default function SideBar() {
       <div className="links second-part-links">
         <NavLink to="/help">
           <div className="menu-link">
-            <IoHelpCircleOutline size={20} className="menu-icon" />
+            <IoHelpCircleOutline size={15} className="menu-icon" />
             <span>Help</span>
           </div>
         </NavLink>
 
         <NavLink to="/settings">
           <div className="menu-link">
-            <IoSettingsOutline className="menu-icon" size={20} />
+            <IoSettingsOutline className="menu-icon" size={15} />
             <span>Settings</span>
           </div>
         </NavLink>
 
         <NavLink to="/">
           <div className="menu-link logout">
-            <IoLogOutOutline color="red" size={20} className="menu-icon" />
+            <IoLogOutOutline color="red" size={15} className="menu-icon" />
             <span className="">Logout</span>
           </div>
         </NavLink>

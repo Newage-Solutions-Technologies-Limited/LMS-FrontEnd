@@ -34,13 +34,12 @@ main {
 }
 
 .main-content-one p {
-  font-size: 13px;
+  font-size: 12px;
 }
 
 .main-content-one h2 {
   font-family: "MetaPro Bold", sans-serif;
   color: #0e1f1d;
-  font-weight: 900;
 }
 
 :is(.main-content-two, .main-content-three) {
@@ -308,7 +307,7 @@ main {
 
 .total-resources {
   padding: 0 20px;
-  width: 80%;
+  /* width: 75%; */
 }
 
 .total-resources .doughnut {

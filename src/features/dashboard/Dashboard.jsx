@@ -2,6 +2,7 @@ import "./Dashboard.css";
 import SideBar from "../../ui/sidebar/SideBar";
 import NavBar from "../../ui/navbar/NavBar";
 import Button from "../../ui/Button";
+import OverviewBox from "../../ui/OverviewBox";
 import DoughnutChart from "../../ui/doughnut-chart/DoughnutChart";
 import { FiRadio } from "react-icons/fi";
 import { LuTimer } from "react-icons/lu";
@@ -10,6 +11,7 @@ import { CgFileDocument } from "react-icons/cg";
 import { IoPlayOutline } from "react-icons/io5";
 import { FaCircle } from "react-icons/fa6";
 import PropTypes from "prop-types";
+// import BarChart from "../../ui/bar-chart/BarChart";
 
 export default function Dashboard() {
   const today = new Date();
@@ -92,7 +94,7 @@ export default function Dashboard() {
                 <OverviewBox
                   leftTop="Current CGPA"
                   leftBottom1="4.45"
-                  leftBottom2="/5.00"
+                  leftBottom2="/ 5.00"
                   rightMiddle={
                     <CgFileDocument
                       size={25}
@@ -113,6 +115,8 @@ export default function Dashboard() {
                     <option value="">Yearly</option>
                   </select>
                 </div>
+
+                {/* <BarChart /> */}
               </div>
             </div>
 
@@ -303,13 +307,6 @@ export default function Dashboard() {
   );
 }
 
-OverviewBox.propTypes = {
-  leftTop: PropTypes.string,
-  leftBottom1: PropTypes.string,
-  leftBottom2: PropTypes.string,
-  rightMiddle: PropTypes.object,
-};
-
 CourseBox.propTypes = {
   leftTop1: PropTypes.string,
   leftTop2: PropTypes.string,
@@ -345,21 +342,6 @@ function Card({ title, date, time, color }) {
         </span>{" "}
         {date} {time} pm
       </p>
-    </div>
-  );
-}
-
-function OverviewBox({ leftTop, leftBottom1, leftBottom2 = "", rightMiddle }) {
-  return (
-    <div className="boxDesc">
-      <div className="overview">
-        <span className="title">{leftTop}</span>
-
-        <h3 className="overview-report">
-          {leftBottom1} <span>{leftBottom2}</span>
-        </h3>
-      </div>
-      <p className="progressStyle">{rightMiddle}</p>
     </div>
   );
 }

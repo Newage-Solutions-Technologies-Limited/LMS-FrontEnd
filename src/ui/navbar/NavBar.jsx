@@ -5,7 +5,7 @@ import {
 } from "react-icons/io5";
 import user from "../../assets/lanre.png";
 // import { FaUser } from "react-icons/fa";
-// import { FaAngleDown } from "react-icons/fa6";
+
 import "./NavBar.css";
 
 function NavBar() {
@@ -14,7 +14,7 @@ function NavBar() {
       <div></div>
 
       <div className="search">
-        <IoSearchOutline color="#94A3B8" size={18} />
+        <IoSearchOutline color="#A1A1AA" size={18} className="search-icon" />
         <input type="search" placeholder="Search" />
       </div>
 

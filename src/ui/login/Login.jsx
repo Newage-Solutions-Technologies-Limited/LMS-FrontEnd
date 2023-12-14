@@ -36,9 +36,9 @@ function Login() {
     const newErrors = {};
 
     if (!formData.school_id.trim()) {
-      newErrors.school_id = "School ID is required";
+      newErrors.school_id = "Matric No. is required";
     } else if (formData.school_id.length < 5) {
-      newErrors.school_id = "Invalid School ID. Please check and try again.";
+      newErrors.school_id = "Invalid Matric No. Please check and try again.";
     }
 
     if (!formData.password.trim()) {

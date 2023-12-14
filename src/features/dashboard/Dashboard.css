@@ -19,7 +19,7 @@ main {
 }
 
 .side-content-body {
-  padding: 25px;
+  padding: 40px 20px 20px 25px;
   font-family: "MetaPro Regular", sans-serif;
 }
 
@@ -33,13 +33,18 @@ main {
   color: #405855;
 }
 
+.main-content-one {
+  line-height: 0.8;
+}
+
 .main-content-one p {
   font-size: 12px;
 }
 
 .main-content-one h2 {
-  font-family: "MetaPro Bold", sans-serif;
-  color: #0e1f1d;
+  /* font-family: "MetaPro Bold", sans-serif; */
+  color: #000;
+  font-weight: 700;
 }
 
 :is(.main-content-two, .main-content-three) {

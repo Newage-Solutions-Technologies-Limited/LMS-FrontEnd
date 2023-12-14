@@ -43,6 +43,13 @@ const options = {
         },
       },
     },
+    legend: {
+      labels: {
+        font: {
+          size: 40,
+        },
+      },
+    },
   },
   responsive: true,
   maintainAspectRatio: false,

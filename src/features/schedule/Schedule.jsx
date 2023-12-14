@@ -72,37 +72,35 @@ export default function Schedule() {
         <NavBar />
 
         <div className="side-content-body">
-          <div className="overview">
-            <div className="date">
-              <h2>Calendar</h2>
+          <div className="grid-container header">
+            <div className="main-content-one">
+              <h2>Schedule</h2>
             </div>
 
-            <div className="session">
-              <div className="inputs">
-                <select name="" id="">
-                  <option value="">2023/2024</option>
-                  <option value="">2024/2025</option>
-                </select>
+            <div className="inputs aside">
+              <select className="select">
+                <option value="">2023/2024</option>
+                <option value="">2024/2025</option>
+              </select>
 
-                <select name="" id="">
-                  <option value="">Second Semester</option>
-                  <option value="">First Semester</option>
-                </select>
-              </div>
+              <select className="select">
+                <option value="">Second Semester</option>
+                <option value="">First Semester</option>
+              </select>
             </div>
           </div>
-        </div>
 
-        <div className="calendar">
-          <Calendar
-            localizer={localizer}
-            events={events}
-            startAccessor="start"
-            endAccessor="end"
-            defaultView="month"
-            views={["day", "week", "month"]}
-            style={{ height: 1000 }}
-          />
+          <div className="calendar">
+            <Calendar
+              localizer={localizer}
+              events={events}
+              startAccessor="start"
+              endAccessor="end"
+              defaultView="month"
+              views={["day", "week", "month"]}
+              style={{ height: 1000 }}
+            />
+          </div>
         </div>
       </div>
     </section>

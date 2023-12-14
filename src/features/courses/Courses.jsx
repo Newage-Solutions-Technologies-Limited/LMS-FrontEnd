@@ -208,8 +208,10 @@ function Courses() {
                       </span>
 
                       <span className="course-units">
-                        <span className="course-label">Course Unit:</span>
-                        <span className="value">{units} units</span>
+                        <span className="course-label">Course Units:</span>
+                        <span className="value">
+                          {units} unit{units > 1 ? "s" : ""}
+                        </span>
                       </span>
 
                       <span className="course-resources">

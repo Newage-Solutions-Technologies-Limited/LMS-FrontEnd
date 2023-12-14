@@ -2,7 +2,7 @@ import "./Courses.css";
 import NavBar from "../../ui/navbar/NavBar";
 import SideBar from "../../ui/sidebar/SideBar";
 import OverviewBox from "../../ui/OverviewBox";
-import { courses } from "./Courses";
+import { courses } from "./CoursesData";
 import { PiSortAscendingBold } from "react-icons/pi";
 import { GrCopy } from "react-icons/gr";
 import { LuTimer } from "react-icons/lu";

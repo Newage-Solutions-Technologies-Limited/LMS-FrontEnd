@@ -48,9 +48,17 @@ function Courses() {
     const sortedCourses = [...sortedOnGoingCourses, ...sortedCompletedCourses];
     setNewCourses(sortedCourses);
 
-    // Toggle sorting order for the next click
     setSortOrder((prevOrder) => (prevOrder === "desc" ? "asc" : "desc"));
   }
+
+  const [selectedOption, setSelectedOption] = useState("default");
+  let filteredCourses;
+
+  if (selectedOption === "default") filteredCourses = newCourses;
+  if (selectedOption === "ongoing")
+    filteredCourses = newCourses.filter((courses) => courses.progress < 100);
+  if (selectedOption === "completed")
+    filteredCourses = newCourses.filter((courses) => courses.progress === 100);
 
   return (
     <section>
@@ -142,17 +150,22 @@ function Courses() {
                 </div>
 
                 <div>
-                  <select name="Filter by" id="" className="select">
-                    <option value="">Filter by:</option>
-                    <option value="">Course title</option>
-                    <option value="">Course code</option>
+                  <select
+                    name="Filter by"
+                    value={selectedOption}
+                    onChange={(e) => setSelectedOption(e.target.value)}
+                    className="select"
+                  >
+                    <option value="default">All Courses</option>
+                    <option value="ongoing">My On-going Courses</option>
+                    <option value="completed">My Completed Courses</option>
                   </select>
                 </div>
               </div>
             </div>
 
             <div className="all-courses">
-              {newCourses.map((course, index) => {
+              {filteredCourses.map((course, index) => {
                 const {
                   img,
                   title,
@@ -204,7 +217,10 @@ function Courses() {
 
                       <span className="lecturers">
                         <span className="course-label">Lecturers:</span>
-                        <span className="value">{lecturers}</span>
+                        <span className="value">
+                          {lecturers[0]} & {lecturers.length - 1} other
+                          {lecturers.length - 1 > 1 ? "s" : ""}
+                        </span>
                       </span>
 
                       <span className="course-units">

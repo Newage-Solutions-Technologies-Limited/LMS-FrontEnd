@@ -1,16 +1,23 @@
+// import { useTheme } from "../../themes/ThemeProvider";
+import user from "../../assets/lanre.png";
 import {
   IoChatbubbleEllipsesOutline,
   IoNotificationsOutline,
   IoSearchOutline,
 } from "react-icons/io5";
-import user from "../../assets/lanre.png";
+import "./NavBar.css";
 // import { FaUser } from "react-icons/fa";
 
-import "./NavBar.css";
-
 function NavBar() {
+  // const { isDarkMode, toggleTheme } = useTheme();
+  // console.log(isDarkMode);
+
   return (
     <nav>
+      {/* <div className={isDarkMode ? "navbar-dark" : "navbar-light"}>
+        <span onClick={toggleTheme}>icon</span>
+      </div> */}
+
       <div></div>
 
       <div className="search">

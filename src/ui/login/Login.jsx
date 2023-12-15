@@ -140,11 +140,12 @@ function Login() {
 
           <form onSubmit={handleValidationOfForm}>
             <div className="form-details">
-              <label htmlFor="">Matric No.</label>
+              <label htmlFor="school_id">Matric No.</label>
               <input
                 type="tel"
                 placeholder="Enter Matric No."
                 name="school_id"
+                id="school_id"
                 value={formData.school_id || ""}
                 onChange={handleInputChange}
                 className={`${errors.school_id ? "error-style" : ""}`}
@@ -158,9 +159,8 @@ function Login() {
             </div>
 
             <div className="form-details">
-              <label htmlFor="">Password</label>
+              <label htmlFor="password">Password</label>
               <div
-                // className="form-password-toggle"
                 className={`form-password-toggle ${
                   errors.password ? "error-style" : ""
                 }`}
@@ -169,6 +169,7 @@ function Login() {
                   type={showPassword ? "text" : "password"}
                   placeholder="Enter password"
                   name="password"
+                  id="password"
                   value={formData.password || ""}
                   onChange={handleInputChange}
                 />

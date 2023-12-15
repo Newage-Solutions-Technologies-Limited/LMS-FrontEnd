@@ -1,4 +1,5 @@
 import "./Dashboard.css";
+import Header from "../../ui/Header";
 import SideBar from "../../ui/sidebar/SideBar";
 import NavBar from "../../ui/navbar/NavBar";
 import Button from "../../ui/Button";
@@ -14,30 +15,6 @@ import PropTypes from "prop-types";
 // import BarChart from "../../ui/bar-chart/BarChart";
 
 export default function Dashboard() {
-  const today = new Date();
-
-  const daysOfWeek = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-  const monthsOfYear = [
-    "Jan",
-    "Feb",
-    "Mar",
-    "Apr",
-    "May",
-    "Jun",
-    "Jul",
-    "Aug",
-    "Sep",
-    "Oct",
-    "Nov",
-    "Dec",
-  ];
-  const dayOfWeek = daysOfWeek[today.getDay()];
-  const monthOfYear = monthsOfYear[today.getMonth()];
-  const dayOfMonth = today.getDate();
-  const year = today.getFullYear();
-
-  const formattedDate = `${dayOfWeek}, ${dayOfMonth} ${monthOfYear} ${year}`;
-
   return (
     <>
       <SideBar />
@@ -45,24 +22,7 @@ export default function Dashboard() {
       <main>
         <NavBar />
         <div className="side-content-body">
-          <div className="grid-container header">
-            <div className="main-content-one">
-              <p>{formattedDate}</p>
-              <h2>Overview</h2>
-            </div>
-
-            <div className="inputs aside">
-              <select className="select">
-                <option value="">2023/2024</option>
-                <option value="">2024/2025</option>
-              </select>
-
-              <select className="select">
-                <option value="">Second Semester</option>
-                <option value="">First Semester</option>
-              </select>
-            </div>
-          </div>
+          <Header title="Overview" showDate={true} />
 
           <div className="grid-container">
             <div className="main-content-two">

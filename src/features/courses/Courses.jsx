@@ -11,6 +11,7 @@ import { CgFileDocument } from "react-icons/cg";
 import { FaStar } from "react-icons/fa";
 import { IoIosArrowRoundBack, IoIosArrowRoundForward } from "react-icons/io";
 import { useState } from "react";
+import Header from "../../ui/Header";
 
 function Courses() {
   const [newCourses, setNewCourses] = useState(courses);
@@ -68,23 +69,7 @@ function Courses() {
         <NavBar />
 
         <div className="side-content-body">
-          <div className="grid-container header">
-            <div className="main-content-one">
-              <h2>Courses</h2>
-            </div>
-
-            <div className="inputs aside">
-              <select className="select">
-                <option value="">2023/2024</option>
-                <option value="">2024/2025</option>
-              </select>
-
-              <select className="select">
-                <option value="">Second Semester</option>
-                <option value="">First Semester</option>
-              </select>
-            </div>
-          </div>
+          <Header title="Courses" showDate={false} />
 
           <div className="courses-analysis">
             <div className=" box-style">

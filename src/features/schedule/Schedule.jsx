@@ -4,6 +4,7 @@ import moment from "moment";
 import SideBar from "../../ui/sidebar/SideBar";
 import "./Schedule.css";
 import NavBar from "../../ui/navbar/NavBar";
+import Header from "../../ui/Header";
 
 export default function Schedule() {
   const localizer = momentLocalizer(moment);
@@ -72,23 +73,7 @@ export default function Schedule() {
         <NavBar />
 
         <div className="side-content-body">
-          <div className="grid-container header">
-            <div className="main-content-one">
-              <h2>Schedule</h2>
-            </div>
-
-            <div className="inputs aside">
-              <select className="select">
-                <option value="">2023/2024</option>
-                <option value="">2024/2025</option>
-              </select>
-
-              <select className="select">
-                <option value="">Second Semester</option>
-                <option value="">First Semester</option>
-              </select>
-            </div>
-          </div>
+          <Header title="Schedule" showDate={false} />
 
           <div className="calendar">
             <Calendar

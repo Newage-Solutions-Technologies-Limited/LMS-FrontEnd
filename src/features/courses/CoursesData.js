@@ -95,4 +95,60 @@ export const courses = [
     units: 7,
     resources: 20,
   },
+
+  {
+    img: img1,
+    progress: 100,
+    title: "EDX 512: Social Ettiquete & Human Interaction",
+    ratings: 4.5,
+    lecturers: ["Dr. Emmanuel Adeoye", "lorem", "ipsum", "lorem"],
+    units: 7,
+    resources: 13,
+  },
+
+  {
+    img: img6,
+    progress: 48,
+    title: "EDX 500: Principles of Human Resources Within The Workforce",
+    ratings: 4.5,
+    lecturers: [
+      "Dr. Bimpe Adedoyin",
+      "lorem",
+      "ipsum",
+      "lorem",
+      "ipsum",
+      "lorem",
+    ],
+    units: 2,
+    resources: 16,
+  },
+
+  {
+    img: img7,
+    progress: 98,
+    title: "EDX 506: Cultural Analysis & The Poignancy of Social Culturlism",
+    ratings: 4.5,
+    lecturers: [
+      "Dr. Michael Adeshina",
+      "lorem",
+      "lorem",
+      "lorem",
+      "lorem",
+      "lorem",
+      "lorem",
+      "lorem",
+    ],
+    units: 12,
+    resources: 150,
+  },
+
+  {
+    img: img7,
+    progress: 0,
+    title: "EDX 514: Research Evaluation & Analysis",
+    ratings: 4.5,
+    lecturers: ["Mr. Ben Affleck", "lorem"],
+    units: 2,
+    resources: 15,
+  },
 ];

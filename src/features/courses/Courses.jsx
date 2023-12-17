@@ -2,6 +2,8 @@ import "./Courses.css";
 import NavBar from "../../ui/navbar/NavBar";
 import SideBar from "../../ui/sidebar/SideBar";
 import OverviewBox from "../../ui/OverviewBox";
+import Header from "../../ui/Header";
+import Pagination from "../../ui/Pagination";
 import { courses } from "./CoursesData";
 import { PiSortAscendingBold } from "react-icons/pi";
 import { GrCopy } from "react-icons/gr";
@@ -9,21 +11,33 @@ import { LuTimer } from "react-icons/lu";
 import { FiCheckSquare } from "react-icons/fi";
 import { CgFileDocument } from "react-icons/cg";
 import { FaStar } from "react-icons/fa";
-import { IoIosArrowRoundBack, IoIosArrowRoundForward } from "react-icons/io";
 import { useState } from "react";
-import Header from "../../ui/Header";
 
 function Courses() {
+  const [currentPage, setCurrentPage] = useState(1);
   const [newCourses, setNewCourses] = useState(courses);
   const [sortOrder, setSortOrder] = useState("desc");
+  const itemsPerPage = 8;
+
+  const handlePageChange = (newPage) => {
+    setCurrentPage(newPage);
+  };
+
+  const calculatePaginatedCourses = () => {
+    const startIndex = (currentPage - 1) * itemsPerPage;
+    const endIndex = startIndex + itemsPerPage;
+    return newCourses.slice(startIndex, endIndex);
+  };
 
   const filtered = courses.filter((course) => {
     return course.progress < 100;
   });
 
   function handleSorting() {
-    const onGoingCourses = newCourses.filter((course) => course.progress < 100);
-    const completedCourses = newCourses.filter(
+    const onGoingCourses = calculatePaginatedCourses().filter(
+      (course) => course.progress < 100
+    );
+    const completedCourses = calculatePaginatedCourses().filter(
       (course) => course.progress === 100
     );
 
@@ -55,7 +69,8 @@ function Courses() {
   const [selectedOption, setSelectedOption] = useState("default");
   let filteredCourses;
 
-  if (selectedOption === "default") filteredCourses = newCourses;
+  if (selectedOption === "default")
+    filteredCourses = calculatePaginatedCourses();
   if (selectedOption === "ongoing")
     filteredCourses = newCourses.filter((courses) => courses.progress < 100);
   if (selectedOption === "completed")
@@ -224,17 +239,14 @@ function Courses() {
                 );
               })}
             </div>
-            <div className="pagination">
-              <span className="pagination-icon">
-                <IoIosArrowRoundBack size={20} color="#64748B" />
-              </span>
-              <span className="pagination-number">1</span>
-              <span className="pagination-number">2</span>
-              <span className="pagination-number-3 active-pagination">3</span>
-              <span className="pagination-icon right">
-                <IoIosArrowRoundForward size={20} color="#64748B" />
-              </span>
-            </div>
+
+            {selectedOption === "default" && (
+              <Pagination
+                courses={newCourses}
+                onPageChange={handlePageChange}
+                currentPage={currentPage}
+              />
+            )}
           </div>
         </div>
       </div>

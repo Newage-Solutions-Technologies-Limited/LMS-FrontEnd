@@ -201,6 +201,14 @@ progress[value]::-webkit-progress-value {
   border-radius: 8px;
 }
 
+.eachPageNo {
+  pointer-events: default;
+}
+
+.eachPageNo::selection {
+  background: none;
+}
+
 .pagination-icon {
   margin-right: 15px;
   border: 1px solid #d7dfe9;
@@ -208,6 +216,11 @@ progress[value]::-webkit-progress-value {
   padding: 5px 5px 0;
 }
 
-.right {
-  margin-left: 15px;
+.pagination-icon-disabled {
+  background-color: #e5e7eb;
+  pointer-events: none;
+  margin-right: 15px;
+  border: 1px solid #e5e7eb;
+  border-radius: 50%;
+  padding: 5px 5px 0;
 }

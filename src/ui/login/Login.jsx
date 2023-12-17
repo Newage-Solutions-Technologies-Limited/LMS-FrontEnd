@@ -135,7 +135,7 @@ function Login() {
 
           <div className="heading-desc">
             <h2>Welcome back!</h2>
-            <p>Enter your Matric Number and School ID to login.</p>
+            <p>Enter your Matric Number and Password to login.</p>
           </div>
 
           <form onSubmit={handleValidationOfForm}>

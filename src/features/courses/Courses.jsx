@@ -1,3 +1,4 @@
+import { useState } from "react";
 import "./Courses.css";
 import NavBar from "../../ui/navbar/NavBar";
 import SideBar from "../../ui/sidebar/SideBar";
@@ -11,9 +12,9 @@ import { LuTimer } from "react-icons/lu";
 import { FiCheckSquare } from "react-icons/fi";
 import { CgFileDocument } from "react-icons/cg";
 import { FaStar } from "react-icons/fa";
-import { useState } from "react";
 
 function Courses() {
+  // const [courseCard, setCourseCard] = useState(null);
   const [currentPage, setCurrentPage] = useState(1);
   const [newCourses, setNewCourses] = useState(courses);
   const [sortOrder, setSortOrder] = useState("desc");
@@ -75,6 +76,11 @@ function Courses() {
     filteredCourses = newCourses.filter((courses) => courses.progress < 100);
   if (selectedOption === "completed")
     filteredCourses = newCourses.filter((courses) => courses.progress === 100);
+
+  //  Function for course linking to course modules
+  // function handleCourseClick(id) {
+  //   setCourseCard(filteredCourses.map((course, index) => course[index]))
+  // }
 
   return (
     <section>

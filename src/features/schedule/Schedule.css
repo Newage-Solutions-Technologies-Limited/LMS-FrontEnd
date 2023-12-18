@@ -8,3 +8,34 @@
   font-family: "MetaPro Regular", sans-serif;
   padding-top: 20px;
 }
+
+/* Customize button styles */
+.fc .fc-prev-button,
+.fc .fc-next-button,
+.fc-today-button,
+.fc .fc-dayGridMonth-button,
+.fc .fc-timeGridWeek-button,
+.fc .fc-timeGridDay-button {
+  background-color: #fff;
+  color: #000;
+  border: 1px solid #e5e7eb;
+}
+
+/* Customize active state styles */
+.fc-button-group .fc-button .fc-button-active {
+  background-color: #067306;
+  color: #fff;
+  border: 1px solid #067306;
+}
+
+/* Customize hover state styles */
+.fc .fc-prev-button:hover,
+.fc .fc-next-button:hover,
+.fc .fc-today-button:hover,
+.fc .fc-dayGridMonth-button:hover,
+.fc .fc-timeGridWeek-button:hover,
+.fc .fc-timeGridDay-button:hover {
+  background-color: #006869;
+  color: #fff;
+  border: 1px solid #006869;
+}

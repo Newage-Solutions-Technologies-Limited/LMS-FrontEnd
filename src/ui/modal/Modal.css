@@ -39,7 +39,7 @@
 }
 
 .modal-content {
-  background-color: #fff;
+  background-color: #fff !important;
   width: 40%;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
@@ -69,5 +69,79 @@
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+/*  Modal for dashboard */
+
+.modal-dashboard-content {
+  background-color: #fff !important;
+  width: 50%;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  text-align: left;
+  padding: 20px 60px !important;
+  /* line-height: 0.5; */
+}
+
+.close {
+  font-size: 40px;
+  font-weight: bold;
+  text-align: end;
+  line-height: 0.5;
+  cursor: default;
+}
+
+.video {
+  width: 100%;
+}
+
+.close:hover {
+  color: #cbd5e1;
+}
+
+.modal-dashboard-content h3,
+.modal-dashboard-content .sub-title {
+  color: #64748b !important;
+  margin-bottom: 40px;
+  font-weight: 100;
+}
+
+.modal-dashboard-content h3 span {
+  font-size: 25px !important;
+  font-weight: bold;
+}
+
+.modal-dashboard-content .sub-title span {
+  margin-right: 12px;
+}
+
+.modal-dashboard-content .video {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.modal-dashboard-content.open {
+  animation: scale 0.4s ease;
+}
+
+@keyframes scale {
+  0% {
+    transform: scaleY(0);
+  }
+  20% {
+    transform: scaleY(0.2);
+  }
+  40% {
+    transform: scaleY(0.5);
+  }
+  60% {
+    transform: translateY(0.7);
+  }
+  80% {
+    transform: translateY(0.9);
+  }
+  100% {
+    transform: scaleY(1);
   }
 }

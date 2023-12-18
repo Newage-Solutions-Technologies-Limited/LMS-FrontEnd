@@ -64,7 +64,6 @@ select option:hover {
 .courses-card .course-image {
   width: 100%;
   overflow: hidden;
-  /* height: 50%; */
   position: relative;
 }
 

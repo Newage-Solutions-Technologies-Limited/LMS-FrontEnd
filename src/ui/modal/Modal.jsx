@@ -7,7 +7,6 @@ import "./Modal.css";
 Modal.propTypes = {
   isOpen: PropTypes.bool,
   onClose: PropTypes.func,
-  // children: PropTypes.node.isRequired,
 };
 
 export default function Modal({ isOpen, onClose }) {

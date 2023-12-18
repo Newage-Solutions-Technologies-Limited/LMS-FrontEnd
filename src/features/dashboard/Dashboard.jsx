@@ -1,9 +1,11 @@
-import "./Dashboard.css";
+import { useState, useRef } from "react";
+import PropTypes from "prop-types";
 import Header from "../../ui/Header";
 import SideBar from "../../ui/sidebar/SideBar";
 import NavBar from "../../ui/navbar/NavBar";
 import Button from "../../ui/Button";
 import OverviewBox from "../../ui/OverviewBox";
+import ModalDashboard from "../../ui/modal/ModalDashboard";
 import DoughnutChart from "../../ui/doughnut-chart/DoughnutChart";
 import { FiRadio } from "react-icons/fi";
 import { LuTimer } from "react-icons/lu";
@@ -11,7 +13,7 @@ import { GrCopy, GrMicrophone } from "react-icons/gr";
 import { CgFileDocument } from "react-icons/cg";
 import { IoPlayOutline } from "react-icons/io5";
 import { FaCircle } from "react-icons/fa6";
-import PropTypes from "prop-types";
+import "./Dashboard.css";
 // import BarChart from "../../ui/bar-chart/BarChart";
 
 export default function Dashboard() {
@@ -153,7 +155,7 @@ export default function Dashboard() {
 
                   <div className="box-style">
                     <CourseBox
-                      leftTop1="EDX 204: Essential Human Virology"
+                      leftTop1="EDX 201: Animal & Environmental Biology"
                       leftTop2="Video"
                       leftBottom1={<LuTimer size={15} />}
                       leftBottom2="01:30 mins"
@@ -163,7 +165,7 @@ export default function Dashboard() {
 
                   <div className="box-style">
                     <CourseBox
-                      leftTop1="EDX 204: Essential Human Virology"
+                      leftTop1="EDX 208: Applied Biology & Biotechnology"
                       leftTop2="File"
                       leftBottom1={<LuTimer size={15} />}
                       leftBottom2="01:30 mins"
@@ -173,7 +175,7 @@ export default function Dashboard() {
 
                   <div className="box-style">
                     <CourseBox
-                      leftTop1="EDX 204: Essential Human Virology"
+                      leftTop1="EDX 206: Applied Microbiology & Brewing"
                       leftTop2="Audio"
                       leftBottom1={<LuTimer size={15} />}
                       leftBottom2="01:30 mins"
@@ -183,7 +185,7 @@ export default function Dashboard() {
 
                   <div className="box-style">
                     <CourseBox
-                      leftTop1="EDX 204: Essential Human Virology"
+                      leftTop1="EDX 210: Botany & Ecological Studies"
                       leftTop2="Audio"
                       leftBottom1={<LuTimer size={15} />}
                       leftBottom2="01:30 mins"
@@ -193,7 +195,7 @@ export default function Dashboard() {
 
                   <div className="box-style">
                     <CourseBox
-                      leftTop1="EDX 204: Essential Human Virology"
+                      leftTop1="EDX 217: Archeology & Applied Geophysics"
                       leftTop2="Video"
                       leftBottom1={<LuTimer size={15} />}
                       leftBottom2="01:30 mins"
@@ -203,7 +205,7 @@ export default function Dashboard() {
 
                   <div className="box-style">
                     <CourseBox
-                      leftTop1="EDX 204: Essential Human Virology"
+                      leftTop1="EDX 211: Applied Biology & Genetics"
                       leftTop2="File"
                       leftBottom1={<LuTimer size={15} />}
                       leftBottom2="01:30 mins"
@@ -213,7 +215,7 @@ export default function Dashboard() {
 
                   <div className="box-style">
                     <CourseBox
-                      leftTop1="EDX 204: Essential Human Virology"
+                      leftTop1="EDX 207: Applied Mathematics With Statistics"
                       leftTop2="Video"
                       leftBottom1={<LuTimer size={15} />}
                       leftBottom2="01:30 mins"
@@ -313,8 +315,28 @@ function CourseBox({
   leftBottom2 = "",
   rightMiddle,
 }) {
+  const [isModalOpen, setModalOpen] = useState(false);
+  const audioRef = useRef(null);
+  const videoRef = useRef(null);
+
+  // Modal Controls
+  const openModal = () => {
+    setModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setModalOpen(false);
+    if (audioRef.current) {
+      audioRef.current.pause();
+    }
+
+    if (videoRef.current) {
+      videoRef.current.pause();
+    }
+  };
+
   return (
-    <div className="boxDesc">
+    <div className="boxDesc" onClick={openModal}>
       <div className="course-details">
         <div className="course-title">
           <span className="title">{leftTop1}</span>
@@ -326,6 +348,15 @@ function CourseBox({
         </h3>
       </div>
       <p className="progressStyle">{rightMiddle}</p>
+
+      <ModalDashboard
+        isOpen={isModalOpen}
+        onClose={closeModal}
+        title={leftTop1}
+        category={leftTop2}
+        audioRef={audioRef}
+        videoRef={videoRef}
+      />
     </div>
   );
 }

@@ -1,5 +1,5 @@
-import Logo from "../Logo";
-import { NavLink } from "react-router-dom";
+import { useEffect } from "react";
+import { NavLink, useLocation } from "react-router-dom";
 import edurexLogo from "../../assets/edurex-logo.svg";
 import { CiHome, CiCalendar } from "react-icons/ci";
 import {
@@ -11,9 +11,18 @@ import { IoIosCreate } from "react-icons/io";
 import { GrScorecard, GrCopy, GrVirtualMachine } from "react-icons/gr";
 import { GoCommentDiscussion } from "react-icons/go";
 import { TbBrandGoogleAnalytics } from "react-icons/tb";
+import Logo from "../Logo";
 import "./SideBar.css";
 
 export default function SideBar() {
+  const location = useLocation();
+
+  useEffect(() => {
+    const tabName = location.pathname.split("/").pop() || "Home";
+    const capitalizedTabName = tabName.slice(0, 1).toUpperCase();
+    document.title = `${capitalizedTabName}${tabName.slice(1)} | Edurex`;
+  }, [location.pathname]);
+
   return (
     <div className="sidebar">
       <Logo

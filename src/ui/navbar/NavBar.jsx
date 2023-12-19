@@ -1,4 +1,3 @@
-// import { useTheme } from "../../themes/ThemeProvider";
 import user from "../../assets/lanre.png";
 import {
   IoChatbubbleEllipsesOutline,
@@ -6,6 +5,7 @@ import {
   IoSearchOutline,
 } from "react-icons/io5";
 import "./NavBar.css";
+// import { useTheme } from "../../themes/ThemeProvider";
 // import { FaUser } from "react-icons/fa";
 
 function NavBar() {

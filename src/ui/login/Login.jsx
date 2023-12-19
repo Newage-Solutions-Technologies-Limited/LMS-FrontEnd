@@ -2,7 +2,8 @@ import { useEffect, useState } from "react";
 import "./Login.css";
 import Logo from "../../ui/Logo";
 import Modal from "../modal/Modal";
-import edurexLogo from "../../assets/edurex-logo.svg";
+// import edurexLogo from "../../assets/edurex-logo.svg";
+import adinLogo from "../../assets/adin-logo.svg";
 import { IoEyeOffSharp, IoEyeSharp } from "react-icons/io5";
 
 function Login() {
@@ -37,14 +38,16 @@ function Login() {
 
     if (!formData.school_id.trim()) {
       newErrors.school_id = "Matric No. is required";
-    } else if (formData.school_id.length < 5) {
-      newErrors.school_id = "Invalid Matric No. Please check and try again.";
+    } else if (formData.school_id.length < 9) {
+      newErrors.school_id =
+        "Matric number not found. Please check and try again.";
     }
 
     if (!formData.password.trim()) {
       newErrors.password = "Password is required";
     } else if (formData.password.length < 6) {
-      newErrors.password = "Password must be at least 6 characters";
+      newErrors.password =
+        "Incorrect password. Password must be at least 6 characters. Please check and try again.";
     } else if (
       !/(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@_])[A-Za-z\d@_]/.test(
         formData.password
@@ -127,10 +130,10 @@ function Login() {
       <div className="container">
         <div>
           <Logo
-            width={150}
+            width={300}
             margin={70}
-            imageUrl={edurexLogo}
-            imageAlt="edurex-logo"
+            imageUrl={adinLogo}
+            imageAlt="Adin University Logo"
           />
 
           <div className="heading-desc">

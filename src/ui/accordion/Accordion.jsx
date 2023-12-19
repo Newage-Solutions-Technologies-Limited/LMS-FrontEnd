@@ -38,7 +38,7 @@ function AccordionItem({ num, title, lecturers }) {
   return (
     <>
       <div
-        className={`item ${isOpen ? "open" : ""}`}
+        className={`accordion-item ${isOpen ? "accordion-open" : ""}`}
         key={num}
         onClick={handleToggle}
       >
@@ -57,7 +57,7 @@ function AccordionItem({ num, title, lecturers }) {
         </div>
 
         {isOpen && (
-          <div className="content-box">
+          <div className="accordion-content-box">
             <p>
               <span>Lecture 1:</span> Introduction to Epidemiology and Public
               Health
@@ -82,7 +82,7 @@ function AccordionItem({ num, title, lecturers }) {
 
       {/* Module 2 */}
       <div
-        className={`item ${isOpen ? "open" : ""}`}
+        className={`accordion-item ${isOpen ? "accordion-open" : ""}`}
         key={num}
         onClick={handleToggle}
       >
@@ -101,7 +101,7 @@ function AccordionItem({ num, title, lecturers }) {
         </div>
 
         {isOpen && (
-          <div className="content-box">
+          <div className="accordion-content-box">
             <p>
               <span>Lecture 1:</span> Introduction to Epidemiology and Public
               Health

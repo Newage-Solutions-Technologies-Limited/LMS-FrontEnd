@@ -1,9 +1,9 @@
-import { useState } from "react";
-import "./Courses.css";
+/* eslint-disable no-unused-vars */
+import { useState, useHistory } from "react";
 import NavBar from "../../ui/navbar/NavBar";
 import SideBar from "../../ui/sidebar/SideBar";
-import OverviewBox from "../../ui/OverviewBox";
 import Header from "../../ui/Header";
+import OverviewBox from "../../ui/OverviewBox";
 import Pagination from "../../ui/Pagination";
 import { courses } from "./CoursesData";
 import { PiSortAscendingBold } from "react-icons/pi";
@@ -13,12 +13,21 @@ import { FiCheckSquare } from "react-icons/fi";
 import { CgFileDocument } from "react-icons/cg";
 import { FaStar } from "react-icons/fa";
 
+import "./Courses.css";
+
 function Courses() {
-  // const [courseCard, setCourseCard] = useState(null);
   const [currentPage, setCurrentPage] = useState(1);
   const [newCourses, setNewCourses] = useState(courses);
   const [sortOrder, setSortOrder] = useState("desc");
   const itemsPerPage = 8;
+  // const history = useHistory();
+  const [selectedCourse, setSelectedCourse] = useState(null);
+  // ... other state and functions
+
+  const handleCardClick = (course) => {
+    setSelectedCourse(course);
+    history.push(`/courses/${encodeURIComponent(course.title)}`);
+  };
 
   const handlePageChange = (newPage) => {
     setCurrentPage(newPage);
@@ -76,11 +85,6 @@ function Courses() {
     filteredCourses = newCourses.filter((courses) => courses.progress < 100);
   if (selectedOption === "completed")
     filteredCourses = newCourses.filter((courses) => courses.progress === 100);
-
-  //  Function for course linking to course modules
-  // function handleCourseClick(id) {
-  //   setCourseCard(filteredCourses.map((course, index) => course[index]))
-  // }
 
   return (
     <section>
@@ -183,7 +187,11 @@ function Courses() {
                 } = course;
 
                 return (
-                  <div className="courses-card" key={index}>
+                  <div
+                    className="courses-card"
+                    key={index}
+                    // onClick={() => handleCardClick(course)}
+                  >
                     <div className="course-image">
                       <img src={img} alt="course-name" />
 

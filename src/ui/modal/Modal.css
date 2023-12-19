@@ -16,6 +16,7 @@
 
 .modal-content.open {
   animation: bounce 0.9s ease;
+  border: none;
 }
 
 @keyframes bounce {
@@ -81,7 +82,6 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   text-align: left;
   padding: 20px 60px !important;
-  /* line-height: 0.5; */
 }
 
 .close {
@@ -105,6 +105,10 @@
   color: #64748b !important;
   margin-bottom: 40px;
   font-weight: 100;
+}
+
+.modal-dashboard-content .sub-title {
+  margin-bottom: 15px;
 }
 
 .modal-dashboard-content h3 span {

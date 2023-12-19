@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { NavLink, useLocation } from "react-router-dom";
-import edurexLogo from "../../assets/edurex-logo.svg";
+import adinLogo from "../../assets/adin-logo.svg";
 import { CiHome, CiCalendar } from "react-icons/ci";
 import {
   IoLogOutOutline,
@@ -20,54 +20,51 @@ export default function SideBar() {
   useEffect(() => {
     const tabName = location.pathname.split("/").pop() || "Home";
     const capitalizedTabName = tabName.slice(0, 1).toUpperCase();
-    document.title = `${capitalizedTabName}${tabName.slice(1)} | Edurex`;
+    document.title = `${capitalizedTabName}${tabName.slice(
+      1
+    )} | Adin University`;
   }, [location.pathname]);
 
   return (
     <div className="sidebar">
       <Logo
-        width={150}
+        width={200}
         margin={60}
-        imageUrl={edurexLogo}
-        imageAlt="edurex-logo"
+        imageUrl={adinLogo}
+        imageAlt="Adin University Logo"
       />
 
       <div className="links">
         <NavLink to="/dashboard" className="menu ">
           <div className="menu-link">
-            <CiHome className="menu-icon" size={15} />
+            <CiHome className="menu-icon" size={18} />
             <span>Dashboard</span>
           </div>
         </NavLink>
-
         <NavLink to="/schedule" className="menu">
           <div className="menu-link">
-            <CiCalendar size={15} className="menu-icon" />
+            <CiCalendar size={18} className="menu-icon" />
             <span>Schedule</span>
           </div>
         </NavLink>
-
         <NavLink to="/courses">
           <div className="menu-link">
             <GrCopy size={15} className="menu-icon" />
             <span>Courses</span>
           </div>
         </NavLink>
-
         <NavLink to="/virtual-class">
           <div className="menu-link">
             <GrVirtualMachine size={15} className="menu-icon" />
             <span>Virtual Class</span>
           </div>
         </NavLink>
-
         <NavLink to="/assessments">
           <div className="menu-link">
             <IoIosCreate size={15} className="menu-icon" />
             <span>Assessments</span>
           </div>
         </NavLink>
-
         <NavLink to="/grades">
           <div className="menu-link">
             <GrScorecard size={15} className="menu-icon" />
@@ -81,7 +78,6 @@ export default function SideBar() {
             <span>Discussions</span>
           </div>
         </NavLink>
-
         <NavLink to="/report">
           <div className="menu-link">
             <TbBrandGoogleAnalytics size={15} className="menu-icon" />

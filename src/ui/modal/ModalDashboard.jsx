@@ -6,7 +6,7 @@ import "@react-pdf-viewer/core/lib/styles/index.css";
 import poster from "../../assets/video-poster.png";
 import "./Modal.css";
 
-Modal.propTypes = {
+ModalDashboard.propTypes = {
   isOpen: PropTypes.bool,
   onClose: PropTypes.func,
   title: PropTypes.string,
@@ -15,7 +15,7 @@ Modal.propTypes = {
   videoRef: PropTypes.object,
 };
 
-export default function Modal({
+export default function ModalDashboard({
   isOpen,
   onClose,
   title,
@@ -23,13 +23,6 @@ export default function Modal({
   audioRef,
   videoRef,
 }) {
-  //   const [numPages, setNumPages] = useState(null);
-  //   const pageNumber = 1;
-
-  //   const onDocumentLoadSuccess = ({ numPages }) => {
-  //     setNumPages(numPages);
-  //   };
-
   const modalStyle = {
     display: isOpen ? "block" : "none",
   };
@@ -92,7 +85,7 @@ export default function Modal({
               height="400"
             >
               <source
-                src="https://file-examples.com/storage/fe6e60472c657f757a0e725/2017/11/file_example_MP3_700KB.mp3"
+                src="https://file-examples.com/storage/fe0bd45a6765817dc92f8a6/2017/11/file_example_MP3_700KB.mp3"
                 type="audio/mp3"
               />
               Your browser does not support the audio element.

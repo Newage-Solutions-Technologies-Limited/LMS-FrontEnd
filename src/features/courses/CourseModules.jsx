@@ -1,9 +1,14 @@
 import Accordion from "../../ui/accordion/Accordion";
 import NavBar from "../../ui/navbar/NavBar";
 import SideBar from "../../ui/sidebar/SideBar";
-import { courses } from "../courses/CoursesData";
+import PropTypes from "prop-types";
 
-function CourseModules() {
+CourseModules.propTypes = {
+  selectedCourse: PropTypes.object,
+};
+
+function CourseModules({ selectedCourse }) {
+  console.log("Selected course: ", selectedCourse);
   return (
     <section>
       <SideBar />
@@ -12,11 +17,11 @@ function CourseModules() {
         <NavBar />
 
         <div className="course-card-info">
-          {/* <h1>{cardDetails.title}</h1>
-          <p>{cardDetails.lecturers[0]}</p> */}
+          <h1>{selectedCourse.title}</h1>
+          <p>{selectedCourse.lecturers[0]}</p>
         </div>
 
-        <Accordion courses={courses} />
+        <Accordion courses={selectedCourse} />
       </div>
     </section>
   );

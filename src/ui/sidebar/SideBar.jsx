@@ -8,9 +8,8 @@ import {
   IoSettingsOutline,
 } from "react-icons/io5";
 import { IoIosCreate } from "react-icons/io";
-import { GrScorecard, GrCopy, GrVirtualMachine } from "react-icons/gr";
+import { GrScorecard, GrCopy } from "react-icons/gr";
 import { GoCommentDiscussion } from "react-icons/go";
-import { TbBrandGoogleAnalytics } from "react-icons/tb";
 import Logo from "../Logo";
 import "./SideBar.css";
 
@@ -53,12 +52,7 @@ export default function SideBar() {
             <span>Courses</span>
           </div>
         </NavLink>
-        <NavLink to="/virtual-class">
-          <div className="menu-link">
-            <GrVirtualMachine size={15} className="menu-icon" />
-            <span>Virtual Class</span>
-          </div>
-        </NavLink>
+
         <NavLink to="/assessments">
           <div className="menu-link">
             <IoIosCreate size={15} className="menu-icon" />
@@ -76,12 +70,6 @@ export default function SideBar() {
           <div className="menu-link">
             <GoCommentDiscussion size={15} className="menu-icon" />
             <span>Discussions</span>
-          </div>
-        </NavLink>
-        <NavLink to="/report">
-          <div className="menu-link">
-            <TbBrandGoogleAnalytics size={15} className="menu-icon" />
-            <span>Report</span>
           </div>
         </NavLink>
       </div>
@@ -110,4 +98,23 @@ export default function SideBar() {
       </div>
     </div>
   );
+}
+
+{
+  /* 
+  import { TbBrandGoogleAnalytics } from "react-icons/tb";
+  
+  <NavLink to="/virtual-class">
+<div className="menu-link">
+  <GrVirtualMachine size={15} className="menu-icon" />
+  <span>Virtual Class</span>
+</div>
+</NavLink>
+
+<NavLink to="/report">
+<div className="menu-link">
+  <TbBrandGoogleAnalytics size={15} className="menu-icon" />
+  <span>Report</span>
+</div>
+</NavLink> */
 }

@@ -8,27 +8,22 @@ Accordion.propTypes = {
 };
 
 AccordionItem.propTypes = {
-  num: PropTypes.number,
+  id: PropTypes.number,
   title: PropTypes.string,
   lecturers: PropTypes.array,
 };
 
 export default function Accordion({ courses }) {
+  const { title, lecturers, id } = courses;
+
   return (
     <div className="accordion">
-      {courses.map((course, index) => (
-        <AccordionItem
-          title={course.title}
-          text={course.text}
-          num={index}
-          key={course.title}
-        />
-      ))}
+      <AccordionItem title={title} lecturers={lecturers} id={id} />
     </div>
   );
 }
 
-function AccordionItem({ num, title, lecturers }) {
+function AccordionItem({ id, title, lecturers }) {
   const [isOpen, setIsOpen] = useState(false);
 
   function handleToggle() {
@@ -39,7 +34,7 @@ function AccordionItem({ num, title, lecturers }) {
     <>
       <div
         className={`accordion-item ${isOpen ? "accordion-open" : ""}`}
-        key={num}
+        key={id}
         onClick={handleToggle}
       >
         <h3>Module 1: {title}</h3>
@@ -83,7 +78,7 @@ function AccordionItem({ num, title, lecturers }) {
       {/* Module 2 */}
       <div
         className={`accordion-item ${isOpen ? "accordion-open" : ""}`}
-        key={num}
+        key={id}
         onClick={handleToggle}
       >
         <h3>Module 2: {title}</h3>

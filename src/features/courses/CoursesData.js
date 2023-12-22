@@ -9,6 +9,7 @@ import img8 from "../../assets/course-4.png";
 
 export const courses = [
   {
+    id: 1,
     img: img1,
     progress: 100,
     title: "EDX 504: Principles of Epidemiology and Public Health",
@@ -19,6 +20,7 @@ export const courses = [
   },
 
   {
+    id: 2,
     img: img2,
     progress: 20,
     title: "EDX 506 : Tenets of Obstetrics and Gynaecology",
@@ -29,6 +31,7 @@ export const courses = [
   },
 
   {
+    id: 3,
     img: img3,
     progress: 75,
     title: "EDX 502: Methods for Sustainability within the Workforce",
@@ -47,6 +50,7 @@ export const courses = [
   },
 
   {
+    id: 4,
     img: img4,
     progress: 60,
     title: "EDX 510: Research Methods, Methodology & Analysis",
@@ -57,6 +61,7 @@ export const courses = [
   },
 
   {
+    id: 5,
     img: img5,
     progress: 85,
     title: "EDX 502: Methods for Sustainability within the Workforce",
@@ -67,6 +72,7 @@ export const courses = [
   },
 
   {
+    id: 6,
     img: img6,
     progress: 90,
     title: "EDX 504: Principles of Epidemiology and Public Health",
@@ -77,6 +83,7 @@ export const courses = [
   },
 
   {
+    id: 7,
     img: img7,
     progress: 10,
     title: "EDX 504: Research Methods, Methodology & Analysis",
@@ -87,6 +94,7 @@ export const courses = [
   },
 
   {
+    id: 8,
     img: img8,
     progress: 100,
     title: "EDX 506 : Tenets of Obstetrics and Gynaecology",
@@ -97,6 +105,7 @@ export const courses = [
   },
 
   {
+    id: 9,
     img: img1,
     progress: 100,
     title: "EDX 512: Social Ettiquete & Human Interaction",
@@ -107,6 +116,7 @@ export const courses = [
   },
 
   {
+    id: 10,
     img: img6,
     progress: 48,
     title: "EDX 500: Principles of Human Resources Within The Workforce",
@@ -124,6 +134,7 @@ export const courses = [
   },
 
   {
+    id: 11,
     img: img7,
     progress: 98,
     title: "EDX 506: Cultural Analysis & The Poignancy of Social Culturlism",
@@ -143,6 +154,7 @@ export const courses = [
   },
 
   {
+    id: 12,
     img: img7,
     progress: 0,
     title: "EDX 514: Research Evaluation & Analysis",

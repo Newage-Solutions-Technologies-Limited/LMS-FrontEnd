@@ -104,17 +104,6 @@ select option:hover {
   right: 4px;
 }
 
-.progress {
-  position: absolute;
-  bottom: 15px;
-  left: 20px;
-  background-color: transparent;
-  backdrop-filter: blur(10px);
-  padding: 7px;
-  border-style: none;
-  border-radius: 14px;
-}
-
 .courses-card .course-title {
   font-size: 14px;
   color: #374151;
@@ -125,9 +114,37 @@ select option:hover {
   padding: 0 6px;
 }
 
+.progress {
+  /* position: absolute;
+  bottom: 15px;
+  left: 20px;
+  background-color: transparent;
+  backdrop-filter: blur(10px); */
+  display: flex;
+  align-items: center;
+}
+
 .progress > span {
   font-size: 12px;
-  color: #fff;
+  color: #46c1ca;
+}
+
+progress {
+  width: 170px;
+  height: 4px;
+  border-radius: 18px;
+}
+
+progress[max],
+progress[max]::-webkit-progress-max {
+  background-color: #dcecec;
+  border-radius: 18px;
+}
+
+progress[value],
+progress[value]::-webkit-progress-value {
+  background-color: #46c1ca;
+  border-radius: 18px;
 }
 
 .courses-card .course-details .course-label {
@@ -157,22 +174,6 @@ select option:hover {
 
 .course-units {
   margin-right: 14px;
-}
-
-progress {
-  width: 170px;
-  height: 7px;
-  border-radius: 18px;
-}
-
-progress[value] {
-  background-color: #008688;
-  border-radius: 18px;
-}
-
-progress[value]::-webkit-progress-value {
-  border-radius: 18px;
-  background-color: #008688;
 }
 
 .pagination {

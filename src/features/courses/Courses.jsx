@@ -209,6 +209,11 @@ function Courses() {
                       >
                         {progress < 100 ? "On-going" : "Completed"}
                       </span>
+                    </div>
+
+                    <div className="course-details">
+                      <h1 className="course-title">{title}</h1>
+
                       <div className="progress">
                         <span className="rating">{progress}%</span>
                         <progress
@@ -217,22 +222,6 @@ function Courses() {
                           max={10}
                         ></progress>
                       </div>
-                    </div>
-
-                    <div className="course-details">
-                      <h1 className="course-title">{title}</h1>
-
-                      <span className="course-rating">
-                        <span className="course-label">Ratings:</span>
-                        <span className="value rating">{ratings}</span>
-                        <span>
-                          <FaStar color="#FDB022" size={10} />
-                          <FaStar color="#FDB022" size={10} />
-                          <FaStar color="#FDB022" size={10} />
-                          <FaStar color="#FDB022" size={10} />
-                          <FaStar color="#FDB022" size={10} />
-                        </span>
-                      </span>
 
                       <span className="lecturers">
                         <span className="course-label">Lecturers:</span>

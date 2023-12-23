@@ -17,6 +17,11 @@ export default function Schedule() {
   const [events, setEvents] = useState([]);
   const [modalData, setModalData] = useState(null);
 
+  // Scroll To top
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+  }, []);
+
   useEffect(() => {
     setEvents([
       {

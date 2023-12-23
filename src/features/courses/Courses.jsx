@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import NavBar from "../../ui/navbar/NavBar";
 import SideBar from "../../ui/sidebar/SideBar";
@@ -22,6 +22,11 @@ function Courses() {
   const [newCourses, setNewCourses] = useState(courses);
   const [sortOrder, setSortOrder] = useState("desc");
   const itemsPerPage = 8;
+
+  // Scroll To top
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+  }, []);
 
   const handlePageChange = (newPage) => {
     setCurrentPage(newPage);
@@ -184,7 +189,7 @@ function Courses() {
                   <div
                     className="courses-card"
                     key={id}
-                    onClick={() => navigate(`/course/${id}`)}
+                    onClick={() => navigate(`/courses/${id}`)}
                   >
                     <div className="course-image">
                       <img src={img} alt="course-name" />

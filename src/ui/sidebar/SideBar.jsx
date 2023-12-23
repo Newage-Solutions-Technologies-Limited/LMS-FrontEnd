@@ -40,12 +40,14 @@ export default function SideBar() {
             <span>Dashboard</span>
           </div>
         </NavLink>
+
         <NavLink to="/schedule" className="menu">
           <div className="menu-link">
             <CiCalendar size={18} className="menu-icon" />
             <span>Schedule</span>
           </div>
         </NavLink>
+
         <NavLink to="/courses">
           <div className="menu-link">
             <GrCopy size={15} className="menu-icon" />
@@ -59,6 +61,7 @@ export default function SideBar() {
             <span>Assessments</span>
           </div>
         </NavLink>
+
         <NavLink to="/grades">
           <div className="menu-link">
             <GrScorecard size={15} className="menu-icon" />

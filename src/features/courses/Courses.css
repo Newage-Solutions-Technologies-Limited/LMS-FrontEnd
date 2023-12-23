@@ -122,11 +122,16 @@ select option:hover {
   backdrop-filter: blur(10px); */
   display: flex;
   align-items: center;
+  justify-content: start;
 }
 
 .progress > span {
   font-size: 12px;
   color: #46c1ca;
+}
+
+.progress .rating {
+  margin-right: 10px;
 }
 
 progress {
@@ -164,13 +169,9 @@ progress[value]::-webkit-progress-value {
   display: block;
 }
 
-.rating {
-  margin-right: 10px;
-}
-
-.course-rating .rating .rating-icon {
+/* .course-rating .rating .rating-icon {
   background-color: #fdb022;
-}
+} */
 
 .course-units {
   margin-right: 14px;
@@ -195,7 +196,7 @@ progress[value]::-webkit-progress-value {
 
 .active-pagination {
   font-size: 12px;
-  background-color: #008688;
+  background-color: #46c1ca;
   color: #f9fafb;
   padding: 2px 10px 5px;
   border-radius: 8px;

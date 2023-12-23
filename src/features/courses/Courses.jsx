@@ -13,8 +13,7 @@ import { GrCopy } from "react-icons/gr";
 import { LuTimer } from "react-icons/lu";
 import { FiCheckSquare } from "react-icons/fi";
 import { CgFileDocument } from "react-icons/cg";
-import { FaStar } from "react-icons/fa";
-
+// import { FaStar } from "react-icons/fa";
 import "./Courses.css";
 
 function Courses() {
@@ -23,15 +22,6 @@ function Courses() {
   const [newCourses, setNewCourses] = useState(courses);
   const [sortOrder, setSortOrder] = useState("desc");
   const itemsPerPage = 8;
-  const [selectedCourse, setSelectedCourse] = useState(null);
-
-  const handleCardClick = (course) => {
-    setSelectedCourse(course);
-    selectedCourse && navigate(`/courses/${encodeURIComponent(course.title)}`);
-    // history.push(`/courses/${encodeURIComponent(course.title)}`);
-  };
-
-  console.log(selectedCourse);
 
   const handlePageChange = (newPage) => {
     setCurrentPage(newPage);
@@ -185,7 +175,6 @@ function Courses() {
                   img,
                   title,
                   progress,
-                  ratings,
                   lecturers,
                   units,
                   resources,
@@ -195,7 +184,7 @@ function Courses() {
                   <div
                     className="courses-card"
                     key={id}
-                    onClick={() => handleCardClick(course)}
+                    onClick={() => navigate(`/course/${id}`)}
                   >
                     <div className="course-image">
                       <img src={img} alt="course-name" />
@@ -212,8 +201,6 @@ function Courses() {
                     </div>
 
                     <div className="course-details">
-                      <h1 className="course-title">{title}</h1>
-
                       <div className="progress">
                         <span className="rating">{progress}%</span>
                         <progress
@@ -222,6 +209,8 @@ function Courses() {
                           max={10}
                         ></progress>
                       </div>
+
+                      <h1 className="course-title">{title}</h1>
 
                       <span className="lecturers">
                         <span className="course-label">Lecturers:</span>
@@ -258,8 +247,6 @@ function Courses() {
           </div>
         </div>
       </div>
-
-      {selectedCourse && <CourseModules selectedCourse={selectedCourse} />}
     </section>
   );
 }

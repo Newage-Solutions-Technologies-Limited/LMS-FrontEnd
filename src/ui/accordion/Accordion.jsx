@@ -4,7 +4,7 @@ import { IoLockOpenOutline, IoLockClosedOutline } from "react-icons/io5";
 import "./Accordion.css";
 
 Accordion.propTypes = {
-  courses: PropTypes.array,
+  selectedCourse: PropTypes.object,
 };
 
 AccordionItem.propTypes = {
@@ -13,17 +13,17 @@ AccordionItem.propTypes = {
   lecturers: PropTypes.array,
 };
 
-export default function Accordion({ courses }) {
-  const { title, lecturers, id } = courses;
+export default function Accordion({ selectedCourse }) {
+  const { title, lecturers } = selectedCourse;
 
   return (
     <div className="accordion">
-      <AccordionItem title={title} lecturers={lecturers} id={id} />
+      <AccordionItem title={title} lecturers={lecturers} />
     </div>
   );
 }
 
-function AccordionItem({ id, title, lecturers }) {
+function AccordionItem({ title, lecturers }) {
   const [isOpen, setIsOpen] = useState(false);
 
   function handleToggle() {
@@ -34,7 +34,6 @@ function AccordionItem({ id, title, lecturers }) {
     <>
       <div
         className={`accordion-item ${isOpen ? "accordion-open" : ""}`}
-        key={id}
         onClick={handleToggle}
       >
         <h3>Module 1: {title}</h3>
@@ -78,7 +77,6 @@ function AccordionItem({ id, title, lecturers }) {
       {/* Module 2 */}
       <div
         className={`accordion-item ${isOpen ? "accordion-open" : ""}`}
-        key={id}
         onClick={handleToggle}
       >
         <h3>Module 2: {title}</h3>

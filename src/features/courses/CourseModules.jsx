@@ -1,14 +1,19 @@
+import { useParams } from "react-router-dom";
 import Accordion from "../../ui/accordion/Accordion";
 import NavBar from "../../ui/navbar/NavBar";
 import SideBar from "../../ui/sidebar/SideBar";
-import PropTypes from "prop-types";
+import { courses } from "./CoursesData";
 
-CourseModules.propTypes = {
-  selectedCourse: PropTypes.object,
-};
+function CourseModules() {
+  const { courseId } = useParams();
+  const selectedCourse = courses.find(
+    (course) => course.id === Number(courseId)
+  );
 
-function CourseModules({ selectedCourse }) {
-  console.log("Selected course: ", selectedCourse);
+  if (!selectedCourse) {
+    return <div>Course not found</div>;
+  }
+
   return (
     <section>
       <SideBar />
@@ -21,7 +26,7 @@ function CourseModules({ selectedCourse }) {
           <p>{selectedCourse.lecturers[0]}</p>
         </div>
 
-        <Accordion courses={selectedCourse} />
+        <Accordion selectedCourse={selectedCourse} />
       </div>
     </section>
   );

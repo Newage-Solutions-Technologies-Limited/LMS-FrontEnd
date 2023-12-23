@@ -19,9 +19,9 @@ export default function SideBar() {
   useEffect(() => {
     const tabName = location.pathname.split("/").pop() || "Home";
     const capitalizedTabName = tabName.slice(0, 1).toUpperCase();
-    document.title = `${capitalizedTabName}${tabName.slice(
-      1
-    )} | Adin University`;
+    document.title = decodeURIComponent(
+      `${capitalizedTabName}${tabName.slice(1)} | Adin University`
+    );
   }, [location.pathname]);
 
   return (

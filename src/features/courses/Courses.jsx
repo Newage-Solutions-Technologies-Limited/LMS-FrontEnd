@@ -189,7 +189,7 @@ function Courses() {
                   <div
                     className="courses-card"
                     key={id}
-                    onClick={() => navigate(`/courses/${id}`)}
+                    onClick={() => navigate(`/courses/${title}`)}
                   >
                     <div className="course-image">
                       <img src={img} alt="course-name" />

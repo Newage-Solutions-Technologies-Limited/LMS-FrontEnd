@@ -7,10 +7,8 @@ import { useEffect } from "react";
 // import "./Courses.css";
 
 function CourseModules() {
-  const { courseId } = useParams();
-  const selectedCourse = courses.find(
-    (course) => course.id === Number(courseId)
-  );
+  const { courseTitle } = useParams();
+  const selectedCourse = courses.find((course) => course.title === courseTitle);
 
   // Scroll To top
   useEffect(() => {

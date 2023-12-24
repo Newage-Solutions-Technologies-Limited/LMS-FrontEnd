@@ -17,6 +17,32 @@ export const courses = [
     lecturers: ["Prof. Adedotun Fasiku", "lorem", "ipsum"],
     units: 3,
     resources: 23,
+    modules: [
+      {
+        id:
+          new Date().getTime().toString().slice(8) +
+          Math.trunc(Math.random() * 100) +
+          1,
+        title: "Introduction to Epidemiology and Public Health",
+        isAvailable: true,
+      },
+      {
+        id:
+          new Date().getTime().toString().slice(8) +
+          Math.trunc(Math.random() * 100) +
+          1,
+        title: "Tenets of Epidemiology and Public Health",
+        isAvailable: true,
+      },
+      {
+        id:
+          new Date().getTime().toString().slice(8) +
+          Math.trunc(Math.random() * 100) +
+          1,
+        title: "Use cases & Practicability",
+        isAvailable: false,
+      },
+    ],
   },
 
   {
@@ -28,6 +54,25 @@ export const courses = [
     lecturers: ["Dr. Lanre Onasanya", "lorem"],
     units: 2,
     resources: 23,
+    modules: [
+      {
+        id:
+          new Date().getTime().toString().slice(8) +
+          Math.trunc(Math.random() * 100) +
+          1,
+        title: "Introduction to Obstetrics and Gynaecology",
+        isAvailable: true,
+      },
+
+      {
+        id:
+          new Date().getTime().toString().slice(8) +
+          Math.trunc(Math.random() * 100) +
+          1,
+        title: "Use cases & Practicability",
+        isAvailable: false,
+      },
+    ],
   },
 
   {
@@ -47,6 +92,64 @@ export const courses = [
     ],
     units: 4,
     resources: 20,
+    modules: [
+      {
+        id:
+          new Date().getTime().toString().slice(8) +
+          Math.trunc(Math.random() * 100) +
+          1,
+        title: "Introduction to Sustainability within the Workforce",
+        isAvailable: true,
+      },
+      {
+        id:
+          new Date().getTime().toString().slice(8) +
+          Math.trunc(Math.random() * 100) +
+          1,
+        title: "Methods for Sustainability within the Workforce",
+        isAvailable: true,
+      },
+      {
+        id:
+          new Date().getTime().toString().slice(8) +
+          Math.trunc(Math.random() * 100) +
+          1,
+        title: "Processes for Sustainability within the Workforce",
+        isAvailable: false,
+      },
+      {
+        id:
+          new Date().getTime().toString().slice(8) +
+          Math.trunc(Math.random() * 100) +
+          1,
+        title: "Rudiments for Sustainability within the Workforce",
+        isAvailable: false,
+      },
+      {
+        id:
+          new Date().getTime().toString().slice(8) +
+          Math.trunc(Math.random() * 100) +
+          1,
+        title: "Methods for Sustainability within the Workforce",
+        isAvailable: false,
+      },
+      {
+        id:
+          new Date().getTime().toString().slice(8) +
+          Math.trunc(Math.random() * 100) +
+          1,
+        title: "Methods for Sustainability within the Workforce",
+        isAvailable: false,
+      },
+      {
+        id:
+          new Date().getTime().toString().slice(8) +
+          Math.trunc(Math.random() * 100) +
+          1,
+        title: "Use cases & Practicability",
+        isAvailable: false,
+      },
+    ],
   },
 
   {
@@ -58,6 +161,29 @@ export const courses = [
     lecturers: ["Dr. Feranmi Ajayi", "lorem", "ipsum", "lorem", "ipsum"],
     units: 1,
     resources: 17,
+    modules: [
+      {
+        id:
+          new Date().getTime().toString().slice(8) +
+          Math.trunc(Math.random() * 100) +
+          1,
+        title: "Introduction to Epidemiology and Public Health",
+      },
+      {
+        id:
+          new Date().getTime().toString().slice(8) +
+          Math.trunc(Math.random() * 100) +
+          1,
+        title: "Tenets of Epidemiology and Public Health",
+      },
+      {
+        id:
+          new Date().getTime().toString().slice(8) +
+          Math.trunc(Math.random() * 100) +
+          1,
+        title: "Use cases & Practicability",
+      },
+    ],
   },
 
   {
@@ -69,6 +195,30 @@ export const courses = [
     lecturers: ["Prof. Kayode Olaniyan", "lorem", "ipsum"],
     units: 5,
     resources: 10,
+    modules: [
+      {
+        id:
+          new Date().getTime().toString().slice(8) +
+          Math.trunc(Math.random() * 100) +
+          1,
+
+        title: "Introduction to Epidemiology and Public Health",
+      },
+      {
+        id:
+          new Date().getTime().toString().slice(8) +
+          Math.trunc(Math.random() * 100) +
+          1,
+        title: "Tenets of Epidemiology and Public Health",
+      },
+      {
+        id:
+          new Date().getTime().toString().slice(8) +
+          Math.trunc(Math.random() * 100) +
+          1,
+        title: "Use cases & Practicability",
+      },
+    ],
   },
 
   {
@@ -80,6 +230,29 @@ export const courses = [
     lecturers: ["Dr. Caroline Aruleoba", "lorem", "ipsum", "lorem", "ipsum"],
     units: 4,
     resources: 6,
+    modules: [
+      {
+        id:
+          new Date().getTime().toString().slice(8) +
+          Math.trunc(Math.random() * 100) +
+          1,
+        title: "Introduction to Epidemiology and Public Health",
+      },
+      {
+        id:
+          new Date().getTime().toString().slice(8) +
+          Math.trunc(Math.random() * 100) +
+          1,
+        title: "Tenets of Epidemiology and Public Health",
+      },
+      {
+        id:
+          new Date().getTime().toString().slice(8) +
+          Math.trunc(Math.random() * 100) +
+          1,
+        title: "Use cases & Practicability",
+      },
+    ],
   },
 
   {
@@ -91,17 +264,63 @@ export const courses = [
     lecturers: ["Dr. Adedoyin Adebayo", "lorem"],
     units: 2,
     resources: 15,
+    modules: [
+      {
+        id:
+          new Date().getTime().toString().slice(8) +
+          Math.trunc(Math.random() * 100) +
+          1,
+        title: "Introduction to Epidemiology and Public Health",
+      },
+      {
+        id:
+          new Date().getTime().toString().slice(8) +
+          Math.trunc(Math.random() * 100) +
+          1,
+        title: "Tenets of Epidemiology and Public Health",
+      },
+      {
+        id:
+          new Date().getTime().toString().slice(8) +
+          Math.trunc(Math.random() * 100) +
+          1,
+        title: "Use cases & Practicability",
+      },
+    ],
   },
 
   {
     id: 8,
     img: img8,
     progress: 100,
-    title: "EDX 501 : MEdial Practices & Insurance Schemes - A Case Study",
+    title: "EDX 501 : Medical Practices & Insurance Schemes - A Case Study",
     ratings: 4.5,
     lecturers: ["Dr. Jane Foster", "lorem", "ipsum", "lorem"],
     units: 7,
     resources: 20,
+    modules: [
+      {
+        id:
+          new Date().getTime().toString().slice(8) +
+          Math.trunc(Math.random() * 100) +
+          1,
+        title: "Introduction to Epidemiology and Public Health",
+      },
+      {
+        id:
+          new Date().getTime().toString().slice(8) +
+          Math.trunc(Math.random() * 100) +
+          1,
+        title: "Tenets of Epidemiology and Public Health",
+      },
+      {
+        id:
+          new Date().getTime().toString().slice(8) +
+          Math.trunc(Math.random() * 100) +
+          1,
+        title: "Use cases & Practicability",
+      },
+    ],
   },
 
   {
@@ -113,6 +332,29 @@ export const courses = [
     lecturers: ["Dr. Emmanuel Adeoye", "lorem", "ipsum", "lorem"],
     units: 7,
     resources: 13,
+    modules: [
+      {
+        id:
+          new Date().getTime().toString().slice(8) +
+          Math.trunc(Math.random() * 100) +
+          1,
+        title: "Introduction to Epidemiology and Public Health",
+      },
+      {
+        id:
+          new Date().getTime().toString().slice(8) +
+          Math.trunc(Math.random() * 100) +
+          1,
+        title: "Tenets of Epidemiology and Public Health",
+      },
+      {
+        id:
+          new Date().getTime().toString().slice(8) +
+          Math.trunc(Math.random() * 100) +
+          1,
+        title: "Use cases & Practicability",
+      },
+    ],
   },
 
   {
@@ -131,13 +373,36 @@ export const courses = [
     ],
     units: 2,
     resources: 16,
+    modules: [
+      {
+        id:
+          new Date().getTime().toString().slice(8) +
+          Math.trunc(Math.random() * 100) +
+          1,
+        title: "Introduction to Epidemiology and Public Health",
+      },
+      {
+        id:
+          new Date().getTime().toString().slice(8) +
+          Math.trunc(Math.random() * 100) +
+          1,
+        title: "Tenets of Epidemiology and Public Health",
+      },
+      {
+        id:
+          new Date().getTime().toString().slice(8) +
+          Math.trunc(Math.random() * 100) +
+          1,
+        title: "Use cases & Practicability",
+      },
+    ],
   },
 
   {
     id: 11,
     img: img7,
     progress: 98,
-    title: "EDX 506: Cultural Analysis & The Poignancy of Social Culturlism",
+    title: "EDX 506: Cultural Analysis & The Poignancy of Social Culturalism",
     ratings: 4.5,
     lecturers: [
       "Dr. Michael Adeshina",
@@ -151,6 +416,29 @@ export const courses = [
     ],
     units: 12,
     resources: 150,
+    modules: [
+      {
+        id:
+          new Date().getTime().toString().slice(8) +
+          Math.trunc(Math.random() * 100) +
+          1,
+        title: "Introduction to Epidemiology and Public Health",
+      },
+      {
+        id:
+          new Date().getTime().toString().slice(8) +
+          Math.trunc(Math.random() * 100) +
+          1,
+        title: "Tenets of Epidemiology and Public Health",
+      },
+      {
+        id:
+          new Date().getTime().toString().slice(8) +
+          Math.trunc(Math.random() * 100) +
+          1,
+        title: "Use cases & Practicability",
+      },
+    ],
   },
 
   {
@@ -162,5 +450,198 @@ export const courses = [
     lecturers: ["Mr. Ben Affleck", "lorem"],
     units: 2,
     resources: 15,
+    modules: [
+      {
+        id:
+          new Date().getTime().toString().slice(8) +
+          Math.trunc(Math.random() * 100) +
+          1,
+        title: "Introduction to Epidemiology and Public Health",
+      },
+      {
+        id:
+          new Date().getTime().toString().slice(8) +
+          Math.trunc(Math.random() * 100) +
+          1,
+        title: "Tenets of Epidemiology and Public Health",
+      },
+      {
+        id:
+          new Date().getTime().toString().slice(8) +
+          Math.trunc(Math.random() * 100) +
+          1,
+        title: "Use cases & Practicability",
+      },
+    ],
+  },
+
+  {
+    id: 13,
+    img: img4,
+    progress: 16,
+    title: "EDX 509: International Organizations & Modus Operandi",
+    ratings: 4.5,
+    lecturers: ["Dr. Rita", "lorem"],
+    units: 12,
+    resources: 15,
+    modules: [
+      {
+        id:
+          new Date().getTime().toString().slice(8) +
+          Math.trunc(Math.random() * 100) +
+          1,
+        title: "Introduction to Epidemiology and Public Health",
+      },
+      {
+        id:
+          new Date().getTime().toString().slice(8) +
+          Math.trunc(Math.random() * 100) +
+          1,
+        title: "Tenets of Epidemiology and Public Health",
+      },
+      {
+        id:
+          new Date().getTime().toString().slice(8) +
+          Math.trunc(Math.random() * 100) +
+          1,
+        title: "Use cases & Practicability",
+      },
+    ],
+  },
+
+  {
+    id: 14,
+    img: img1,
+    progress: 56,
+    title: "EDX 511: Globalization & Captilaistic Markets",
+    ratings: 4.5,
+    lecturers: ["Dr. Judith", "lorem"],
+    units: 7,
+    resources: 15,
+    modules: [
+      {
+        id:
+          new Date().getTime().toString().slice(8) +
+          Math.trunc(Math.random() * 100) +
+          1,
+        title: "Introduction to Epidemiology and Public Health",
+      },
+      {
+        id:
+          new Date().getTime().toString().slice(8) +
+          Math.trunc(Math.random() * 100) +
+          1,
+        title: "Tenets of Epidemiology and Public Health",
+      },
+      {
+        id:
+          new Date().getTime().toString().slice(8) +
+          Math.trunc(Math.random() * 100) +
+          1,
+        title: "Use cases & Practicability",
+      },
+    ],
+  },
+
+  {
+    id: 15,
+    img: img3,
+    progress: 100,
+    title: "EDX 507: Governance, Government & The Governed",
+    ratings: 4.5,
+    lecturers: ["Dr. Omobowale", "lorem", "lorem"],
+    units: 5,
+    resources: 25,
+    modules: [
+      {
+        id:
+          new Date().getTime().toString().slice(8) +
+          Math.trunc(Math.random() * 100) +
+          1,
+        title: "Introduction to Epidemiology and Public Health",
+      },
+      {
+        id:
+          new Date().getTime().toString().slice(8) +
+          Math.trunc(Math.random() * 100) +
+          1,
+        title: "Tenets of Epidemiology and Public Health",
+      },
+      {
+        id:
+          new Date().getTime().toString().slice(8) +
+          Math.trunc(Math.random() * 100) +
+          1,
+        title: "Use cases & Practicability",
+      },
+    ],
+  },
+
+  {
+    id: 16,
+    img: img5,
+    progress: 25,
+    title: "EDX 517: Marginalization & FDI Of Economies",
+    ratings: 4.5,
+    lecturers: ["Dr Seun", "lorem", "lorem", "lorem", "lorem"],
+    units: 4,
+    resources: 15,
+    modules: [
+      {
+        id:
+          new Date().getTime().toString().slice(8) +
+          Math.trunc(Math.random() * 100) +
+          1,
+        title: "Introduction to Epidemiology and Public Health",
+      },
+      {
+        id:
+          new Date().getTime().toString().slice(8) +
+          Math.trunc(Math.random() * 100) +
+          1,
+        title: "Tenets of Epidemiology and Public Health",
+      },
+      {
+        id:
+          new Date().getTime().toString().slice(8) +
+          Math.trunc(Math.random() * 100) +
+          1,
+        title: "Use cases & Practicability",
+      },
+    ],
+  },
+
+  {
+    id: 17,
+    img: img2,
+    progress: 100,
+    title: "EDX 521: Cost Benefits & Evaluation",
+    ratings: 4.5,
+    lecturers: ["Dr Stella", "lorem", "lorem", "lorem", "lorem"],
+    units: 1,
+    resources: 7,
+    modules: [
+      {
+        id:
+          new Date().getTime().toString().slice(8) +
+          Math.trunc(Math.random() * 100) +
+          1,
+        title: "Introduction to Epidemiology and Public Health",
+      },
+      {
+        id:
+          new Date().getTime().toString().slice(8) +
+          Math.trunc(Math.random() * 100) +
+          1,
+        title: "Tenets of Epidemiology and Public Health",
+      },
+      {
+        id:
+          new Date().getTime().toString().slice(8) +
+          Math.trunc(Math.random() * 100) +
+          1,
+        title: "Use cases & Practicability",
+      },
+    ],
   },
 ];

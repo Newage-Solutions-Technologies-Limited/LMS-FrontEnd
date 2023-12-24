@@ -1,6 +1,7 @@
 import { useState } from "react";
 import PropTypes from "prop-types";
 import { IoLockOpenOutline, IoLockClosedOutline } from "react-icons/io5";
+import { FaAngleUp, FaAngleDown } from "react-icons/fa";
 import "./Accordion.css";
 
 Accordion.propTypes = {
@@ -11,19 +12,20 @@ AccordionItem.propTypes = {
   id: PropTypes.number,
   title: PropTypes.string,
   lecturers: PropTypes.array,
+  modules: PropTypes.array,
 };
 
 export default function Accordion({ selectedCourse }) {
-  const { title, lecturers } = selectedCourse;
+  const { title, lecturers, modules } = selectedCourse;
 
   return (
     <div className="accordion">
-      <AccordionItem title={title} lecturers={lecturers} />
+      <AccordionItem title={title} lecturers={lecturers} modules={modules} />
     </div>
   );
 }
 
-function AccordionItem({ title, lecturers }) {
+function AccordionItem({ lecturers, modules }) {
   const [isOpen, setIsOpen] = useState(false);
 
   function handleToggle() {
@@ -32,90 +34,73 @@ function AccordionItem({ title, lecturers }) {
 
   return (
     <>
-      <div
-        className={`accordion-item ${isOpen ? "accordion-open" : ""}`}
-        onClick={handleToggle}
-      >
-        <h3>Module 1: {title}</h3>
-        <div className="module-footer">
-          <div className="module-footer-left">
-            <span>{lecturers.length} lectures</span>
-            <span>|</span>
-            <span>55min</span>
+      {modules.map((module, index) => {
+        return (
+          <div
+            className={`accordion-item ${isOpen ? "accordion-open" : ""} ${
+              !module.isAvailable ? "module-disabled" : ""
+            }`}
+            key={module.id}
+            onClick={handleToggle}
+          >
+            <div>
+              <div className="accordion-details">
+                <h4>
+                  Module {index + 1}: {module.title}
+                </h4>
+
+                <div className="accordion-icon">
+                  {isOpen ? <FaAngleUp size={20} /> : <FaAngleDown size={20} />}
+                </div>
+              </div>
+
+              <div className="accordion-foot">
+                <div>
+                  <span>{lecturers.length} lectures</span>
+                  <span>|</span>
+                  <span>55min</span>
+                </div>
+
+                <div
+                  className={module.isAvailable ? "available" : "unavailable"}
+                >
+                  <span>
+                    {module.isAvailable ? "Available" : "Unavailable"}
+                  </span>
+                  {module.isAvailable ? (
+                    <IoLockOpenOutline />
+                  ) : (
+                    <IoLockClosedOutline />
+                  )}
+                </div>
+              </div>
+            </div>
+
+            {isOpen && (
+              <div className="accordion-content-box">
+                <p>
+                  <span>Lecture 1:</span> Introduction to Epidemiology and
+                  Public Health
+                </p>
+
+                <p>
+                  <span>Lecture 2:</span> Introduction to Epidemiology and
+                  Public Health
+                </p>
+
+                <p>
+                  <span>Lecture 3:</span> Introduction to Epidemiology and
+                  Public Health
+                </p>
+
+                <p className="module-quiz">
+                  Quiz: Introduction to Epidemiology and Public Health
+                </p>
+              </div>
+            )}
           </div>
-
-          <div className="module-footer-right">
-            <span>Available</span>
-            <IoLockOpenOutline />
-          </div>
-        </div>
-
-        {isOpen && (
-          <div className="accordion-content-box">
-            <p>
-              <span>Lecture 1:</span> Introduction to Epidemiology and Public
-              Health
-            </p>
-
-            <p>
-              <span>Lecture 2:</span> Introduction to Epidemiology and Public
-              Health
-            </p>
-
-            <p>
-              <span>Lecture 3:</span> Introduction to Epidemiology and Public
-              Health
-            </p>
-
-            <p className="module-quiz">
-              Quiz: Introduction to Epidemiology and Public Health
-            </p>
-          </div>
-        )}
-      </div>
-
-      {/* Module 2 */}
-      <div
-        className={`accordion-item ${isOpen ? "accordion-open" : ""}`}
-        onClick={handleToggle}
-      >
-        <h3>Module 2: {title}</h3>
-        <div className="module-footer">
-          <div className="module-footer-left">
-            <span>{lecturers.length} lectures</span>
-            <span>|</span>
-            <span>55min</span>
-          </div>
-
-          <div className="module-footer-right">
-            <span>Unavailable</span>
-            <IoLockClosedOutline />
-          </div>
-        </div>
-
-        {isOpen && (
-          <div className="accordion-content-box">
-            <p>
-              <span>Lecture 1:</span> Introduction to Epidemiology and Public
-              Health
-            </p>
-
-            <p>
-              <span>Lecture 2:</span> Introduction to Epidemiology and Public
-              Health
-            </p>
-
-            <p>
-              <span>Lecture 3:</span> Introduction to Epidemiology and Public
-              Health
-            </p>
-
-            <p className="module-quiz">
-              Quiz: Introduction to Epidemiology and Public Health
-            </p>
-          </div>
-        )}
-      </div>
+        );
+      })}
     </>
   );
 }

@@ -4,6 +4,9 @@ import NavBar from "../../ui/navbar/NavBar";
 import SideBar from "../../ui/sidebar/SideBar";
 import { courses } from "./CoursesData";
 import { useEffect } from "react";
+import Button from "../../ui/Button";
+import { FaUsers } from "react-icons/fa";
+import { FaCircle } from "react-icons/fa6";
 // import "./Courses.css";
 
 function CourseModules() {
@@ -29,7 +32,7 @@ function CourseModules() {
         <div className="side-content-body">
           <div className="course-card-heading">
             <div className="course-card-heading-left">
-              <h3>{selectedCourse.title}</h3>
+              <h2>{selectedCourse.title}</h2>
               <p className="lecturers">
                 Lecturers In Charge:{" "}
                 <span>{selectedCourse.lecturers[0]}, Prof. Gbademo Alice</span>
@@ -47,9 +50,54 @@ function CourseModules() {
               </p>
             </div>
           </div>
-        </div>
 
-        <Accordion selectedCourse={selectedCourse} />
+          <div className="course-modules">
+            <h4>Course Contents</h4>
+            <div className="course-modules-grid">
+              <Accordion selectedCourse={selectedCourse} />
+
+              <div className="course-contents-right">
+                <div className="course-video">
+                  <div className="course-video-inner">
+                    <div>
+                      <div className="course-video-header">
+                        <span>
+                          <FaUsers size={15} className="course-video-icon" />
+                          Present : 23 students
+                        </span>
+
+                        <span>
+                          <FaCircle
+                            color="red"
+                            size={12}
+                            className="course-video-icon"
+                          />{" "}
+                          00: 02:05
+                        </span>
+                      </div>
+
+                      <p>
+                        Lecture has started. Click <br />
+                        &apos;Join Now&apos; to join
+                      </p>
+
+                      <Button
+                        width={70}
+                        fontsize={18}
+                        fontweight={900}
+                        color="#dde1e6"
+                        backgroundcolor="#008688"
+                        hoverin="#1c9c9e"
+                      >
+                        Join Now
+                      </Button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );

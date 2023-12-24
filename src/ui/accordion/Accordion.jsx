@@ -45,9 +45,9 @@ function AccordionItem({ lecturers, modules }) {
           >
             <div>
               <div className="accordion-details">
-                <h4>
+                <h5>
                   Module {index + 1}: {module.title}
-                </h4>
+                </h5>
 
                 <div className="accordion-icon">
                   {isOpen ? <FaAngleUp size={20} /> : <FaAngleDown size={20} />}

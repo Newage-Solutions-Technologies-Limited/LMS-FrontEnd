@@ -6,7 +6,6 @@ import SideBar from "../../ui/sidebar/SideBar";
 import Header from "../../ui/Header";
 import OverviewBox from "../../ui/OverviewBox";
 import Pagination from "../../ui/Pagination";
-import CourseModules from "../courses/CourseModules";
 import { courses } from "./CoursesData";
 import { PiSortAscendingBold } from "react-icons/pi";
 import { GrCopy } from "react-icons/gr";

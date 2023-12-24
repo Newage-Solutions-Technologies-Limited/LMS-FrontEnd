@@ -7,6 +7,7 @@ import { useEffect } from "react";
 import Button from "../../ui/Button";
 import { FaUsers } from "react-icons/fa";
 import { FaCircle } from "react-icons/fa6";
+import Steps from "../../ui/steps/Steps";
 // import "./Courses.css";
 
 function CourseModules() {
@@ -94,6 +95,8 @@ function CourseModules() {
                     </div>
                   </div>
                 </div>
+
+                <Steps />
               </div>
             </div>
           </div>

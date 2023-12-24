@@ -1,5 +1,5 @@
 .accordion {
-  width: 350px;
+  width: 400px;
   border: 1px solid #eeeff0;
   border-radius: 8px;
   padding: 35px 25px 15px;
@@ -23,8 +23,13 @@
   align-items: center;
 }
 
+.accordion-details h5 {
+  font-weight: 600;
+}
+
 .accordion-icon {
   text-align: end;
+  color: #4b5563;
 }
 
 .accordion-foot {
@@ -36,6 +41,7 @@
 .accordion-foot span {
   font-size: 13px;
   margin-right: 5px;
+  color: #4b5563;
 }
 
 .accordion-foot .available {
@@ -44,12 +50,16 @@
   border: 1px solid #087f5b;
   border-radius: 20px;
   padding: 3px 12px;
+  display: flex;
+  align-items: center;
 }
 
 .accordion-foot .unavailable {
   border: 1px solid #e5e7eb;
   border-radius: 20px;
   padding: 3px 12px;
+  display: flex;
+  align-items: center;
 }
 
 .module-disabled {
@@ -59,7 +69,7 @@
 }
 
 .accordion-content-box {
-  font-size: 14px;
+  font-size: 12px;
   padding-top: 16px;
 }
 
@@ -71,8 +81,8 @@
 }
 
 .accordion-content-box p span {
-  font-weight: 900;
-  font-size: 15px;
+  font-weight: 600;
+  font-size: 14px;
 }
 
 /* OPEN STATE */

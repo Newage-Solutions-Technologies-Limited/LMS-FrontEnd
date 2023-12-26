@@ -36,7 +36,7 @@ function CourseModules() {
               <h2>{selectedCourse.title}</h2>
               <p className="lecturers">
                 Lecturers In Charge:{" "}
-                <span>{selectedCourse.lecturers[0]}, Prof. Gbademo Alice</span>
+                <span> {selectedCourse.lecturers.join(", ")}</span>
               </p>
               <p className="description">
                 The study of disease in populations and of factors that
@@ -47,7 +47,7 @@ function CourseModules() {
 
             <div className="course-card-heading-right">
               <p>
-                <span>20% Completed</span>
+                <span>{selectedCourse.progress}% Completed</span>
               </p>
             </div>
           </div>

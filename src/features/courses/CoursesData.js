@@ -40,7 +40,7 @@ export const courses = [
           Math.trunc(Math.random() * 100) +
           1,
         title: "Use cases & Practicability",
-        isAvailable: false,
+        isAvailable: true,
       },
     ],
   },
@@ -115,7 +115,7 @@ export const courses = [
           Math.trunc(Math.random() * 100) +
           1,
         title: "Processes for Sustainability within the Workforce",
-        isAvailable: false,
+        isAvailable: true,
       },
       {
         id:
@@ -123,7 +123,7 @@ export const courses = [
           Math.trunc(Math.random() * 100) +
           1,
         title: "Rudiments for Sustainability within the Workforce",
-        isAvailable: false,
+        isAvailable: true,
       },
       {
         id:
@@ -131,7 +131,7 @@ export const courses = [
           Math.trunc(Math.random() * 100) +
           1,
         title: "Methods for Sustainability within the Workforce",
-        isAvailable: false,
+        isAvailable: true,
       },
       {
         id:
@@ -168,6 +168,7 @@ export const courses = [
           Math.trunc(Math.random() * 100) +
           1,
         title: "Introduction to Epidemiology and Public Health",
+        isAvailable: true,
       },
       {
         id:
@@ -175,6 +176,7 @@ export const courses = [
           Math.trunc(Math.random() * 100) +
           1,
         title: "Tenets of Epidemiology and Public Health",
+        isAvailable: true,
       },
       {
         id:
@@ -182,6 +184,25 @@ export const courses = [
           Math.trunc(Math.random() * 100) +
           1,
         title: "Use cases & Practicability",
+        isAvailable: true,
+      },
+
+      {
+        id:
+          new Date().getTime().toString().slice(8) +
+          Math.trunc(Math.random() * 100) +
+          1,
+        title: "Use cases & Practicability",
+        isAvailable: false,
+      },
+
+      {
+        id:
+          new Date().getTime().toString().slice(8) +
+          Math.trunc(Math.random() * 100) +
+          1,
+        title: "Use cases & Practicability",
+        isAvailable: false,
       },
     ],
   },
@@ -203,6 +224,7 @@ export const courses = [
           1,
 
         title: "Introduction to Epidemiology and Public Health",
+        isAvailable: true,
       },
       {
         id:
@@ -210,6 +232,7 @@ export const courses = [
           Math.trunc(Math.random() * 100) +
           1,
         title: "Tenets of Epidemiology and Public Health",
+        isAvailable: true,
       },
       {
         id:
@@ -217,6 +240,7 @@ export const courses = [
           Math.trunc(Math.random() * 100) +
           1,
         title: "Use cases & Practicability",
+        isAvailable: true,
       },
     ],
   },
@@ -237,6 +261,7 @@ export const courses = [
           Math.trunc(Math.random() * 100) +
           1,
         title: "Introduction to Epidemiology and Public Health",
+        isAvailable: true,
       },
       {
         id:
@@ -244,6 +269,7 @@ export const courses = [
           Math.trunc(Math.random() * 100) +
           1,
         title: "Tenets of Epidemiology and Public Health",
+        isAvailable: true,
       },
       {
         id:
@@ -251,6 +277,25 @@ export const courses = [
           Math.trunc(Math.random() * 100) +
           1,
         title: "Use cases & Practicability",
+        isAvailable: true,
+      },
+
+      {
+        id:
+          new Date().getTime().toString().slice(8) +
+          Math.trunc(Math.random() * 100) +
+          1,
+        title: "Use cases & Practicability",
+        isAvailable: true,
+      },
+
+      {
+        id:
+          new Date().getTime().toString().slice(8) +
+          Math.trunc(Math.random() * 100) +
+          1,
+        title: "Use cases & Practicability",
+        isAvailable: true,
       },
     ],
   },
@@ -271,6 +316,7 @@ export const courses = [
           Math.trunc(Math.random() * 100) +
           1,
         title: "Introduction to Epidemiology and Public Health",
+        isAvailable: true,
       },
       {
         id:
@@ -278,13 +324,7 @@ export const courses = [
           Math.trunc(Math.random() * 100) +
           1,
         title: "Tenets of Epidemiology and Public Health",
-      },
-      {
-        id:
-          new Date().getTime().toString().slice(8) +
-          Math.trunc(Math.random() * 100) +
-          1,
-        title: "Use cases & Practicability",
+        isAvailable: false,
       },
     ],
   },
@@ -305,6 +345,7 @@ export const courses = [
           Math.trunc(Math.random() * 100) +
           1,
         title: "Introduction to Epidemiology and Public Health",
+        isAvailable: true,
       },
       {
         id:
@@ -312,6 +353,7 @@ export const courses = [
           Math.trunc(Math.random() * 100) +
           1,
         title: "Tenets of Epidemiology and Public Health",
+        isAvailable: true,
       },
       {
         id:
@@ -319,6 +361,15 @@ export const courses = [
           Math.trunc(Math.random() * 100) +
           1,
         title: "Use cases & Practicability",
+        isAvailable: true,
+      },
+      {
+        id:
+          new Date().getTime().toString().slice(8) +
+          Math.trunc(Math.random() * 100) +
+          1,
+        title: "Use cases & Practicability",
+        isAvailable: true,
       },
     ],
   },

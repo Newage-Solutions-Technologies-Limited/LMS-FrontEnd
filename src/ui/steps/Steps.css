@@ -1,5 +1,7 @@
 .steps {
   width: 100%;
+  /* height: 90vh;
+  overflow-y: scroll; */
   border-radius: 7px;
   margin: auto;
   margin-top: 20px;

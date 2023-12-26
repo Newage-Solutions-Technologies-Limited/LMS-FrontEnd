@@ -1,13 +1,15 @@
 import { useState } from "react";
+import ResourcesContent from "./ResourcesContent";
+import AssignmentContent from "./AssignmentContent";
 import PropTypes from "prop-types";
 import "./Steps.css";
-import ResourcesContent from "./StepsMessages";
 
 const messages = [
   "The study of disease in populations and of factors that determine its occurrence over time. The purpose is to describe and identify opportunities for intervention",
   // eslint-disable-next-line react/jsx-key
   <ResourcesContent />,
-  "Invest your new income 🤑",
+  // eslint-disable-next-line react/jsx-key
+  <AssignmentContent />,
   "Invest your new income 🤑",
   "Invest your new income 🤑",
 ];
@@ -91,14 +93,3 @@ function Button({ textColor, bgColor, onClick, children }) {
     </button>
   );
 }
-
-// <div className="buttons">
-//   <Button bgColor="#7950f2" textColor="#fff" onClick={handlePrevious}>
-//     <span>👈</span> Previous
-//   </Button>
-
-//   <Button bgColor="#7950f2" textColor="#fff" onClick={handleNext}>
-//     Next <span>👉</span>
-//     <span>🤓</span>
-//   </Button>
-// </div>

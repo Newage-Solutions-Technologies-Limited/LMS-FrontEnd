@@ -40,16 +40,6 @@ export default function Steps() {
 function Step() {
   const [step, setStep] = useState(1);
 
-  //   function handlePrevious() {
-  //     if (step > 1) setStep((s) => s - 1);
-  //   }
-
-  //   function handleNext() {
-  //     if (step < 5) {
-  //       setStep((s) => s + 1);
-  //     }
-  //   }
-
   function handleStepClick(selectedStep) {
     setStep(selectedStep);
   }
@@ -64,7 +54,7 @@ function Step() {
               className={step === s ? "active" : ""}
               onClick={() => handleStepClick(s)}
             >
-              {getStepName(s)}
+              <span className="step-title">{getStepName(s)}</span>
             </div>
           ))}
         </div>

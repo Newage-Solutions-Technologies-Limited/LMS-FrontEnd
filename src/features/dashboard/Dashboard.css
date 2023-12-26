@@ -142,7 +142,7 @@ main {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-top: 14px;
+  padding-top: 5px;
 }
 
 .boxDesc h3 {

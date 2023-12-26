@@ -26,6 +26,10 @@
   font-weight: 600;
 }
 
+.steps .step-title {
+  cursor: default;
+}
+
 .steps .message {
   font-size: 13px;
   margin: 40px 0 20px;

@@ -51,7 +51,7 @@ function Assignment({
 
           <div>
             <span className={marked ? "marked" : "deadline"}>
-              {marked ? "Marked" : "Deadline: Jan. 12, 2023"}
+              {marked ? "Marked" : "Deadline: Jan. 12, 2024"}
             </span>
           </div>
         </div>

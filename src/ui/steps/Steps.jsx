@@ -1,6 +1,7 @@
 import { useState } from "react";
 import ResourcesContent from "./ResourcesContent";
 import AssignmentContent from "./AssignmentContent";
+import NotesContent from "./NotesContent";
 import PropTypes from "prop-types";
 import "./Steps.css";
 
@@ -10,7 +11,8 @@ const messages = [
   <ResourcesContent />,
   // eslint-disable-next-line react/jsx-key
   <AssignmentContent />,
-  "Invest your new income 🤑",
+  // eslint-disable-next-line react/jsx-key
+  <NotesContent />,
   "Invest your new income 🤑",
 ];
 

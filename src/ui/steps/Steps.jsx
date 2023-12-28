@@ -1,10 +1,11 @@
 import { useState } from "react";
+import PropTypes from "prop-types";
+import ModuleDescription from "./ModuleDescription";
 import ResourcesContent from "./ResourcesContent";
 import AssignmentContent from "./AssignmentContent";
 import NotesContent from "./NotesContent";
-import PropTypes from "prop-types";
+import QA from "./QA";
 import "./Steps.css";
-import ModuleDescription from "./ModuleDescription";
 
 const messages = [
   // eslint-disable-next-line react/jsx-key
@@ -15,7 +16,8 @@ const messages = [
   <AssignmentContent />,
   // eslint-disable-next-line react/jsx-key
   <NotesContent />,
-  "Invest your new income 🤑",
+  // eslint-disable-next-line react/jsx-key
+  <QA />,
 ];
 
 function getStepName(step) {

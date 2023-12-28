@@ -1,19 +1,24 @@
+import { useParams } from "react-router-dom";
+import { courses } from "../../features/courses/CoursesData";
 import PropTypes from "prop-types";
 import { CiCalendar } from "react-icons/ci";
 import "./Steps.css";
 
 export default function ModuleDescription() {
+  const { courseTitle } = useParams();
+  const selectedCourse = courses.find((course) => course.title === courseTitle);
+
   return (
     <>
       <div className="module-desc">
         <div>
           <h4>Module Title</h4>
-          <p>Principles of Epidemiology and Public Health</p>
+          <p>{selectedCourse.title}</p>
         </div>
 
         <div>
           <h4>Lecturer In Charge</h4>
-          <p>Dr. Peter Alexa</p>
+          <p>{selectedCourse.lecturers[0]}</p>
         </div>
 
         <div>
@@ -25,7 +30,8 @@ export default function ModuleDescription() {
           </p>
         </div>
       </div>
-      <div>
+
+      <div className="module-desc-assessment">
         <h4>Assessment Schedule</h4>
 
         <div className="assessment-boxes">

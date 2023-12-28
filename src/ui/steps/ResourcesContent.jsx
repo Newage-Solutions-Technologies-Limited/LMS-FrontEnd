@@ -5,7 +5,7 @@ import "../../features/courses/Courses.css";
 
 export default function ResourcesContent() {
   return (
-    <>
+    <div className="resources-content">
       <h4>Available Resources</h4>
       <div className="course-steps-boxes">
         <CourseBox
@@ -47,6 +47,6 @@ export default function ResourcesContent() {
           rightMiddle={<FiDownloadCloud color="#06A5A6" />}
         />
       </div>
-    </>
+    </div>
   );
 }

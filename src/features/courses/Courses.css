@@ -317,6 +317,12 @@ progress[value]::-webkit-progress-value {
 }
 
 /* Course Modules steps */
+
+/* Resources step */
+.resources-content h4 {
+  color: #000;
+}
+
 .course-steps-boxes {
   display: grid;
   grid-template-columns: repeat(2, 1fr);

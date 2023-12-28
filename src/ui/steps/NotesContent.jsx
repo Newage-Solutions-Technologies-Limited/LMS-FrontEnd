@@ -1,11 +1,15 @@
 import { useState } from "react";
+import { useParams } from "react-router-dom";
+import { courses } from "../../features/courses/CoursesData";
 import Quill from "./notes/Quill";
 import { IoAdd } from "react-icons/io5";
 import { MdEdit, MdDelete } from "react-icons/md";
-import "./Steps.css";
 import Modal from "../modal/ModalCourseModule";
+import "./Steps.css";
 
 export default function NotesContent() {
+  const { courseTitle } = useParams();
+  const selectedCourse = courses.find((course) => course.title === courseTitle);
   const [isModalOpen, setModalOpen] = useState(false);
   const [isQuillVisible, setIsQuillVisible] = useState(false);
   const [notes, setNotes] = useState([]);
@@ -92,9 +96,7 @@ export default function NotesContent() {
                     </p>
                     <div className="note-reminder">
                       <div className="note-reminder-header">
-                        <p className="note-title">
-                          Introduction to Epidemiology and Public Health
-                        </p>
+                        <p className="note-title">{selectedCourse.title}</p>
 
                         <span className="note-edit-delete">
                           <MdEdit
@@ -140,6 +142,9 @@ export default function NotesContent() {
           initialContent={editingIndex !== null ? notes[editingIndex] : ""}
           onUpdateNote={updateNoteContent}
           onCancelNote={handleCancelOperation}
+          title1="Cancel"
+          title2="Save Note"
+          placeholder="Type note here..."
         />
       )}
     </div>

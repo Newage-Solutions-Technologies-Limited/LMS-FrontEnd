@@ -6,16 +6,17 @@ import "../Steps.css";
 RichTextEditor.propTypes = {
   value: PropTypes.node,
   onChange: PropTypes.func,
+  placeholder: PropTypes.string,
 };
 
-export default function RichTextEditor({ value, onChange }) {
+export default function RichTextEditor({ value, onChange, placeholder }) {
   return (
     <ReactQuill
       value={value}
       onChange={onChange}
       modules={RichTextEditor.modules}
       formats={RichTextEditor.formats}
-      placeholder="Type note here..."
+      placeholder={placeholder}
     />
   );
 }

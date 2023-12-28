@@ -55,7 +55,9 @@ function CourseModules() {
           <div className="course-modules">
             <h4>Course Contents</h4>
             <div className="course-modules-grid">
-              <Accordion selectedCourse={selectedCourse} />
+              <div className="course-contents-left">
+                <Accordion selectedCourse={selectedCourse} />
+              </div>
 
               <div className="course-contents-right">
                 <div className="course-video">

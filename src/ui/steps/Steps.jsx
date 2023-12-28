@@ -4,9 +4,11 @@ import AssignmentContent from "./AssignmentContent";
 import NotesContent from "./NotesContent";
 import PropTypes from "prop-types";
 import "./Steps.css";
+import ModuleDescription from "./ModuleDescription";
 
 const messages = [
-  "The study of disease in populations and of factors that determine its occurrence over time. The purpose is to describe and identify opportunities for intervention",
+  // eslint-disable-next-line react/jsx-key
+  <ModuleDescription />,
   // eslint-disable-next-line react/jsx-key
   <ResourcesContent />,
   // eslint-disable-next-line react/jsx-key
@@ -49,20 +51,20 @@ function Step() {
   }
 
   return (
-    <div>
-      <div className="steps">
-        <div className="numbers">
-          {[1, 2, 3, 4, 5].map((s) => (
-            <div
-              key={s}
-              className={step === s ? "active" : ""}
-              onClick={() => handleStepClick(s)}
-            >
-              <span className="step-title">{getStepName(s)}</span>
-            </div>
-          ))}
-        </div>
+    <div className="steps">
+      <div className="numbers">
+        {[1, 2, 3, 4, 5].map((s) => (
+          <div
+            key={s}
+            className={step === s ? "active" : ""}
+            onClick={() => handleStepClick(s)}
+          >
+            <span className="step-title">{getStepName(s)}</span>
+          </div>
+        ))}
+      </div>
 
+      <div className="step-message">
         <StepMessage>{messages[step - 1]}</StepMessage>
       </div>
     </div>

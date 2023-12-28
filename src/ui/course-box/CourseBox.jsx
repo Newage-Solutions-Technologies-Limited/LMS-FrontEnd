@@ -6,6 +6,8 @@ CourseBox.propTypes = {
   leftTop2: PropTypes.string,
   leftBottom1: PropTypes.object,
   leftBottom2: PropTypes.string,
+  leftBottom3: PropTypes.object,
+  leftBottom4: PropTypes.string,
   rightMiddle: PropTypes.object,
 };
 
@@ -13,7 +15,9 @@ export default function CourseBox({
   leftTop1,
   leftTop2 = "",
   leftBottom1,
-
+  leftBottom2,
+  leftBottom3,
+  leftBottom4,
   rightMiddle,
 }) {
   return (
@@ -28,7 +32,10 @@ export default function CourseBox({
           </span>
         </div>
 
-        <span>{leftBottom1}</span>
+        <span className="left-details">{leftBottom1}</span>
+        <span className="first-left-details-group">{leftBottom2}</span>
+        <span className="left-details">{leftBottom3}</span>
+        <span className="">{leftBottom4}</span>
       </div>
       <p className="progressStyle">{rightMiddle}</p>
     </div>

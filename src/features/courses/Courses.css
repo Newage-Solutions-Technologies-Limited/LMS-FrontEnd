@@ -259,7 +259,14 @@ progress[value]::-webkit-progress-value {
 
 .course-modules-grid {
   display: grid;
-  grid-template-columns: 450px 1fr;
+  grid-template-columns: 400px 1fr;
+  column-gap: 14px;
+}
+
+.course-modules-grid .course-contents-left,
+.course-modules-grid .course-contents-right {
+  height: 80vh;
+  overflow-y: scroll;
 }
 
 .course-video {

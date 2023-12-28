@@ -1,7 +1,5 @@
 .steps {
   max-width: 100%;
-  /* height: 90vh;
-  overflow-y: scroll; */
   border-radius: 7px;
   margin: auto;
   margin-top: 20px;
@@ -11,6 +9,11 @@
   display: flex;
   border-bottom: 1px solid #dde1e6;
 }
+
+/* .steps .step-message {
+  height: 60vh;
+  overflow-y: scroll;
+} */
 
 .steps .numbers div {
   margin-right: 40px;
@@ -110,6 +113,12 @@
   border-radius: 12px;
 }
 
+.notes-contents .add-note .add-icon-container:hover,
+.note-edit-delete .note-edit:hover,
+.note-edit-delete .note-delete:hover {
+  cursor: pointer;
+}
+
 .notes-contents .empty-notes {
   text-align: center;
   margin-top: 70px;
@@ -166,10 +175,6 @@
   font-size: 14px;
   color: #4b5563;
 }
-
-/* .quill-content {
-  width: 80%;
-} */
 
 .quill-btns {
   line-height: 0;
@@ -281,4 +286,81 @@
 
 .ql-font option[value]:hover {
   color: #008688;
+}
+
+/* Module Description section */
+.module-desc div {
+  margin-bottom: 40px;
+}
+
+.module-desc div h4 {
+  font-size: 13px;
+  font-weight: 900;
+  line-height: 0;
+  color: #000;
+}
+
+.assessment-boxes {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 15px;
+}
+
+.module-course-box-desc {
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.module-course-box-desc .course-steps-details .course-title {
+  display: flex;
+  column-gap: 8px;
+}
+
+.module-course-box-desc .course-steps-details .course-title .title {
+  font-size: 13px;
+  width: 60%;
+  margin-bottom: 14px;
+}
+
+.module-course-box-desc .course-steps-details .title {
+  font-weight: 900;
+}
+
+.module-course-box-desc .course-steps-details .left-details {
+  margin-right: 5px;
+}
+
+.module-course-box-desc .course-steps-details .first-left-details-group {
+  margin-right: 14px;
+}
+
+.module-course-box-desc .course-steps-details .module-duration {
+  font-size: 10px;
+  color: #868f8f;
+}
+
+.module-course-box-desc .course-title .left-top-2-1 {
+  font-size: 10px;
+  background: #fff9df;
+  color: #d8a800;
+  padding: 3px 8px;
+  border-radius: 5px;
+}
+
+.module-course-box-desc .course-title .left-top-2-2 {
+  font-size: 10px;
+  color: #008688;
+  background-color: #1db4691f;
+  padding: 3px 8px;
+  border-radius: 5px;
+}
+
+.module-course-box-desc .progress-style {
+  border: 1px solid #008688;
+  padding: 5px 7px 3px;
+  border-radius: 12px;
 }

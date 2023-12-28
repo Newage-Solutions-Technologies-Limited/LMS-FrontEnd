@@ -71,7 +71,7 @@ export default function NotesContent() {
             <span className="add-time">
               Add a note at <strong>00:00</strong>
             </span>
-            <span>
+            <span className="add-icon-container">
               <IoAdd
                 size={25}
                 color="#06a5a6"
@@ -101,6 +101,7 @@ export default function NotesContent() {
                             color="#008688"
                             size={20}
                             onClick={() => handleEditNote(index)}
+                            className="note-edit"
                           />
                           <MdDelete
                             color="#008688"

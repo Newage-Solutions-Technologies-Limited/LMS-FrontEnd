@@ -11,39 +11,39 @@ export default function ResourcesContent() {
         <CourseBox
           leftTop1="Epidemiology Publication 1"
           leftTop2="Link"
-          leftBottom1="2MB"
+          leftBottom2="2MB"
           rightMiddle={<GoLink color="#06A5A6" />}
         />
         <CourseBox
           leftTop1="Epidemiology Publication 2"
           leftTop2="Document"
-          leftBottom1="2MB"
+          leftBottom2="2MB"
           rightMiddle={<FiDownloadCloud color="#06A5A6" />}
         />
         <CourseBox
           leftTop1="Epidemiology Publication 3"
           leftTop2="Document"
-          leftBottom1="2MB"
+          leftBottom2="2MB"
           rightMiddle={<FiDownloadCloud color="#06A5A6" />}
         />
         <CourseBox
           leftTop1="Epidemiology Publication 4"
           leftTop2="Link"
-          leftBottom1="2MB"
+          leftBottom2="2MB"
           rightMiddle={<GoLink color="#06A5A6" />}
         />
 
         <CourseBox
           leftTop1="Epidemiology Publication 5"
           leftTop2="Link"
-          leftBottom1="2MB"
+          leftBottom2="2MB"
           rightMiddle={<GoLink color="#06A5A6" />}
         />
 
         <CourseBox
           leftTop1="Epidemiology Publication 6"
           leftTop2="Document"
-          leftBottom1="2MB"
+          leftBottom2="2MB"
           rightMiddle={<FiDownloadCloud color="#06A5A6" />}
         />
       </div>

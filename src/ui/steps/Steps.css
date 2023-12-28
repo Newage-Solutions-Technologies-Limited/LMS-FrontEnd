@@ -89,7 +89,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 15px;
+  padding: 10px 15px;
   border: 1px solid #ecedee;
   border-radius: 12px;
   background-color: #ecedee;
@@ -110,9 +110,66 @@
   border-radius: 12px;
 }
 
-.quill-content {
-  width: 80%;
+.notes-contents .empty-notes {
+  text-align: center;
+  margin-top: 70px;
 }
+
+.notes-contents .empty-notes h4 {
+  font-weight: 900;
+  font-size: 15px;
+  color: #0e1919;
+}
+
+.notes-contents .created-note {
+  margin-bottom: 30px;
+}
+
+.notes-contents .previous-notes {
+  margin-top: 70px;
+}
+
+.created-note .note-details {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+}
+
+.created-note .note-details .note-time span {
+  margin-right: 20px;
+  background-color: #008688;
+  color: #fcfcfc;
+  padding: 5px 18px 10px;
+  border-radius: 12px;
+}
+
+.created-note .note-details .note-reminder .note-reminder-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 15px;
+}
+
+.created-note .note-details .note-reminder .note-reminder-header .note-delete {
+  margin-left: 16px;
+}
+
+.created-note .note-details .note-reminder .note-created {
+  border: 1px solid #ddd;
+  padding: 5px 15px;
+  height: 7vh;
+  overflow-y: scroll;
+  border-radius: 12px;
+  background-color: #fcfcfc;
+}
+
+.notes-contents .empty-notes p {
+  font-size: 14px;
+  color: #4b5563;
+}
+
+/* .quill-content {
+  width: 80%;
+} */
 
 .quill-btns {
   line-height: 0;

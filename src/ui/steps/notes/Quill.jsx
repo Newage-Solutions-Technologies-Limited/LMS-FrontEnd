@@ -1,12 +1,32 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import RichTextEditor from "./RichTextEditor";
 import Button from "../../Button";
+import PropTypes from "prop-types";
 
-export default function Quill() {
+Quill.propTypes = {
+  onUpdateNote: PropTypes.func,
+  initialContent: PropTypes.string,
+};
+
+export default function Quill({ onUpdateNote, initialContent }) {
   const [content, setContent] = useState("");
 
   const handleContentChange = (value) => {
     setContent(value);
+  };
+
+  useEffect(() => {
+    setContent(initialContent || "");
+  }, [initialContent]);
+
+  const stripHtmlTags = (html) => {
+    var doc = new DOMParser().parseFromString(html, "text/html");
+    return doc.body.textContent || "";
+  };
+
+  const handleSaveNote = () => {
+    const textContent = stripHtmlTags(content);
+    onUpdateNote && onUpdateNote(textContent);
   };
 
   return (
@@ -33,6 +53,7 @@ export default function Quill() {
           hoverin="#1c9c9e"
           borderradius={12}
           fontsize={14}
+          onClick={handleSaveNote}
         >
           Save Note
         </Button>

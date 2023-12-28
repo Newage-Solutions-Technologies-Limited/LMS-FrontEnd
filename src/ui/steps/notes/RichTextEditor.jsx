@@ -9,7 +9,6 @@ RichTextEditor.propTypes = {
 };
 
 export default function RichTextEditor({ value, onChange }) {
-  console.log(value);
   return (
     <ReactQuill
       value={value}

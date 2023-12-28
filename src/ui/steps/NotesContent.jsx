@@ -3,12 +3,24 @@ import Quill from "./notes/Quill";
 import { IoAdd } from "react-icons/io5";
 import { MdEdit, MdDelete } from "react-icons/md";
 import "./Steps.css";
+import Modal from "../modal/ModalCourseModule";
 
 export default function NotesContent() {
+  const [isModalOpen, setModalOpen] = useState(false);
   const [isQuillVisible, setIsQuillVisible] = useState(false);
   const [notes, setNotes] = useState([]);
   const [editingIndex, setEditingIndex] = useState(null);
-  // const [noteContent, setNoteContent] = useState("");
+  const [deletingIndex, setDeletingIndex] = useState(null);
+
+  // Modal Controls
+  const openModal = () => {
+    setModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setModalOpen(false);
+    setDeletingIndex(null);
+  };
 
   function handleAddClick() {
     setIsQuillVisible(true);
@@ -34,9 +46,21 @@ export default function NotesContent() {
   }
 
   function handleDeleteNote(index) {
-    const updatedNotes = [...notes];
-    updatedNotes.splice(index, 1);
-    setNotes(updatedNotes);
+    setDeletingIndex(index);
+    openModal();
+  }
+
+  function handleConfirmDelete() {
+    if (deletingIndex !== null) {
+      const updatedNotes = [...notes];
+      updatedNotes.splice(deletingIndex, 1);
+      setNotes(updatedNotes);
+      closeModal();
+    }
+  }
+
+  function handleCancelOperation() {
+    setIsQuillVisible(false);
   }
 
   return (
@@ -94,6 +118,12 @@ export default function NotesContent() {
                   </div>
                 </div>
               ))}
+
+              <Modal
+                isOpen={isModalOpen}
+                onClose={closeModal}
+                onDelete={handleConfirmDelete}
+              />
             </div>
           ) : (
             <div className="empty-notes">
@@ -108,6 +138,7 @@ export default function NotesContent() {
         <Quill
           initialContent={editingIndex !== null ? notes[editingIndex] : ""}
           onUpdateNote={updateNoteContent}
+          onCancelNote={handleCancelOperation}
         />
       )}
     </div>

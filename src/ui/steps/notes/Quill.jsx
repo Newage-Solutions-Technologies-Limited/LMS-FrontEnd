@@ -5,10 +5,11 @@ import PropTypes from "prop-types";
 
 Quill.propTypes = {
   onUpdateNote: PropTypes.func,
+  onCancelNote: PropTypes.func,
   initialContent: PropTypes.string,
 };
 
-export default function Quill({ onUpdateNote, initialContent }) {
+export default function Quill({ onUpdateNote, onCancelNote, initialContent }) {
   const [content, setContent] = useState("");
 
   const handleContentChange = (value) => {
@@ -25,8 +26,12 @@ export default function Quill({ onUpdateNote, initialContent }) {
   };
 
   const handleSaveNote = () => {
-    const textContent = stripHtmlTags(content);
-    onUpdateNote && onUpdateNote(textContent);
+    if (content) {
+      const textContent = stripHtmlTags(content);
+      onUpdateNote && onUpdateNote(textContent);
+    }
+
+    return;
   };
 
   return (
@@ -41,6 +46,7 @@ export default function Quill({ onUpdateNote, initialContent }) {
           fontsize={14}
           borderradius={12}
           fontweight={900}
+          onClick={onCancelNote}
         >
           Cancel
         </Button>

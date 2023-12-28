@@ -41,10 +41,6 @@
   font-size: 13px;
   margin: 40px 0 20px;
   color: #4b5563;
-
-  /* display: flex;
-  flex-direction: column;
-  align-items: center; */
 }
 
 .steps .buttons {
@@ -212,7 +208,7 @@
   line-height: 0;
 }
 
-.notes-contents .previous-notes .user-question {
+.notes-contents .previous-notes .questions .user-question {
   color: #363333;
   margin-bottom: 10px;
 }
@@ -220,6 +216,11 @@
 .notes-contents .previous-notes .user-response {
   margin-left: 20px;
   font-size: 12px;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 10px;
+  width: 60%;
+  color: #868f8f;
 }
 
 .notes-contents .previous-notes .user-times {

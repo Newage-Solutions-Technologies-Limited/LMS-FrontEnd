@@ -75,17 +75,7 @@ export default function Assessments() {
                 leftTop="Average Score"
                 leftBottom1="60%"
                 rightMiddle={
-                  <LuTimer size={20} color="#886C09" className="icon-current" />
-                }
-              />
-            </div>
-
-            <div className=" box-style">
-              <OverviewBox
-                leftTop="Average Time Spent"
-                leftBottom1="12hrs"
-                rightMiddle={
-                  <FiCheckSquare
+                  <CgFileDocument
                     size={20}
                     color="#540A7D"
                     className="icon-current"
@@ -96,10 +86,20 @@ export default function Assessments() {
 
             <div className=" box-style">
               <OverviewBox
+                leftTop="Average Time Spent"
+                leftBottom1="12hrs"
+                rightMiddle={
+                  <LuTimer size={20} color="#886C09" className="icon-current" />
+                }
+              />
+            </div>
+
+            <div className=" box-style">
+              <OverviewBox
                 leftTop="Completed Assessment"
                 leftBottom1="23"
                 rightMiddle={
-                  <CgFileDocument
+                  <FiCheckSquare
                     size={20}
                     color="#540A7D"
                     className="icon-current"
@@ -122,7 +122,7 @@ export default function Assessments() {
                   <div
                     className="courses-card"
                     key={id}
-                    onClick={() => navigate(`/courses/${title}`)}
+                    onClick={() => navigate(`/assessments/${title}`)}
                   >
                     <div className="course-image">
                       <img src={img} alt="course-name" />

@@ -5,6 +5,7 @@ import Schedule from "./features/schedule/Schedule";
 import Courses from "./features/courses/Courses";
 import CourseModules from "./features/courses/CourseModules";
 import Assessments from "./features/assessments/Assessments";
+import AssessmentModules from "./features/assessments/AssessmentModules";
 
 function App() {
   return (
@@ -16,6 +17,10 @@ function App() {
         <Route path="courses" element={<Courses />} />
         <Route path="/courses/:courseTitle" element={<CourseModules />} />
         <Route path="assessments" element={<Assessments />} />
+        <Route
+          path="/assessments/:courseTitle"
+          element={<AssessmentModules />}
+        />
       </Routes>
     </Router>
   );

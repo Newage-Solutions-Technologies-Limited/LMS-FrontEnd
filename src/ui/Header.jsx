@@ -38,12 +38,13 @@ function Header({ title, showDate }) {
       </div>
 
       <div className="inputs aside">
-        <select className="select">
+        <select id="session" className="select">
           <option value="">2023/2024</option>
           <option value="">2024/2025</option>
         </select>
 
         <select
+          id="semester"
           className="select"
           value={current}
           onChange={(e) => setCurrent(e.target.value)}

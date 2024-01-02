@@ -22,7 +22,7 @@ function NavBar() {
 
       <div className="search">
         <IoSearchOutline color="#A1A1AA" size={18} className="search-icon" />
-        <input type="search" placeholder="Search" />
+        <input id="search" type="search" placeholder="Search" />
       </div>
 
       <div className="icons ">

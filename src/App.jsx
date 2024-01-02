@@ -4,6 +4,7 @@ import LoginPage from "./features/loginpage/LoginPage";
 import Schedule from "./features/schedule/Schedule";
 import Courses from "./features/courses/Courses";
 import CourseModules from "./features/courses/CourseModules";
+import Assessments from "./features/assessments/Assessments";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="schedule" element={<Schedule />} />
         <Route path="courses" element={<Courses />} />
         <Route path="/courses/:courseTitle" element={<CourseModules />} />
+        <Route path="assessments" element={<Assessments />} />
       </Routes>
     </Router>
   );

@@ -1,25 +1,48 @@
+// import { useState } from "react";
+import { useParams } from "react-router-dom";
+import { courses } from "../../features/courses/CoursesData";
 import PropTypes from "prop-types";
-import "../../features/courses/Courses.css";
 import preview from "../../assets/pdf-preview.png";
 import assignment from "../../assets/sample.pdf";
+import emptyFolder from "../../assets/empty.svg";
 import Button from "../Button";
+import "./Steps.css";
 
 export default function AssignmentContent() {
+  const { courseTitle } = useParams();
+  const selectedCourse = courses.find((course) => course.title === courseTitle);
+  // const [assignments, setAssignments] = useState(null);
+
+  // function handleViewDetails(item) {
+  //   setAssignments(item);
+  // }
+
   return (
     <>
-      <Assignment
-        fileNo={1}
-        fileFormat="DOCX"
-        fileName="Assignment Document"
-        filePath={assignment}
-      />
-      <Assignment
-        fileNo={2}
-        fileFormat="PDF"
-        fileName="Assignment Document"
-        filePath={assignment}
-        marked={true}
-      />
+      {selectedCourse.progress === 100 ? (
+        <div className="empty-assignment">
+          <img src={emptyFolder} alt="empty" width="25%" />
+
+          <h4>Nothing on your assignment board right now!</h4>
+          <p>Check back later for new assignments</p>
+        </div>
+      ) : (
+        <>
+          <Assignment
+            fileNo={1}
+            fileFormat="DOCX"
+            fileName="Assignment Document"
+            filePath={assignment}
+          />
+          <Assignment
+            fileNo={2}
+            fileFormat="PDF"
+            fileName="Assignment Document"
+            filePath={assignment}
+            marked={true}
+          />
+        </>
+      )}
     </>
   );
 }

@@ -1,7 +1,7 @@
 import CourseBox from "../course-box/CourseBox";
 import { GoLink } from "react-icons/go";
 import { FiDownloadCloud } from "react-icons/fi";
-import "../../features/courses/Courses.css";
+import "./Steps.css";
 
 export default function ResourcesContent() {
   return (

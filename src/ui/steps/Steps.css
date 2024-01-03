@@ -8,7 +8,6 @@
 .steps .numbers {
   display: flex;
   border-bottom: 1px solid #dde1e6;
-  /* max-width: 100%; */
 }
 
 /* .steps .step-message {

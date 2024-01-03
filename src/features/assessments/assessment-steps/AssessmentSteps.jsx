@@ -1,14 +1,17 @@
 import { useState } from "react";
 import PropTypes from "prop-types";
+import PracticeQuiz from "./practice-quiz/PracticeQuiz";
 import "../Assessments.css";
 
 const messages = [
   // eslint-disable-next-line react/jsx-key
-  "Still under construction 1",
+  <PracticeQuiz />,
   // eslint-disable-next-line react/jsx-key
-  "Still under construction 2",
+  "Nothing assessments to show yet!",
   // eslint-disable-next-line react/jsx-key
   "Still under construction 3",
+  // eslint-disable-next-line react/jsx-key
+  "No examinations to display yet",
 ];
 
 function getStepName(step) {
@@ -16,8 +19,10 @@ function getStepName(step) {
     case 1:
       return "Practice Quiz";
     case 2:
-      return "Assignment";
+      return "Continuous Assessment";
     case 3:
+      return "Assignment";
+    case 4:
       return "Exams";
     default:
       return "";
@@ -42,7 +47,7 @@ function Step() {
   return (
     <div className="steps">
       <div className="numbers">
-        {[1, 2, 3, 4, 5].map((s) => (
+        {[1, 2, 3, 4].map((s) => (
           <div
             key={s}
             className={step === s ? "active" : ""}

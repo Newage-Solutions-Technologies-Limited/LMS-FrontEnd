@@ -1,0 +1,260 @@
+.assessment-steps .practice-notice {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  border: 1px solid #008688;
+  border-radius: 12px;
+  padding: 10px 20px;
+}
+
+.assessment-steps .practice-notice h4 {
+  color: #008688;
+}
+
+.assessment-steps .practice-notice span {
+  font-size: 16px;
+  font-weight: 900;
+}
+
+.my-assessments {
+  padding-top: 30px;
+}
+
+.my-assessments h4 {
+  color: #000;
+  font-size: 16px;
+}
+
+.my-assessments .my-classes .session .session-icon {
+  background: #f4fafb;
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+}
+
+.my-assessments .my-classes .session .session-icon.active {
+  border-color: #008688;
+}
+
+.my-assessments .my-classes .session .session-sort {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  border-radius: 8px;
+}
+
+.my-assessments .my-classes .session .session-sort > span {
+  font-size: 14px;
+  cursor: default;
+}
+
+.my-assessments .all-assessments {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 10px;
+  row-gap: 20px;
+}
+
+.my-assessments .all-assessments .courses-card {
+  width: 250px;
+  height: 370px;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  background-color: #fff;
+}
+
+.my-assessments .all-assessments .courses-card .course-image {
+  width: 100%;
+  overflow: hidden;
+  padding: 8px 0;
+  text-align: center;
+  background: linear-gradient(0deg, #e8efeb, #e8efeb),
+    linear-gradient(0deg, #f0f0f0, #f0f0f0);
+}
+
+.my-assessments .all-assessments .courses-card .course-image img {
+  width: 90%;
+  border-radius: 8px;
+  object-fit: contain;
+  transition: transform 0.4s;
+}
+
+.my-assessments .all-assessments .courses-card .course-image img:hover {
+  transform: scale(1.2);
+}
+
+.my-assessments .all-assessments .courses-card .course-details {
+  padding: 10px 12px 0;
+}
+
+.my-assessments .all-assessments .courses-card .course-details .course-title {
+  height: 5vh;
+}
+
+.my-assessments .all-assessments .courses-card .course-details .course-label {
+  color: #000;
+  font-size: 11px;
+  margin-right: 3px;
+}
+
+.all-assessments .courses-card .course-details .course-units {
+  margin-right: 13px;
+}
+
+.all-assessments .courses-card .btn-on,
+table .btn-on {
+  color: #008688;
+  border: 1px solid #008688;
+  padding: 10px 12px;
+  border-radius: 8px;
+  background: none;
+  font-family: "MetaPro Regular", sans-serif;
+}
+
+.all-assessments .courses-card .btn-on,
+.all-assessments .courses-card .btn-off {
+  margin: 12px 12px 0;
+}
+
+.all-assessments .courses-card .btn-on:hover,
+table .btn-on:hover {
+  color: #fff;
+  background-color: #008688;
+}
+
+.all-assessments .courses-card .btn-off,
+table .btn-off {
+  color: #8f8f91;
+  border: 1px solid #8f8f91;
+  padding: 10px 12px;
+  border-radius: 8px;
+  background: none;
+
+  font-family: "MetaPro Regular", sans-serif;
+}
+
+/* Unavailable courses */
+.all-assessments .courses-card {
+  position: relative;
+}
+
+.all-assessments .courses-card.unavailable {
+  pointer-events: none;
+}
+
+.all-assessments .courses-card.unavailable::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #202928a6;
+  z-index: 1;
+  border-radius: 12px;
+}
+
+.all-assessments .unavailable-overlay {
+  position: absolute;
+  place-content: center;
+  text-align: center;
+  z-index: 2;
+  top: 25%;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 0 16px;
+  color: #fff;
+}
+
+/* List View */
+table {
+  font-family: "MetaPro Regular", sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  border: 1px solid #f2f2f2;
+  border-radius: 12px;
+}
+
+.availability-icon {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+td,
+th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+td {
+  height: 10vh;
+}
+
+tr:nth-child(even) {
+  background: linear-gradient(
+      0deg,
+      rgba(85, 86, 90, 0.12),
+      rgba(85, 86, 90, 0.12)
+    ),
+    linear-gradient(0deg, #fcfcfc, #fcfcfc);
+}
+
+tr:hover {
+  background-color: #d6eeee;
+}
+
+.table th,
+.table td {
+  border: none; /* Remove borders from inner cells */
+  padding: 8px; /* Add padding to cells for spacing */
+}
+
+.table th {
+  background-color: #f2f2f2; /* Background color for header */
+}
+
+table .available {
+  color: #000;
+}
+
+table .unavailable {
+  color: #8f8f91;
+  pointer-events: none;
+}
+
+/* ... (existing CSS) */
+
+.availability-icon {
+  position: relative;
+}
+
+.availability-icon .tooltip {
+  display: none;
+  position: absolute;
+  bottom: 30px; /* Adjust this value to position the tooltip above the icon */
+  background-color: #f7f8fc;
+  color: #000;
+  padding: 8px 10px;
+  border-radius: 30px;
+  font-size: 11px;
+  width: 150%;
+  text-align: center;
+}
+
+.availability-icon .tooltip h4 {
+  font-size: 14px;
+  color: #000;
+}
+
+.availability-icon .tooltip p {
+  color: #8f8f91;
+  font-weight: 100;
+  font-size: 11px;
+}
+
+.availability-icon.tooltip-visible .tooltip {
+  display: block;
+}

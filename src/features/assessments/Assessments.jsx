@@ -111,7 +111,7 @@ export default function Assessments() {
 
           <div className="course-gallery">
             <div className="my-classes">
-              <h4>My Courses</h4>
+              <h4>Choose Course</h4>
             </div>
 
             <div className="all-courses">

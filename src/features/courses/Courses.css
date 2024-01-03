@@ -47,10 +47,10 @@ select option:hover {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   column-gap: 10px;
-  grid-gap: 10px;
+  row-gap: 20px;
 }
 
-.courses-card {
+.all-courses .courses-card {
   width: 250px;
   height: 350px;
   border-width: 0, 1px, 1px, 1px;
@@ -61,24 +61,24 @@ select option:hover {
     linear-gradient(0deg, #ffffff, #ffffff);
 }
 
-.courses-card .course-image {
+.all-courses .courses-card .course-image {
   width: 100%;
   overflow: hidden;
   position: relative;
 }
 
-.courses-card .course-image img {
+.all-courses .courses-card .course-image img {
   width: 100%;
   border-radius: 8px;
   object-fit: contain;
   transition: transform 0.4s;
 }
 
-.courses-card .course-image img:hover {
+.all-courses .courses-card .course-image img:hover {
   transform: scale(1.2);
 }
 
-.course-tag-uncompleted {
+.all-courses .course-tag-uncompleted {
   font-size: 10px;
   padding: 3px 5px;
   color: #946300;
@@ -168,10 +168,6 @@ progress[value]::-webkit-progress-value {
 .lecturers {
   display: block;
 }
-
-/* .course-rating .rating .rating-icon {
-  background-color: #fdb022;
-} */
 
 .course-units {
   margin-right: 14px;

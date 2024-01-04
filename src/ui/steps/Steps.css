@@ -138,6 +138,12 @@
   text-align: center;
 }
 
+.empty-assignment h4 {
+  font-weight: 900;
+  font-size: 15px;
+  color: #0e1919;
+}
+
 .file-container {
   padding: 20px;
   border: 1px solid #ddd;
@@ -308,7 +314,7 @@
 
 .notes-contents .empty-notes {
   text-align: center;
-  margin-top: 70px;
+  margin-top: 50px;
 }
 
 .notes-contents .empty-notes h4 {

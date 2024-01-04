@@ -101,7 +101,7 @@ function Assignment({
 
             <div className="assignment-file-btn">
               <Button
-                width={30}
+                width={35}
                 fontsize={14}
                 fontweight={900}
                 color="#008688"

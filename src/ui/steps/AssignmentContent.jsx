@@ -11,11 +11,6 @@ import "./Steps.css";
 export default function AssignmentContent() {
   const { courseTitle } = useParams();
   const selectedCourse = courses.find((course) => course.title === courseTitle);
-  // const [assignments, setAssignments] = useState(null);
-
-  // function handleViewDetails(item) {
-  //   setAssignments(item);
-  // }
 
   return (
     <>

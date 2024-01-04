@@ -1,15 +1,16 @@
 import { useState } from "react";
 import PropTypes from "prop-types";
 import PracticeQuiz from "./practice-quiz/PracticeQuiz";
+import AssigmentAssessment from "./assignment/AssignmentAssessment";
 import "../Assessments.css";
 
 const messages = [
   // eslint-disable-next-line react/jsx-key
   <PracticeQuiz />,
   // eslint-disable-next-line react/jsx-key
-  "Nothing assessments to show yet!",
+  <AssigmentAssessment />,
   // eslint-disable-next-line react/jsx-key
-  "Still under construction 3",
+  "No continuous Assessment to display yet",
   // eslint-disable-next-line react/jsx-key
   "No examinations to display yet",
 ];
@@ -19,9 +20,9 @@ function getStepName(step) {
     case 1:
       return "Practice Quiz";
     case 2:
-      return "Continuous Assessment";
-    case 3:
       return "Assignment";
+    case 3:
+      return "Continuous Assessment";
     case 4:
       return "Exams";
     default:

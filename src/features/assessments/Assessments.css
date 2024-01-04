@@ -1,3 +1,5 @@
+/* Practice Quiz step */
+/* Grid view */
 .assessment-steps .practice-notice {
   display: flex;
   align-items: center;
@@ -194,12 +196,7 @@ td {
 }
 
 tr:nth-child(even) {
-  background: linear-gradient(
-      0deg,
-      rgba(85, 86, 90, 0.12),
-      rgba(85, 86, 90, 0.12)
-    ),
-    linear-gradient(0deg, #fcfcfc, #fcfcfc);
+  background-color: #f4fafb;
 }
 
 tr:hover {
@@ -208,12 +205,12 @@ tr:hover {
 
 .table th,
 .table td {
-  border: none; /* Remove borders from inner cells */
-  padding: 8px; /* Add padding to cells for spacing */
+  border: none;
+  padding: 8px;
 }
 
 .table th {
-  background-color: #f2f2f2; /* Background color for header */
+  background-color: #f4fafb;
 }
 
 table .available {
@@ -225,8 +222,6 @@ table .unavailable {
   pointer-events: none;
 }
 
-/* ... (existing CSS) */
-
 .availability-icon {
   position: relative;
 }
@@ -234,27 +229,105 @@ table .unavailable {
 .availability-icon .tooltip {
   display: none;
   position: absolute;
-  bottom: 30px; /* Adjust this value to position the tooltip above the icon */
-  background-color: #f7f8fc;
+  bottom: 30px;
   color: #000;
-  padding: 8px 10px;
-  border-radius: 30px;
-  font-size: 11px;
+  padding: 5px 8px;
+  background-color: #3e3d3d;
+  border-radius: 15px;
+  border: 1px solid #f2f2f2;
   width: 150%;
   text-align: center;
 }
 
 .availability-icon .tooltip h4 {
   font-size: 14px;
-  color: #000;
+  color: #e9e4e4;
 }
 
 .availability-icon .tooltip p {
-  color: #8f8f91;
+  color: #b3b3b9;
   font-weight: 100;
-  font-size: 11px;
+  font-size: 13px;
 }
 
 .availability-icon.tooltip-visible .tooltip {
   display: block;
+}
+
+/* Assignment step */
+.assessment-assignment-menu {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.assessment-assignment-menu .menu-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.assessment-assignment-menu .menu-link .menu-icon {
+  margin-right: 8px;
+  font-family: "MetaPro Bold", sans-serif;
+  font-weight: 700;
+}
+
+.assessment-assignment-menu .count {
+  border: 1px solid #f53a51;
+  background-color: #f53a51;
+  color: #fff;
+  padding: 3px 8px 4px;
+  border-radius: 50%;
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.assessment-assignment-section {
+  padding: 0 20px;
+  font-family: "MetaPro Regular", sans-serif;
+}
+
+.step-content {
+  height: 55vh;
+  overflow-y: scroll;
+}
+
+.assessment-assignment-steps {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  column-gap: 10px;
+}
+
+.assessment-assignment-steps .all-steps {
+  border-right: 1px solid #dde1e6;
+  padding: 0 12px;
+}
+
+.assessment-assignment-steps .all-steps .step-title {
+  padding: 3px 12px;
+  text-align: center;
+  color: #374151;
+  /* margin-bottom: 20px; */
+}
+
+.assessment-assignment-steps .all-steps .active {
+  border: 1px solid #f4f4f4;
+  border-radius: 12px;
+  color: #374151;
+  font-weight: 600;
+  background-color: #f4f4f4;
+}
+
+.assessment-assignment-steps .all-steps .step-title:hover {
+  cursor: pointer;
+  color: #008688;
+  font-weight: 600;
+}
+
+.assessment-assignment-steps .message {
+  font-size: 13px;
+  margin: 0;
+  color: #4b5563;
 }

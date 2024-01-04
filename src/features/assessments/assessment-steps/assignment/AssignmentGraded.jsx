@@ -6,20 +6,19 @@ import preview from "../../../../assets/pdf-preview.png";
 import assignment from "../../../../assets/sample.pdf";
 import emptyFolder from "../../../../assets/empty.svg";
 import Button from "../../../../ui/Button";
-// import "./Steps.css";
 
-export default function AssignmentPending() {
+export default function AssignmentGraded() {
   const { courseTitle } = useParams();
   const selectedCourse = courses.find((course) => course.title === courseTitle);
 
   return (
     <>
-      {selectedCourse.progress === 100 ? (
+      {selectedCourse.progress < 100 ? (
         <div className="empty-assignment">
           <img src={emptyFolder} alt="empty" width="25%" />
 
-          <h4>You have no assignments pending!</h4>
-          <p>Check back later for new assignments</p>
+          <h4>You do not have any graded assignments yet!</h4>
+          <p>Please complete the assignments in the pending board.</p>
         </div>
       ) : (
         <>
@@ -28,14 +27,15 @@ export default function AssignmentPending() {
             fileFormat="DOCX"
             fileName="Assignment Document"
             filePath={assignment}
+            score={3}
             totalMark={5}
-            marked={true}
           />
           <Assignment
             fileNo={2}
             fileFormat="PDF"
             fileName="Assignment Document"
             filePath={assignment}
+            score={4}
             totalMark={10}
           />
         </>
@@ -50,7 +50,7 @@ Assignment.propTypes = {
   filePath: PropTypes.string,
   fileFormat: PropTypes.string,
   totalMark: PropTypes.number,
-  marked: PropTypes.bool,
+  score: PropTypes.number,
 };
 
 function Assignment({
@@ -59,7 +59,7 @@ function Assignment({
   filePath,
   fileNo,
   totalMark,
-  marked = false,
+  score,
 }) {
   return (
     <div className="assessment-assignment-section">
@@ -84,8 +84,12 @@ function Assignment({
             </div>
 
             <div>
-              <span className={marked ? "almost-expired" : "deadline"}>
-                {marked ? "2 days left" : "Deadline: Jan. 12, 2024"}
+              <span
+                className={
+                  score <= totalMark * 0.4 ? "almost-expired" : "marked"
+                }
+              >
+                Your score: {score}/{totalMark}
               </span>
             </div>
           </div>
@@ -101,7 +105,7 @@ function Assignment({
 
             <div className="assignment-file-btn">
               <Button
-                width={30}
+                width={40}
                 fontsize={14}
                 fontweight={900}
                 color="#008688"
@@ -109,7 +113,7 @@ function Assignment({
                 bordercolor="#008688"
                 hoverin="#d6e9e9"
               >
-                Submit now
+                View Details
               </Button>
             </div>
           </div>

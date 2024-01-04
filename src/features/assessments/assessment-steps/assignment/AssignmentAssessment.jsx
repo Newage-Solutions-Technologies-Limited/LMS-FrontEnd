@@ -4,16 +4,18 @@ import { useParams } from "react-router-dom";
 import { courses } from "../../../courses/CoursesData";
 import PropTypes from "prop-types";
 import AssignmentPending from "./AssignmentPending";
+import AssignmentSubmitted from "./AssignmentSubmitted";
 import { IoHelpCircleOutline, IoCheckmarkDone } from "react-icons/io5";
 import { IoMdCheckboxOutline } from "react-icons/io";
+import AssignmentGraded from "./AssignmentGraded";
 
 const messages = [
   // eslint-disable-next-line react/jsx-key
   <AssignmentPending />,
   // eslint-disable-next-line react/jsx-key
-  "NA",
+  <AssignmentSubmitted />,
   // eslint-disable-next-line react/jsx-key
-  "NA",
+  <AssignmentGraded />,
 ];
 
 function getStepName(step, checkPending) {
@@ -22,7 +24,7 @@ function getStepName(step, checkPending) {
       return (
         <p className="assessment-assignment-menu">
           <span className="menu-link">
-            <IoHelpCircleOutline className="menu-icon" size={20} />
+            <IoHelpCircleOutline className="menu-icon" size={24} />
             PENDING
           </span>
 

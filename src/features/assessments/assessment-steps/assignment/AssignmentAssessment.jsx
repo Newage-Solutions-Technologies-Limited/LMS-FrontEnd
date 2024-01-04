@@ -8,15 +8,7 @@ import AssignmentSubmitted from "./AssignmentSubmitted";
 import { IoHelpCircleOutline, IoCheckmarkDone } from "react-icons/io5";
 import { IoMdCheckboxOutline } from "react-icons/io";
 import AssignmentGraded from "./AssignmentGraded";
-
-const messages = [
-  // eslint-disable-next-line react/jsx-key
-  <AssignmentPending />,
-  // eslint-disable-next-line react/jsx-key
-  <AssignmentSubmitted />,
-  // eslint-disable-next-line react/jsx-key
-  <AssignmentGraded />,
-];
+import AssignmentSubmit from "./AssignmentSubmit";
 
 function getStepName(step, checkPending) {
   switch (step) {
@@ -59,14 +51,36 @@ function getStepName(step, checkPending) {
 }
 
 export default function AssignmentAssessment() {
+  const [submissionStatus, setSubmissionStatus] = useState(false);
+
+  function handleSubmission() {
+    setSubmissionStatus(true);
+  }
+
   return (
     <div>
-      <Step />
+      {!submissionStatus ? (
+        <Step onSubmitNow={handleSubmission} />
+      ) : (
+        <AssignmentSubmit />
+      )}
     </div>
   );
 }
 
-function Step() {
+Step.propTypes = {
+  onSubmitNow: PropTypes.func,
+};
+
+function Step({ onSubmitNow }) {
+  const messages = [
+    // eslint-disable-next-line react/jsx-key
+    <AssignmentPending onSubmitNow={onSubmitNow} />,
+    // eslint-disable-next-line react/jsx-key
+    <AssignmentSubmitted />,
+    // eslint-disable-next-line react/jsx-key
+    <AssignmentGraded />,
+  ];
   const { courseTitle } = useParams();
   const selectedCourse = courses.find((course) => course.title === courseTitle);
   const { progress } = selectedCourse;

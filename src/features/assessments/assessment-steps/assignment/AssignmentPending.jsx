@@ -6,9 +6,12 @@ import preview from "../../../../assets/pdf-preview.png";
 import assignment from "../../../../assets/sample.pdf";
 import emptyFolder from "../../../../assets/empty.svg";
 import Button from "../../../../ui/Button";
-// import "./Steps.css";
 
-export default function AssignmentPending() {
+AssignmentPending.propTypes = {
+  onSubmitNow: PropTypes.func,
+};
+
+export default function AssignmentPending({ onSubmitNow }) {
   const { courseTitle } = useParams();
   const selectedCourse = courses.find((course) => course.title === courseTitle);
 
@@ -30,6 +33,7 @@ export default function AssignmentPending() {
             filePath={assignment}
             totalMark={5}
             marked={true}
+            onSubmitNow={onSubmitNow}
           />
           <Assignment
             fileNo={2}
@@ -37,6 +41,7 @@ export default function AssignmentPending() {
             fileName="Assignment Document"
             filePath={assignment}
             totalMark={10}
+            onSubmitNow={onSubmitNow}
           />
         </>
       )}
@@ -51,6 +56,7 @@ Assignment.propTypes = {
   fileFormat: PropTypes.string,
   totalMark: PropTypes.number,
   marked: PropTypes.bool,
+  onSubmitNow: PropTypes.func,
 };
 
 function Assignment({
@@ -60,6 +66,7 @@ function Assignment({
   fileNo,
   totalMark,
   marked = false,
+  onSubmitNow,
 }) {
   return (
     <div className="assessment-assignment-section">
@@ -108,6 +115,7 @@ function Assignment({
                 borderradius={12}
                 bordercolor="#008688"
                 hoverin="#d6e9e9"
+                onClick={onSubmitNow}
               >
                 Submit now
               </Button>

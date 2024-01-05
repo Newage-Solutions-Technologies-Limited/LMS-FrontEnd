@@ -26,8 +26,10 @@ export default function ModalPracticeQuiz({ isOpen, onClose, selectedModule }) {
         style={modalStyle}
         onClick={(e) => e.stopPropagation()}
       >
-        <div className="close">
-          <span onClick={onClose}>&times;</span>
+        <div className="close-container">
+          <span className="close" onClick={onClose}>
+            &times;
+          </span>
         </div>
 
         {selectedModule && (

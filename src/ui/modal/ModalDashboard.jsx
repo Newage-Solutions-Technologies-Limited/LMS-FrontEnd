@@ -47,8 +47,10 @@ export default function ModalDashboard({
         style={modalStyle}
         onClick={(e) => e.stopPropagation()}
       >
-        <div className="close">
-          <span onClick={onClose}>&times;</span>
+        <div className="close-container">
+          <span className="close" onClick={onClose}>
+            &times;
+          </span>
         </div>
 
         <h3>

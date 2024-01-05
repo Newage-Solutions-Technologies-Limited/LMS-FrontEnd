@@ -89,10 +89,13 @@
   padding: 20px 60px !important;
 }
 
+.close-container {
+  text-align: end;
+}
+
 .close {
   font-size: 40px;
   font-weight: bold;
-  text-align: end;
   line-height: 0.5;
   cursor: default;
 }

@@ -5,15 +5,6 @@ import { courses } from "../../../courses/CoursesData";
 import PropTypes from "prop-types";
 import AssignmentQuestions from "./AssignmentQuestions";
 
-const messages = [
-  // eslint-disable-next-line react/jsx-key
-  <AssignmentQuestions module={1} fileNo={1} />,
-  // eslint-disable-next-line react/jsx-key
-  <AssignmentQuestions module={1} fileNo={2} />,
-  // eslint-disable-next-line react/jsx-key
-  <AssignmentQuestions module={1} fileNo={3} />,
-];
-
 function getStepName(step) {
   switch (step) {
     case 1:
@@ -55,6 +46,15 @@ function Step() {
   const { courseTitle } = useParams();
   const selectedCourse = courses.find((course) => course.title === courseTitle);
   const [step, setStep] = useState(1);
+
+  const messages = [
+    // eslint-disable-next-line react/jsx-key
+    <AssignmentQuestions module={1} fileNo={1} />,
+    // eslint-disable-next-line react/jsx-key
+    <AssignmentQuestions module={1} fileNo={2} />,
+    // eslint-disable-next-line react/jsx-key
+    <AssignmentQuestions module={1} fileNo={3} />,
+  ];
 
   function handleStepClick(selectedStep) {
     setStep(selectedStep);

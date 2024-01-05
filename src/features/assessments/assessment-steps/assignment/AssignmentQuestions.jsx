@@ -173,7 +173,8 @@ function Assignment({
                 <SlCloudUpload size={30} color="#008688" />
               </span>
               <span>
-                Drop your file here to upload or select from storage. <br />
+                Drag and drop your file here to upload or select from storage.
+                <br />
                 Supported files: pdf, doc, docx , png. Max file size: 2MB
               </span>
             </>

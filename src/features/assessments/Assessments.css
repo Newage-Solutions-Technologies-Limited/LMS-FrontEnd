@@ -505,6 +505,9 @@ table .unavailable {
 
 .assessment-assignment-section .file-container .no-pointer-events {
   pointer-events: none;
+  color: #008688;
+  border-color: #008688;
+  background-color: #fff;
 }
 
 .assessment-assignment-section .file-container .drag-drop:hover {

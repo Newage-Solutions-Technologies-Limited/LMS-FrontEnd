@@ -5,10 +5,10 @@ import { courses } from "../../../courses/CoursesData";
 import PropTypes from "prop-types";
 import AssignmentPending from "./AssignmentPending";
 import AssignmentSubmitted from "./AssignmentSubmitted";
-import { IoHelpCircleOutline, IoCheckmarkDone } from "react-icons/io5";
-import { IoMdCheckboxOutline } from "react-icons/io";
 import AssignmentGraded from "./AssignmentGraded";
 import AssignmentSubmit from "./AssignmentSubmit";
+import { IoHelpCircleOutline, IoCheckmarkDone } from "react-icons/io5";
+import { IoMdCheckboxOutline } from "react-icons/io";
 
 function getStepName(step, checkPending) {
   switch (step) {

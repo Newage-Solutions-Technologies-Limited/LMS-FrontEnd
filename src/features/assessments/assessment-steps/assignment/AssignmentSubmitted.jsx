@@ -1,4 +1,3 @@
-// import { useState } from "react";
 import { useParams } from "react-router-dom";
 import { courses } from "../../../courses/CoursesData";
 import PropTypes from "prop-types";

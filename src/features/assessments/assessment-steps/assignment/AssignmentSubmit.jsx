@@ -3,21 +3,22 @@ import { useState } from "react";
 import { useParams } from "react-router-dom";
 import { courses } from "../../../courses/CoursesData";
 import PropTypes from "prop-types";
+import AssignmentQuestions from "./AssignmentQuestions";
 
 const messages = [
   // eslint-disable-next-line react/jsx-key
-  "Module 1",
+  <AssignmentQuestions module={1} fileNo={1} />,
   // eslint-disable-next-line react/jsx-key
-  "Module 2",
+  <AssignmentQuestions module={1} fileNo={2} />,
   // eslint-disable-next-line react/jsx-key
-  "Module 3",
+  <AssignmentQuestions module={1} fileNo={3} />,
 ];
 
 function getStepName(step) {
   switch (step) {
     case 1:
       return (
-        <div className="">
+        <div className="step-title-container">
           <h3>Module 1: Assignment 1 (5 marks)</h3>
           <p>Dec 27th, 9:00am - Jan 16th 12:00</p>
         </div>
@@ -25,14 +26,14 @@ function getStepName(step) {
 
     case 2:
       return (
-        <div className="">
+        <div className="step-title-container">
           <h3>Module 1: Assignment 2 (5 marks)</h3>
           <p>Dec 27th, 9:00am - Jan 16th 12:00</p>
         </div>
       );
     case 3:
       return (
-        <div className="">
+        <div className="step-title-container">
           <h3>Module 1: Assignment 3 (5 marks)</h3>
           <p>Dec 27th, 9:00am - Jan 16th 12:00</p>
         </div>

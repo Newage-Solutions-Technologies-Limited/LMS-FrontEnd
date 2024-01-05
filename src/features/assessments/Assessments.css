@@ -112,6 +112,7 @@ table .btn-on {
   border-radius: 8px;
   background: none;
   font-family: "MetaPro Regular", sans-serif;
+  font-weight: 900;
 }
 
 .all-assessments .courses-card .btn-on,
@@ -132,7 +133,6 @@ table .btn-off {
   padding: 10px 12px;
   border-radius: 8px;
   background: none;
-
   font-family: "MetaPro Regular", sans-serif;
 }
 
@@ -289,14 +289,9 @@ table .unavailable {
   font-family: "MetaPro Regular", sans-serif;
 }
 
-.step-content {
-  height: 55vh;
-  overflow-y: scroll;
-}
-
 .assessment-assignment-steps {
   display: grid;
-  grid-template-columns: 200px 1fr;
+  grid-template-columns: 300px 1fr;
   column-gap: 10px;
 }
 
@@ -305,11 +300,22 @@ table .unavailable {
   padding: 0 12px;
 }
 
+.step-content {
+  height: 55vh;
+  overflow-y: scroll;
+}
+
 .assessment-assignment-steps .all-steps .step-title {
   padding: 3px 12px;
-  text-align: center;
-  color: #374151;
-  /* margin-bottom: 20px; */
+  color: #000;
+}
+
+.step-title-container {
+  margin-bottom: 20px;
+}
+
+.step-title-container p {
+  color: #8f8f91;
 }
 
 .assessment-assignment-steps .all-steps .active {
@@ -347,6 +353,16 @@ table .unavailable {
   display: flex;
   align-items: center;
   gap: 20px;
+}
+
+.assessment-assignment-section .file-container .question .question-due {
+  display: flex;
+  gap: 7px;
+  font-size: 11px;
+}
+
+.assessment-assignment-section .file-container .question .question-due span {
+  font-weight: 900;
 }
 
 .assignment-file-container .assignment-file-container-date {
@@ -445,4 +461,91 @@ table .unavailable {
 .assignment-file-container .assignment-file-foot .assignment-file-btn {
   width: 50%;
   text-align: end;
+}
+
+.assessment-assignment-section .file-container .line {
+  border-bottom: 1px solid #e5e7eb;
+  padding-top: 25px;
+}
+
+.assessment-assignment-section .file-container .submit-assignment {
+  padding-top: 15px;
+  width: 100%;
+}
+
+.assessment-assignment-section .file-container .submit-assignment h4 {
+  color: #000;
+}
+
+.assessment-assignment-section .file-container .submit-assignment textarea {
+  width: 90%;
+  border: 1px solid #e5e7eb;
+  outline: none;
+  padding: 20px;
+  font-family: "MetaPro Regular", sans-serif;
+  border-radius: 8px;
+}
+
+.assessment-assignment-section .file-container .drag-drop {
+  height: 30vh;
+  padding: 20px;
+  width: 90%;
+  border: 2px dashed #e5e7eb;
+  margin-top: 20px;
+  background: none;
+  border-radius: 8px;
+  display: grid;
+  place-content: center;
+  text-align: center;
+}
+
+.assessment-assignment-section .file-container .pointer-events {
+  cursor: pointer;
+}
+
+.assessment-assignment-section .file-container .no-pointer-events {
+  pointer-events: none;
+}
+
+.assessment-assignment-section .file-container .drag-drop:hover {
+  color: #008688;
+  border-color: #008688;
+  background-color: #fff;
+}
+
+.assessment-assignment-section .file-container .drag-drop .drag-drop-upload {
+  color: #008688;
+}
+
+.assessment-assignment-section .file-container .assignment-submit-btn {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.assignment-submit-btn .btn-on {
+  color: #008688;
+  border: 1px solid #008688;
+  padding: 12px 40px;
+  border-radius: 8px;
+  background: none;
+  font-family: "MetaPro Regular", sans-serif;
+  width: 30%;
+  font-weight: 900;
+}
+
+.assignment-submit-btn .btn-off {
+  color: #9ca3af;
+  border: 1px solid #e5e7eb;
+  width: 30%;
+  padding: 12px 40px;
+  border-radius: 8px;
+  background: #e5e7eb;
+  font-family: "MetaPro Regular", sans-serif;
+  pointer-events: none;
+  font-weight: 900;
+}
+
+.assignment-submit-btn .btn-on:hover {
+  color: #fff;
+  background-color: #008688;
 }

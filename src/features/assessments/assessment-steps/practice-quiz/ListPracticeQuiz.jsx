@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 import { IoLockOpenOutline, IoLockClosedOutline } from "react-icons/io5";
 import { FaCircleInfo } from "react-icons/fa6";
 import "../../Assessments.css";
+import ModalPracticeQuiz from "../../../../ui/modal/ModalPracticeQuiz";
 
 ListPracticeQuiz.propTypes = {
   sortedModules: PropTypes.array,
@@ -12,6 +13,18 @@ ListPracticeQuiz.propTypes = {
 
 export default function ListPracticeQuiz({ sortedModules, selectedCourse }) {
   const [tooltipVisible, setTooltipVisible] = useState(false);
+  const [isModalOpen, setModalOpen] = useState(false);
+  const [selectedModule, setSelectedModule] = useState(null);
+
+  const openModal = (module) => {
+    setSelectedModule(module);
+    setModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setSelectedModule(null);
+    setModalOpen(false);
+  };
 
   const toggleTooltip = () => {
     setTooltipVisible(!tooltipVisible);
@@ -110,9 +123,20 @@ export default function ListPracticeQuiz({ sortedModules, selectedCourse }) {
                   )}
                 </td>
                 <td>
-                  <button className={isAvailable ? "btn-on" : "btn-off"}>
+                  <button
+                    onClick={() =>
+                      openModal({ module, index, parentObject: selectedCourse })
+                    }
+                    className={isAvailable ? "btn-on" : "btn-off"}
+                  >
                     Start Quiz
                   </button>
+
+                  <ModalPracticeQuiz
+                    isOpen={isModalOpen}
+                    onClose={closeModal}
+                    selectedModule={selectedModule}
+                  />
                 </td>
               </tr>
             );

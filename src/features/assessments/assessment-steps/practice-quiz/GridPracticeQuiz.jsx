@@ -1,6 +1,7 @@
-/* eslint-disable no-unused-vars */
+import { useState } from "react";
 import PropTypes from "prop-types";
 import { IoLockOpenOutline, IoLockClosedOutline } from "react-icons/io5";
+import ModalPracticeQuiz from "../../../../ui/modal/ModalPracticeQuiz";
 import "../../Assessments.css";
 
 GridPracticeQuiz.propTypes = {
@@ -10,6 +11,18 @@ GridPracticeQuiz.propTypes = {
 
 export default function GridPracticeQuiz({ sortedModules, selectedCourse }) {
   const { lecturers, img } = selectedCourse;
+  const [isModalOpen, setModalOpen] = useState(false);
+  const [selectedModule, setSelectedModule] = useState(null);
+
+  const openModal = (module) => {
+    setSelectedModule(module);
+    setModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setSelectedModule(null);
+    setModalOpen(false);
+  };
 
   return (
     <>
@@ -70,9 +83,20 @@ export default function GridPracticeQuiz({ sortedModules, selectedCourse }) {
                   </span>
                 </span>
               </div>
-              <button className={isAvailable ? "btn-on" : "btn-off"}>
+              <button
+                onClick={() =>
+                  openModal({ module, index, parentObject: selectedCourse })
+                }
+                className={isAvailable ? "btn-on" : "btn-off"}
+              >
                 Start Quiz
               </button>
+
+              <ModalPracticeQuiz
+                isOpen={isModalOpen}
+                onClose={closeModal}
+                selectedModule={selectedModule}
+              />
             </div>
           );
         })}

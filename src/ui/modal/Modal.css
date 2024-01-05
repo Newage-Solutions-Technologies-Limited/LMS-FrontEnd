@@ -8,6 +8,11 @@
   background-color: rgba(0, 0, 0, 0.6);
   justify-content: center;
   align-items: center;
+  z-index: 3;
+}
+
+.practice-quiz-modal {
+  background-color: rgba(0, 0, 0, 0.3);
 }
 
 .modal.open {
@@ -154,4 +159,56 @@
   display: flex;
   justify-content: space-around;
   margin-top: 20px;
+}
+
+/* Practice Quiz Modal */
+.practice-modal-header {
+  margin-bottom: 30px;
+}
+
+.practice-modal-header h2 {
+  color: #000;
+  font-weight: bolder;
+  font-size: 28px;
+  margin: 0;
+}
+
+.practice-modal-header .sub-title {
+  font-size: 15px;
+  color: #000;
+}
+
+.practice-modal-header,
+.practice-modal-notes p {
+  color: #4f5662;
+  font-size: 12.5px;
+}
+
+.practice-modal-header p span {
+  font-weight: bold;
+}
+
+.practice-modal-options select {
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  color: #4f5662;
+  outline: none;
+  width: 60%;
+  padding: 10px 2px;
+  box-sizing: border-box;
+  font-family: "MetaPro Regular", sans-serif;
+  font-size: 13px;
+}
+
+.practice-modal-notes {
+  width: 90%;
+  margin: auto;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.practice-modal-notes h3 {
+  color: #000;
+  font-size: 14px;
+  margin: 0;
 }

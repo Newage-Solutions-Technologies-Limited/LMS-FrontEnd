@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import { useState } from "react";
 import { useParams } from "react-router-dom";
 import { courses } from "../../../courses/CoursesData";

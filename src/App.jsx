@@ -6,7 +6,7 @@ import Courses from "./features/courses/Courses";
 import CourseModules from "./features/courses/CourseModules";
 import Assessments from "./features/assessments/Assessments";
 import AssessmentModules from "./features/assessments/AssessmentModules";
-import AssignmentPending from "./features/assessments/assessment-steps/assignment/AssignmentPending";
+import QuizQuestions from "./features/assessments/assessment-steps/practice-quiz/QuizQuestions";
 
 function App() {
   return (
@@ -22,10 +22,7 @@ function App() {
           path="/assessments/:courseTitle"
           element={<AssessmentModules />}
         />
-        <Route
-          path="/assessments/pending-assignments"
-          element={<AssignmentPending />}
-        />
+        <Route path="/assessments/quiz" element={<QuizQuestions />} />
       </Routes>
     </Router>
   );

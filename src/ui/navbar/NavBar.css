@@ -112,3 +112,52 @@ nav .icons .icon .notifications {
   border-radius: 50%;
   font-family: "MetaPro Regular", sans-serif;
 }
+
+/* Navbar for Quiz */
+.quiz-navbar {
+  gap: 20px;
+}
+
+.quiz-navbar .quiz-navbar-logo img {
+  width: 50%;
+}
+
+.quiz-navbar .quiz-navbar-logo {
+  margin: 0;
+}
+
+.quiz-navbar .quiz-navbar-countdown {
+  text-align: center;
+  display: flex;
+  gap: 12px;
+  margin: auto;
+  font-family: "MetaPro Regular", sans-serif;
+}
+
+.quiz-navbar .quiz-navbar-countdown span {
+  border: 1px solid #058b8d;
+  border-radius: 8px;
+  padding: 10px 0;
+  width: 150px;
+  color: #058b8d;
+  background-color: #f3f8f8;
+  font-weight: bold;
+}
+
+.quiz-navbar .quiz-navbar-countdown .time-remaining {
+  font-size: 20px;
+}
+
+.quiz-navbar .icons .other-icons {
+  padding: 8px 0 8px 10px;
+}
+
+.quiz-navbar .icons .icon .chat {
+  top: 18px;
+  right: 290px;
+}
+
+.quiz-navbar .icons .icon .notifications {
+  top: 18px;
+  right: 235px;
+}

@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import PropTypes from "prop-types";
 import Button from "../Button";
 import "./Modal.css";
@@ -10,10 +11,15 @@ ModalPracticeQuiz.propTypes = {
 
 export default function ModalPracticeQuiz({ isOpen, onClose, selectedModule }) {
   const parentObject = selectedModule?.parentObject;
+  const navigate = useNavigate();
   console.log(selectedModule);
 
   const modalStyle = {
     display: isOpen ? "block" : "none",
+  };
+
+  const startQuiz = () => {
+    navigate("/assessments/quiz");
   };
 
   return (
@@ -83,7 +89,7 @@ export default function ModalPracticeQuiz({ isOpen, onClose, selectedModule }) {
             hoverin="#1c9c9e"
             borderradius={12}
             fontsize={14}
-            // onClick={() => onDelete(index)}
+            onClick={startQuiz}
           >
             Start quiz
           </Button>

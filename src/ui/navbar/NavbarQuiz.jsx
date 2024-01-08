@@ -9,7 +9,7 @@ import {
 import "./NavBar.css";
 
 export default function NavBarQuiz() {
-  const [seconds, setSeconds] = useState(30);
+  const [seconds, setSeconds] = useState(15);
 
   useEffect(() => {
     if (seconds > 0) {
@@ -30,7 +30,9 @@ export default function NavBarQuiz() {
 
       <div className="quiz-navbar-countdown">
         <span>Time Remaining:</span>
-        <span className="time-remaining">
+        <span
+          className={seconds < 6 ? "time-remaining critical" : "time-remaining"}
+        >
           00:{String(seconds).padStart(2, "0")}
         </span>
       </div>

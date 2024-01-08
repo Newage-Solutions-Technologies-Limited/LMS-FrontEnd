@@ -116,6 +116,8 @@ nav .icons .icon .notifications {
 /* Navbar for Quiz */
 .quiz-navbar {
   gap: 20px;
+  position: fixed;
+  background-color: #fff;
 }
 
 .quiz-navbar .quiz-navbar-logo img {
@@ -148,16 +150,21 @@ nav .icons .icon .notifications {
   font-size: 20px;
 }
 
+.quiz-navbar .quiz-navbar-countdown .critical {
+  border: 1px solid #fb7b7b;
+  color: #f53a51;
+}
+
 .quiz-navbar .icons .other-icons {
   padding: 8px 0 8px 10px;
 }
 
 .quiz-navbar .icons .icon .chat {
-  top: 18px;
+  top: 20px;
   right: 290px;
 }
 
 .quiz-navbar .icons .icon .notifications {
-  top: 18px;
+  top: 20px;
   right: 235px;
 }

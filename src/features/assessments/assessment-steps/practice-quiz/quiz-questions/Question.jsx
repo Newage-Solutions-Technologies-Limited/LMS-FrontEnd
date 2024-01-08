@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
-import "../../../Assessments.css";
-import img1 from "../../../../../assets/quiz-img-1.png";
 import { useState } from "react";
+import img1 from "../../../../../assets/quiz-img-1.png";
+import "../../../Assessments.css";
 import { FaCheck } from "react-icons/fa6";
 
 export default function Question() {
@@ -14,7 +14,7 @@ export default function Question() {
       <div className="quiz-question">
         <p>
           An epidemic that becomes unusually widespread and even global in its
-          reach is referred to as a
+          reach is referred to as a/an
         </p>
       </div>
 

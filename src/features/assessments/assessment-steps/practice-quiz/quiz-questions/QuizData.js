@@ -4,7 +4,7 @@ export const quiz = [
   {
     id: 1,
     question:
-      "An epidemic that becomes unusually widespread and even global in its reach is referred to as a",
+      "An epidemic that becomes unusually widespread and even global in its reach is referred to as a/an",
     options: { a: "Pandemic", b: "Endemic", c: "Outbreak", d: "Epidemic" },
     correct: "Pandemic",
   },
@@ -13,7 +13,7 @@ export const quiz = [
     id: 2,
     img: quiz1,
     question:
-      "An disease that becomes unusually widespread within a local sphere is referred to as a",
+      "An disease that becomes unusually widespread within a local sphere is referred to as a/an",
     options: { a: "Pandemic", b: "Endemic", c: "Outbreak", d: "Epidemic" },
     correct: "Outbreak",
   },

@@ -1,14 +1,17 @@
-import NavBarQuiz from "../../../../ui/navbar/NavbarQuiz";
+/* eslint-disable no-unused-vars */
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { courses } from "../../../courses/CoursesData";
-import "../../Assessments.css";
+import NavBarQuiz from "../../../../ui/navbar/NavbarQuiz";
+import Button from "../../../../ui/Button";
 import Question from "./quiz-questions/Question";
-import { useEffect } from "react";
+import "../../Assessments.css";
 
 function QuizQuestions() {
+  const [completedQuestions, setCompletedQuestions] = useState(false);
   const { courseTitle } = useParams();
   const selectedCourse = courses.find((course) => course.title === courseTitle);
-  console.log(selectedCourse);
+  // console.log(selectedCourse);
 
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
@@ -40,6 +43,22 @@ function QuizQuestions() {
           <div>
             <Question />
           </div>
+        </div>
+      </div>
+
+      <div className="quiz-footer">
+        <div className="quiz-btns-left">
+          <button>Exit</button>
+        </div>
+        <div className="quiz-btns-right">
+          {!completedQuestions ? (
+            <div className="quiz-next-prev">
+              <button className="prev">Previous</button>
+              <button className="next">Next</button>
+            </div>
+          ) : (
+            <button className="next">Submit</button>
+          )}
         </div>
       </div>
     </section>

@@ -1,5 +1,6 @@
+/* eslint-disable no-unused-vars */
 import { useEffect, useState } from "react";
-// import Logo from "../Logo";
+import PropTypes from "prop-types";
 import user from "../../assets/lanre.png";
 import adinLogo from "../../assets/adin-logo.svg";
 import {
@@ -8,7 +9,11 @@ import {
 } from "react-icons/io5";
 import "./NavBar.css";
 
-export default function NavBarQuiz() {
+NavBarQuiz.propTypes = {
+  onSkipQuestion: PropTypes.func,
+};
+
+export default function NavBarQuiz({ onSkipQuestion }) {
   const [seconds, setSeconds] = useState(15);
 
   useEffect(() => {

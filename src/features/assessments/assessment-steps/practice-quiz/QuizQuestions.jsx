@@ -2,16 +2,33 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { courses } from "../../../courses/CoursesData";
+import { quiz } from "./quiz-questions/QuizData";
 import NavBarQuiz from "../../../../ui/navbar/NavbarQuiz";
-import Button from "../../../../ui/Button";
 import Question from "./quiz-questions/Question";
 import "../../Assessments.css";
 
 function QuizQuestions() {
+  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [completedQuestions, setCompletedQuestions] = useState(false);
   const { courseTitle } = useParams();
   const selectedCourse = courses.find((course) => course.title === courseTitle);
   // console.log(selectedCourse);
+
+  function handleNext() {
+    setCurrentQuestionIndex((prevIndex) => prevIndex + 1);
+  }
+
+  function handlePrevious() {
+    setCurrentQuestionIndex((prevIndex) => Math.max(0, prevIndex - 1));
+  }
+
+  function handleSkip() {
+    setCurrentQuestionIndex((prevIndex) =>
+      Math.min(quiz.length - 1, prevIndex + 1)
+    );
+  }
+
+  const currentQuestion = quiz[currentQuestionIndex];
 
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
@@ -20,7 +37,7 @@ function QuizQuestions() {
   return (
     <section>
       <div className="quiz-questions">
-        <NavBarQuiz />
+        <NavBarQuiz onSkipQuestion={handleSkip} />
 
         <div className="quiz-question-body">
           <div className="quiz-question-title">
@@ -36,12 +53,21 @@ function QuizQuestions() {
             </div>
 
             <div className="quiz-skip">
-              <span>Skip</span>
+              <span
+                onClick={handleSkip}
+                disabled={currentQuestionIndex === quiz.length - 1}
+              >
+                Skip
+              </span>
             </div>
           </div>
 
           <div>
-            <Question />
+            <Question
+              index={currentQuestionIndex}
+              question={currentQuestion}
+              quiz={quiz}
+            />
           </div>
         </div>
       </div>
@@ -53,8 +79,20 @@ function QuizQuestions() {
         <div className="quiz-btns-right">
           {!completedQuestions ? (
             <div className="quiz-next-prev">
-              <button className="prev">Previous</button>
-              <button className="next">Next</button>
+              <button
+                className="prev"
+                onClick={handlePrevious}
+                disabled={currentQuestionIndex === 0}
+              >
+                Previous
+              </button>
+              <button
+                className="next"
+                onClick={handleNext}
+                disabled={currentQuestionIndex === quiz.length - 1}
+              >
+                Next
+              </button>
             </div>
           ) : (
             <button className="next">Submit</button>

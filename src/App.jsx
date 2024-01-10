@@ -6,7 +6,8 @@ import Courses from "./features/courses/Courses";
 import CourseModules from "./features/courses/CourseModules";
 import Assessments from "./features/assessments/Assessments";
 import AssessmentModules from "./features/assessments/AssessmentModules";
-import QuizQuestions from "./features/assessments/assessment-steps/practice-quiz/QuizQuestions";
+// import QuizQuestions from "./features/assessments/assessment-steps/practice-quiz/QuizQuestions";
+import Quiz from "./features/assessments/assessment-steps/practice-quiz/Quiz";
 
 function App() {
   return (
@@ -22,7 +23,7 @@ function App() {
           path="/assessments/:courseTitle"
           element={<AssessmentModules />}
         />
-        <Route path="/assessments/quiz" element={<QuizQuestions />} />
+        <Route path="/assessments/quiz" element={<Quiz />} />
       </Routes>
     </Router>
   );

@@ -4,7 +4,7 @@ import { courses } from "../../features/courses/CoursesData";
 import Quill from "./notes/Quill";
 import { IoAdd } from "react-icons/io5";
 import { MdEdit, MdDelete } from "react-icons/md";
-import Modal from "../modal/ModalCourseModule";
+import ModalCourseModule from "../modal/ModalCourseModule";
 import "./Steps.css";
 
 export default function NotesContent() {
@@ -122,10 +122,13 @@ export default function NotesContent() {
                 </div>
               ))}
 
-              <Modal
+              <ModalCourseModule
                 isOpen={isModalOpen}
-                onClose={closeModal}
-                onDelete={handleConfirmDelete}
+                cancel={closeModal}
+                ok={handleConfirmDelete}
+                message="Are you sure you want to delete this note?"
+                okBtn="Yes, please"
+                cancelBtn="No, Cancel"
               />
             </div>
           ) : (

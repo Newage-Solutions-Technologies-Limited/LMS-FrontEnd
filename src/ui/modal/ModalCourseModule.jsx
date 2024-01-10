@@ -2,14 +2,23 @@ import PropTypes from "prop-types";
 import Button from "../Button";
 import "./Modal.css";
 
-Modal.propTypes = {
-  index: PropTypes.number,
+ModalCourseModule.propTypes = {
   isOpen: PropTypes.bool,
-  onClose: PropTypes.func,
-  onDelete: PropTypes.func,
+  message: PropTypes.string,
+  cancel: PropTypes.func,
+  okBtn: PropTypes.string,
+  cancelBtn: PropTypes.string,
+  ok: PropTypes.func,
 };
 
-export default function Modal({ isOpen, onClose, onDelete, index }) {
+export default function ModalCourseModule({
+  isOpen,
+  cancel,
+  ok,
+  message,
+  okBtn,
+  cancelBtn,
+}) {
   const modalStyle = {
     display: isOpen ? "block" : "none",
   };
@@ -23,32 +32,32 @@ export default function Modal({ isOpen, onClose, onDelete, index }) {
       >
         <h2>Please Confirm</h2>
 
-        <p>Are you sure you want to delete this note?</p>
+        <p>{message}</p>
 
         <div className="course-modal-btns">
           <Button
-            width={20}
+            width={25}
             hoverin="#d6e9e9"
             color="#06a5a6"
             fontsize={14}
             borderradius={12}
             fontweight={900}
-            onClick={onClose}
+            onClick={cancel}
           >
-            Cancel
+            {cancelBtn}
           </Button>
 
           <Button
-            width={20}
+            width={25}
             fontweight={500}
             color="#dde1e6"
             backgroundcolor="#008688"
             hoverin="#1c9c9e"
             borderradius={12}
             fontsize={14}
-            onClick={() => onDelete(index)}
+            onClick={ok}
           >
-            Yes, please
+            {okBtn}
           </Button>
         </div>
       </div>

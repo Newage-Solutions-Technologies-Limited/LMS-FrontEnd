@@ -7,6 +7,7 @@ import ModalCourseModule from "../../../../ui/modal/ModalCourseModule";
 import QuizQuestion from "./quiz-questions/QuizQuestion";
 import Loader from "./Loader";
 import Error from "./Error";
+import FinishedQuizScreen from "./quiz-questions/FinishedQuizScreen";
 
 const initialState = {
   questions: quiz,
@@ -61,6 +62,13 @@ function reducer(state, action) {
         questionFocus: !state.questionFocus,
       };
 
+    case "finishedQuiz":
+      return {
+        ...state,
+        status: "finished",
+        questionFocus: !state.questionFocus,
+      };
+
     default:
       throw new Error("Action unknown");
   }
@@ -101,11 +109,13 @@ export default function Quiz() {
               <h3>Module 1</h3>
             </div>
 
-            <div className="quiz-skip">
-              <span onClick={() => dispatch({ type: "nextQuestion" })}>
-                Skip
-              </span>
-            </div>
+            {status !== "finished" && (
+              <div className="quiz-skip">
+                <span onClick={() => dispatch({ type: "nextQuestion" })}>
+                  Skip
+                </span>
+              </div>
+            )}
           </div>
 
           <div>
@@ -120,45 +130,56 @@ export default function Quiz() {
                 answer={answer}
               />
             )}
+
+            {status === "finished" && (
+              <FinishedQuizScreen questions={questions} />
+            )}
           </div>
         </div>
       </div>
 
-      <div className="quiz-footer">
-        <div className="quiz-btns-left">
-          <button onClick={() => dispatch({ type: "exitQuiz" })}>Exit</button>
-        </div>
-        <div className="quiz-btns-right">
-          {index !== questions.length - 1 ? (
-            <div className="quiz-next-prev">
+      {status !== "finished" && (
+        <div className="quiz-footer">
+          <div className="quiz-btns-left">
+            <button onClick={() => dispatch({ type: "exitQuiz" })}>Exit</button>
+          </div>
+          <div className="quiz-btns-right">
+            {index !== questions.length - 1 ? (
+              <div className="quiz-next-prev">
+                <button
+                  className="prev"
+                  onClick={() => dispatch({ type: "prevQuestion" })}
+                >
+                  Previous
+                </button>
+                <button
+                  className="next"
+                  onClick={() => dispatch({ type: "nextQuestion" })}
+                  disabled={answer === null}
+                >
+                  Next
+                </button>
+              </div>
+            ) : (
               <button
-                className="prev"
-                onClick={() => dispatch({ type: "prevQuestion" })}
+                className="submit"
+                onClick={() => dispatch({ type: "finishedQuiz" })}
               >
-                Previous
+                Submit
               </button>
-              <button
-                className="next"
-                onClick={() => dispatch({ type: "nextQuestion" })}
-                disabled={answer === null}
-              >
-                Next
-              </button>
-            </div>
-          ) : (
-            <button className="submit">Submit</button>
-          )}
-        </div>
+            )}
+          </div>
 
-        <ModalCourseModule
-          isOpen={isModalOpen}
-          ok={exitQuiz}
-          cancel={continueQuiz}
-          message="Are you sure you want to exit the quiz?"
-          okBtn="Yes, please"
-          cancelBtn="No, Cancel"
-        />
-      </div>
+          <ModalCourseModule
+            isOpen={isModalOpen}
+            ok={exitQuiz}
+            cancel={continueQuiz}
+            message="Are you sure you want to exit the quiz?"
+            okBtn="Yes, please"
+            cancelBtn="No, Cancel"
+          />
+        </div>
+      )}
     </section>
   );
 }

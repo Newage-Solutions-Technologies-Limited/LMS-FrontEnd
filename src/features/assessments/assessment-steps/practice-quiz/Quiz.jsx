@@ -68,7 +68,7 @@ function reducer(state, action) {
 
 export default function Quiz() {
   const [
-    { questions, status, index, answer, isModalOpen, newquestion },
+    { questions, status, index, answer, isModalOpen, questionFocus },
     dispatch,
   ] = useReducer(reducer, initialState);
   const navigate = useNavigate();
@@ -81,7 +81,7 @@ export default function Quiz() {
 
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
-  }, [newquestion]);
+  }, [questionFocus]);
 
   return (
     <section>

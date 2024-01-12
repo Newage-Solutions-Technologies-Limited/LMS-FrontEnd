@@ -1,7 +1,8 @@
 // /* eslint-disable no-unused-vars */
 import { useEffect, useReducer } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { quiz } from "./quiz-questions/QuizData";
+import { courses } from "../../../courses/CoursesData";
 import NavBarQuiz from "../../../../ui/navbar/NavbarQuiz";
 import ModalCourseModule from "../../../../ui/modal/ModalCourseModule";
 import QuizQuestion from "./quiz-questions/QuizQuestion";
@@ -11,8 +12,6 @@ import FinishedQuizScreen from "./quiz-questions/FinishedQuizScreen";
 
 const initialState = {
   questions: quiz,
-
-  // loading, error, ready, active, finished
   status: "active",
   index: 0,
   answer: null,
@@ -80,6 +79,19 @@ export default function Quiz() {
     dispatch,
   ] = useReducer(reducer, initialState);
   const navigate = useNavigate();
+  const { courseTitle } = useParams();
+  const selectedModule = courses
+    .map((course) => course.modules)
+    .flat()
+    .find((module) => module.title === courseTitle);
+  let moduleIndex = -1;
+
+  // If the course is found, find the index of the module
+  if (selectedModule) {
+    moduleIndex = selectedModule.modules?.findIndex(
+      (module) => module.title === courseTitle
+    );
+  }
 
   const continueQuiz = () => dispatch({ type: "continueQuiz" });
 
@@ -98,15 +110,15 @@ export default function Quiz() {
 
         <div className="quiz-question-body">
           <div className="quiz-question-title">
-            <div>
+            <div key={index}>
               <p className="bread-crumb">
                 <span>Practice quiz / </span>
                 <span className="quiz-module-item">
-                  EDX 506: Principles of Epidemiology and Public Health
+                  {selectedModule?.title}
                 </span>
               </p>
 
-              <h3>Module 1</h3>
+              <h3>Module {moduleIndex}</h3>
             </div>
 
             {status !== "finished" && (

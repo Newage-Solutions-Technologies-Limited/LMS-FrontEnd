@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { useNavigate } from "react-router-dom";
 import PropTypes from "prop-types";
 import Button from "../Button";
@@ -12,14 +13,13 @@ ModalPracticeQuiz.propTypes = {
 export default function ModalPracticeQuiz({ isOpen, onClose, selectedModule }) {
   const parentObject = selectedModule?.parentObject;
   const navigate = useNavigate();
-  console.log(selectedModule);
 
   const modalStyle = {
     display: isOpen ? "block" : "none",
   };
 
   const startQuiz = () => {
-    navigate("/assessments/quiz");
+    navigate(`/assessments/quiz/${selectedModule.module.title}`);
   };
 
   return (

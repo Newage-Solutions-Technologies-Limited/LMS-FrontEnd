@@ -2,11 +2,11 @@ import { useState } from "react";
 import { useParams } from "react-router-dom";
 import { courses } from "../../../courses/CoursesData";
 import GridPracticeQuiz from "./GridPracticeQuiz";
+import ListPracticeQuiz from "./ListPracticeQuiz";
 import { FaListUl } from "react-icons/fa";
 import { IoInformationCircleOutline } from "react-icons/io5";
 import { PiSortAscendingBold } from "react-icons/pi";
 import "../../Assessments.css";
-import ListPracticeQuiz from "./ListPracticeQuiz";
 
 export default function PracticeQuiz() {
   const [sortOrder, setSortOrder] = useState("asc");

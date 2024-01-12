@@ -23,7 +23,7 @@ function App() {
           path="/assessments/:courseTitle"
           element={<AssessmentModules />}
         />
-        <Route path="/assessments/quiz" element={<Quiz />} />
+        <Route path="/assessments/quiz/:courseTitle" element={<Quiz />} />
       </Routes>
     </Router>
   );

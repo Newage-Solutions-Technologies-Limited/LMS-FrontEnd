@@ -271,7 +271,7 @@ main {
 
 .live-class {
   color: #008688;
-  background: #f3f8f8;
+  /* background: #f3f8f8; */
   text-align: center;
   padding: 20px 12px;
   border-radius: 12px;
@@ -279,6 +279,7 @@ main {
 
 .live-class h4 {
   animation: animate 2s infinite;
+  font-weight: 900;
 }
 
 @keyframes animate {

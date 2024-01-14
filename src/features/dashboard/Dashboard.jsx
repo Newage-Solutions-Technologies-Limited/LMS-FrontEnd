@@ -85,14 +85,12 @@ export default function Dashboard() {
             <aside className="aside upcoming">
               <div className="live-class">
                 <FiRadio size={40} className="icon-radio" />
-                <h4>
-                  Live class is ongoing. <br /> Join now!
-                </h4>
+                <h4>Live class is ongoing!</h4>
                 <Button
                   width={50}
                   fontsize={14}
                   fontweight={600}
-                  color="#dde1e6"
+                  color="#fff"
                   backgroundcolor="#008688"
                   hoverin="#1c9c9e"
                 >
@@ -340,7 +338,11 @@ function CourseBox({
       <div className="course-details">
         <div className="course-title">
           <span className="title">{leftTop1}</span>
-          <span className={leftTop2 ? "left-top-2" : "hidden"}>{leftTop2}</span>
+          <span>
+            <span className={leftTop2 ? "left-top-2" : "hidden"}>
+              {leftTop2}
+            </span>
+          </span>
         </div>
 
         <h3>

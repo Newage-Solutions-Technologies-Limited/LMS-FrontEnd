@@ -702,10 +702,10 @@ table .unavailable {
 }
 
 .quiz-footer .quiz-btns-left button {
-  color: #f53a51;
-  border: 1px solid #f53a51;
   padding: 15px 50px;
-  background-color: #fff;
+  background-color: #f53a51;
+  color: #dde1e6;
+  border: 1px solid #f53a51;
 }
 
 .quiz-footer .quiz-btns-right .quiz-next-prev .prev {
@@ -733,8 +733,9 @@ table .unavailable {
 }
 
 .quiz-footer .quiz-btns-left button:hover {
-  background-color: #f53a51;
-  color: #dde1e6;
+  color: #f53a51;
+  border: 1px solid #f53a51;
+  background-color: #fff;
 }
 
 /* Error and Loader styles */
@@ -787,15 +788,6 @@ table .unavailable {
 }
 
 /* Progress bar */
-/* .progress {
-  margin-bottom: 4rem;
-  display: grid;
-  justify-content: space-between;
-  gap: 1.2rem;
-  grid-template-columns: auto auto;
-  font-size: 1.8rem;
-  color: var(--color-medium);
-} */
 
 .progress {
   /* -webkit-appearance: none; */

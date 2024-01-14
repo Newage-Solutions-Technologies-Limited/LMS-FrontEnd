@@ -18,16 +18,20 @@ const initialState = {
   points: 0,
   isModalOpen: false,
   questionFocus: false,
+  userAnswers: Array(quiz.length).fill(null),
 };
 
 function reducer(state, action) {
   const question = state.questions.at(state.index);
+  const updatedUserAnswers = [...state.userAnswers];
+  updatedUserAnswers[state.index] = action.payload;
 
   switch (action.type) {
     case "newAnswer":
       return {
         ...state,
         answer: action.payload,
+        userAnswers: updatedUserAnswers,
         points:
           action.payload === question.correct ? state.points + 1 : state.points,
       };
@@ -75,7 +79,15 @@ function reducer(state, action) {
 
 export default function Quiz() {
   const [
-    { questions, status, index, answer, isModalOpen, questionFocus },
+    {
+      questions,
+      status,
+      index,
+      answer,
+      isModalOpen,
+      questionFocus,
+      userAnswers,
+    },
     dispatch,
   ] = useReducer(reducer, initialState);
   const navigate = useNavigate();
@@ -139,7 +151,8 @@ export default function Quiz() {
                 index={index}
                 questions={questions}
                 dispatch={dispatch}
-                answer={answer}
+                answer={answer !== null ? answer : userAnswers[index]}
+                userAnswers={userAnswers}
               />
             )}
 

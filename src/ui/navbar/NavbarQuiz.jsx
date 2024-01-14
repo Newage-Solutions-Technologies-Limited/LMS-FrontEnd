@@ -61,7 +61,7 @@ export default function NavBarQuiz({ onSkipQuestion }) {
           <span className="user-name">Olanrewaju O.</span>
           <p className="user-info">
             <span>Web development | </span>
-            <span>300lvl</span>
+            <span>300L</span>
           </p>
         </span>
       </div>

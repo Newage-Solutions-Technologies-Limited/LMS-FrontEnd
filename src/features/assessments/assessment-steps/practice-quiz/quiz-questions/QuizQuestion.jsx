@@ -9,6 +9,7 @@ QuizQuestion.propTypes = {
   questions: PropTypes.array,
   dispatch: PropTypes.func,
   answer: PropTypes.number,
+  userAnswers: PropTypes.array,
 };
 
 export default function QuizQuestion({
@@ -17,6 +18,7 @@ export default function QuizQuestion({
   questions,
   dispatch,
   answer,
+  userAnswers,
 }) {
   return (
     <div className="quiz-details">
@@ -39,7 +41,7 @@ export default function QuizQuestion({
         {question.options.map((option, i) => (
           <div
             key={i}
-            className={`option ${i === answer ? "selected-option" : ""}`}
+            className={`option ${i === userAnswers ? "selected-option" : ""}`}
             onClick={() => dispatch({ type: "newAnswer", payload: i })}
           >
             <div>

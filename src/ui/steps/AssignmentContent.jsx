@@ -4,7 +4,7 @@ import { courses } from "../../features/courses/CoursesData";
 import PropTypes from "prop-types";
 import preview from "../../assets/pdf-preview.png";
 import assignment from "../../assets/sample.pdf";
-import emptyFolder from "../../assets/empty.svg";
+// import emptyFolder from "../../assets/empty.svg";
 import Button from "../Button";
 import "./Steps.css";
 
@@ -15,12 +15,25 @@ export default function AssignmentContent() {
   return (
     <>
       {selectedCourse.progress === 100 ? (
-        <div className="empty-assignment">
-          <img src={emptyFolder} alt="empty" width="25%" />
+        <>
+          <Assignment
+            fileNo={1}
+            fileFormat="PDF"
+            fileName="Assignment Document"
+            filePath={assignment}
+            marked={true}
+            completed={true}
+          />
 
-          <h4>Nothing on your assignment board right now!</h4>
-          <p>Check back later for new assignments</p>
-        </div>
+          <Assignment
+            fileNo={2}
+            fileFormat="PDF"
+            fileName="Assignment Document"
+            filePath={assignment}
+            marked={true}
+            completed={true}
+          />
+        </>
       ) : (
         <>
           <Assignment
@@ -48,6 +61,7 @@ Assignment.propTypes = {
   filePath: PropTypes.string,
   fileFormat: PropTypes.string,
   marked: PropTypes.bool,
+  completed: PropTypes.bool,
 };
 
 function Assignment({
@@ -56,6 +70,7 @@ function Assignment({
   filePath,
   fileNo,
   marked = false,
+  completed = false,
 }) {
   return (
     <>
@@ -69,7 +84,11 @@ function Assignment({
 
           <div>
             <span className={marked ? "marked" : "deadline"}>
-              {marked ? "Marked" : "Deadline: Jan. 12, 2024"}
+              {completed
+                ? "Completed"
+                : marked
+                ? "Marked"
+                : "Deadline: Jan. 12, 2024"}
             </span>
           </div>
         </div>
